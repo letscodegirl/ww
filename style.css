@@ -47,6 +47,7 @@ html {
 .padded-l  { padding-left: 5%;    }
 .padded-r  { padding-right: 5%;   }
 
+.margin-t-1 { margin-top: 1rem;    }
 .margin-t-2 { margin-top: 2rem;    }
 .margin-b-1 { margin-bottom: 1rem; }
 .margin-b-2 { margin-bottom: 2rem; }
@@ -159,11 +160,17 @@ a:hover { color: #a2745c; }
     font-weight: 400;
 }
 
+.overlay {
+    /* background: linear-gradient(rgba(0, 0, 0, 0.5) 10%, rgba(0, 0, 0, 0) 100%)  no-repeat center center; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 /* Header & Footer  */
 
 header {
-    padding: 2% 5%;
+    padding: 2% 4%;
 }
 
 footer a:hover {
@@ -175,6 +182,10 @@ footer a:hover {
     max-width: 3rem;
     opacity: 0.8;
     margin: 1rem 0;
+}
+
+.icon {
+    margin-right: 8px;
 }
 
 
@@ -203,12 +214,12 @@ footer a:hover {
 }
 
 .bg-plant-2 {
-    background-image: url('/images/plant-2.jpg');
+    background-image: url('/images/stairs.png');
     background-position: 75% 50%;
 }
 
 .bg-sample {
-    background-image: url('/images/sampleman.png');
+    background-image: url('/images/opaque.png');
 }
 
 .bg-meeting {
