@@ -57,9 +57,9 @@ html {
 .margin-b-0 { margin-bottom: 0; }
 
 
-.bg-rust     { background-color: #778290; }
+.bg-rust     { background-color: #bfd1f2; }
 .bg-green     { background-color: #D7D2D6;}
-.bg-dark     { background-color: #1C1E2E;  }
+.bg-dark     { background-color: #6680C0;  }
 
 .light-text { color: white; }
 
@@ -196,7 +196,7 @@ footer a:hover {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /* background-image: url('/images/plant.jpg'); */
+    /* background-image: url('/images/opaquemba.png'); */
 }
 
 .profile-image {
