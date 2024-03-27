@@ -65,7 +65,8 @@ html {
 .bg-slate-200 {
     position: relative;
     overflow: hidden;
-    background-color: #cbd5e1;
+    background-color: rgba(203, 213, 225, 0.5);
+    opacity: 0.8;
     /* Assuming bg-slate-200 is a light gray */
 }
 
@@ -79,6 +80,13 @@ html {
     background-color: inherit;
     filter: blur(8px);
     z-index: -1;
+}
+
+.text-opaque {
+    color: #000;
+    /* Black color */
+    position: relative;
+    z-index: 2;
 }
 
 .light-text { color: white; }
@@ -193,7 +201,7 @@ a:hover { color: #a2745c; }
   padding: 0.5rem 1rem;
   display: inline-block;
   font-weight: 400;
-  color: white;
+  color: black;
 }
 
 .bg-dark .button:hover {
