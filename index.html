@@ -1,19 +1,21 @@
 ---
 layout: default
-banner_image_path:
+banner_image_path: /images/01.png
 icon1_path: /images/icons/flash.png
 
 
 ---
 
-<section class="bg-image padded tall-120 grid-middle style="background-image: url('{{page.banner_image_path}}');">
+<section class="bg-image padded tall-80 grid-middle" style="background-image: url('{{page.banner_image_path}}');">
     <div class="col-8_sm-10 editable">
-        <h2> Welcome to RAMP Business English Skills Training </h2>
+        <h1> Welcome to RAMP <br><h2>Business English Skills Training</h2> </h1>
         <p> At RAMP Business English Skills Training, the mission is to empower emerging professionals with less than five years of
         experience, as well as start-ups, small, and mid-size companies, by equipping them with the skills and confidence
         essential to thrive in the realms of sales, negotiation, and presentation. </p>
     </div>
 </section>
+
+{% include newsletter-signup.html %}
 
 <!-- Icon Grid  -->
 <section class="padded grid center icon-section" id="why-us">
@@ -56,7 +58,6 @@ icon1_path: /images/icons/flash.png
 
 </section>
 
-{% include newsletter-signup.html %}
 
 <section class="bg-image bg-plant-2 padded center tall-70 grid-right" id="services">
     <div class="col-6_sm-8-middle right">
