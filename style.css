@@ -110,6 +110,17 @@ html {
   flex-direction: row-reverse;
 }
 
+.text-background {
+    background-color: rgba(255, 255, 255, 0.9);
+    /* White background with 90% opacity */
+    padding: 1rem;
+    /* Adjust padding as needed */
+    width: 80%;
+    /* Or any width you prefer */
+    box-sizing: border-box;
+    /* So the padding doesn't affect the overall width */
+    text-align: left;
+}
 
 /* video hero banner */
 
