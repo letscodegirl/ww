@@ -111,7 +111,7 @@ html {
 }
 
 .text-background {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(135, 206, 235, 0.9);
     /* White background with 90% opacity */
     padding: 1rem;
     /* Adjust padding as needed */
@@ -120,6 +120,7 @@ html {
     box-sizing: border-box;
     /* So the padding doesn't affect the overall width */
     text-align: left;
+    color: white;
 }
 
 /* video hero banner */
@@ -266,6 +267,12 @@ footer a:hover {
     background-position: center;
     background-repeat: no-repeat;
     /* background-image: url('/images/opaquemba.png'); */
+}
+
+.bg-contact {
+    background-size: cover;
+    height: auto;
+    background-repeat: no-repeat;
 }
 
 .profile-image {
