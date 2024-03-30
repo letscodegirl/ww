@@ -122,6 +122,22 @@ html {
     color: rgb(60,60,60);
 }
 
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.floating-effect {
+    animation: float 3s ease-in-out infinite;
+}
+
 /* video hero banner */
 
 .video-background {
@@ -257,6 +273,12 @@ footer a:hover {
     margin-right: 8px;
 }
 
+/* mission statement */
+
+.quote-icon {
+    font-size: 15vh;
+    margin-top: -2vh;
+}
 
 /* Background Images */
 
