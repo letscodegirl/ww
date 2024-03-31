@@ -441,12 +441,24 @@ form .button {
     .flex-flip-sm { flex-direction: column-reverse; }
 
     .bg-plant {
-        background-image: url('/images/plant-light.png');
+        background-image: url('/images/stairs.png');
     }
 
     .bg-plant-2 {
-        background-image: url('/images/plant-2-light.png');
+        background-image: url('/images/stairs.png');
         background-position: 45% 50%;
+    }
+
+    .hero-title {
+        font-size: 2em;
+    }
+
+    .hero-text {
+        font-size: 1.2em;
+    }
+
+    .hero-nav {
+        padding-bottom: 18px;
     }
 
 }
