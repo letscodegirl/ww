@@ -55,6 +55,7 @@ html {
 
 .padded-0 { padding: 0; }
 .padded-b-0 { padding-bottom: 0; }
+.padded-b-2 { padding-bottom: 2%; }
 .margin-b-0 { margin-bottom: 0; }
 
 
@@ -123,14 +124,16 @@ html {
 }
 
 @keyframes float {
-
-    0%,
-    100% {
+    0% {
         transform: translateY(0);
     }
 
     50% {
         transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
     }
 }
 
@@ -273,12 +276,19 @@ footer a:hover {
     margin-right: 8px;
 }
 
-/* mission statement */
-
-.quote-icon {
-    font-size: 15vh;
-    margin-top: -2vh;
+/* our courses */
+.text-background-2 {
+    background-color: rgba(232, 237, 241, 0.8);
+    padding: 1rem;
+    /* Adjust padding as needed */
+    width: 80%;
+    /* Or any width you prefer */
+    box-sizing: border-box;
+    /* So the padding doesn't affect the overall width */
+    text-align: left;
+    color: rgb(60, 60, 60);
 }
+
 
 /* Background Images */
 
