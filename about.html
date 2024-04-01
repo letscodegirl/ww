@@ -20,7 +20,7 @@ about-video-id: lrM5CRg-O0I
 
 <section class="tall-60 grid bg-green hide-sm">
     <div class="col-5-middle editable padded ">
-        <h2 class="editable hide-sm"> Meet Our Founder </h2>
+        <h2 class="editable hero-title"> Meet Our Founder </h2>
         <p class="editable hide-sm"> RAMP Business English Skills Training began as a way to extend the reach of training new professionals, startups, and
         small to mid-size companies seeking to develop their sales effectiveness, negotiation competence, and presentation
         finesse. </p>
@@ -36,10 +36,10 @@ about-video-id: lrM5CRg-O0I
     {% for person in page.team %}
 
         <div class="grid flex-flip-alternate">
-            <div class="col-5 padded-2">
+            <div class="col-5 padded-2 hide-sm">
                 <img src="{{ person.profile_image }}" class="profile-image" />
             </div>
-            <div class="col-7-middle padded-1">
+            <div class="col-7-middle padded-1 about-section">
                 <h3> {{ person.name }} </h3>
                 <p> <strong> {{ person.bio }} </strong></p>
                 <p> {{person.description }} </p>
@@ -54,8 +54,8 @@ about-video-id: lrM5CRg-O0I
 </section>
 
 <section class="padded bg-green center">
-    <h2 class="editable"> Watch Our Demo Video </h2>
-    <p class="emphasis editable"> RAMP B.E.S.T </p>
+    <h2 class="editable hero-title"> Watch Our Demo Video </h2>
+    <p class="emphasis editable hero-text"> RAMP B.E.S.T </p>
     <div class="padded-1">
         <div class='embed-container'><iframe src='https://www.youtube.com/embed/{{ page.about-video-id }}' frameborder='0' allowfullscreen></iframe></div>
     </div>
