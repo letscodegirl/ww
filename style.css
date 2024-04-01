@@ -450,7 +450,7 @@ form .button {
     }
 
     .hero-title {
-        font-size: 2em;
+        font-size: 2.2em;
     }
 
     .hero-text {
@@ -459,6 +459,17 @@ form .button {
 
     .hero-nav {
         padding-bottom: 18px;
+    }
+
+    .hero-div {
+        width: 100%;
+        /* Make the div take full width */
+        margin: 0 auto;
+        /* Center the div */
+        justify-content: center;
+        /* Horizontally center the content */
+        align-items: center;
+        /* Vertically center the content (if needed) */
     }
 
 }
