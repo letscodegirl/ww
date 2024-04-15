@@ -17,16 +17,31 @@ banner_image: /images/contactsuit.png
         <p><strong><u>Try RAMP now!</u></strong></p>
     </div>
 
-  <form action="/submit-form" method="POST">
-    <label for="_name"> Your Name </label>
-    <input type="text" name="name" id="_name" placeholder="Name" />
+  <form method="post" action="/success.html">
+  <label>Email Address</label>
+  <input type="text" name="email">
 
-    <label for="_replyto"> Your Email </label>
-    <input type="email" name="email" id="_replyto" placeholder="Email" />
+  <label>Name</label>
+  <input type="text" name="name">
 
-    <label for="message"> Share your goals and challenges </label>
-    <textarea name="message" id="message" placeholder="Help me tailor our session to your needs! Briefly describe your objectives and any specific challenges you're facing in Business English sales, negotiation, or presentation. Your input will ensure our session is perfectly customized to address your unique requirements."></textarea>
+  <label>Message</label>
+  <textarea name="message"></textarea>
 
-    <button type="submit" class="button"> SUBMIT </button>
+  <label>Urgent</label>
+  <input type="checkbox" name="urgent">
+
+  <label>Type of Enquiry</label>
+  <input type="radio" name="_subject" value="Sales Enquiry"> Sales
+  <input type="radio" name="_subject" value="General Enquiry"> General
+
+  <input type="hidden" name="inbox_key" value="RAMP training inquiries">
+  <input type="hidden" name="_to" value="rampbizenglish@gmail.com">
+  <input type="hidden" name="_cc" value="sales.tracker@example.com">
+  <input type="hidden" name="_replyto" value="sales@example.com">
+  <input type="text" name="_gotcha" style="display: none;">
+
+  <input type="submit" value="Send Message">
+</form>
+
     
 </section>
