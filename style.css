@@ -373,6 +373,84 @@ footer a:hover {
     padding-bottom: 50px;
 }
 
+/* learn */
+
+.table-container {
+    width: 100%;
+    margin: 0 auto;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    /* Adjust table layout */
+}
+
+thead {
+    background-color: #f2f2f2;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    height: 50px;
+    /* Adjust the height */
+}
+
+tbody tr:hover {
+    background-color: #e8f4f8;
+}
+
+.table-container {
+    /* Container styles */
+    padding: 16px;
+}
+
+.table-actions {
+    /* Align the buttons and input */
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0;
+    margin-right: 80px;
+}
+
+#search-input {
+    /* Style the search input */
+    padding: 8px;
+    margin-left: 14px;
+    margin-right: 250px;
+    /* Give some space between input and button */
+    flex-grow: 1;
+    /* Let input take up available space */
+    font-family: mulish;
+}
+
+#submit-button {
+    /* Style the buttons */
+    padding: 8px 15px;
+    background-color: #7777ED;
+    color: white;
+    /* White text */
+    border: none;
+    cursor: pointer;
+    font-family: mulish;
+    border-radius: 10%;
+    margin-right: -65px;
+}
+
+#search-button:hover,
+#submit-button:hover {
+    /* Hover effect for buttons */
+    background-color: #D8CBFC;
+}
+
 
 /* Contact Forms  */
 
