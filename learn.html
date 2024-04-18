@@ -1,8 +1,16 @@
 ---
 layout: default
 banner_image: /images/learn.jpg
+title: Blog Page
+seo:
+  title:
+  description:
+  social_image:
+  twitter_card:
+  keywords:
+  hide-from-google: false
 ---
-<link rel="stylesheet" href="style.css" />
+
 
 <section class="tall-60 grid bg-green">
   <div class="col-7 bg-contact" style="background-image: url('{{page.banner_image}}');">
@@ -15,7 +23,7 @@ banner_image: /images/learn.jpg
   </div>
 </section>
 
-<section class="padded capped-width">
+<!-- <section class="padded capped-width">
   <div class="center editable margin-b-2">
       <h2>Ready to Ramp Up?</h2>
       <p> </p>
@@ -53,5 +61,19 @@ banner_image: /images/learn.jpg
   <input type="text" id="search-input" placeholder="Search..." />
   <button id="submit-button">Submit</button>
 </div>
+
+</section> -->
+
+<section class="p-5p max-w-screen-2xl mx-auto">
+  <h2 class="serif tracking-wide uppercase text-center text-4xl mb-4"> RAMP Featured Articles </h2>
+  <div class="sm:columns-3">
+
+    {% for post in site.posts limit:12 %}
+
+    {% include post-loop-item-mixed-images.html %}
+
+    {% endfor %}
+
+  </div>
 
 </section>
