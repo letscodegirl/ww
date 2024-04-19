@@ -493,6 +493,19 @@ form .button {
     font-size: 1.3rem;
 }
 
+.columns-3 {
+    columns: 3;
+}
+
+.break-inside-avoid {
+    break-inside: avoid;
+    display: block;
+}
+
+.text-center {
+    text-align: center;
+}
+
 
 /* Responsive Video */
 
@@ -713,6 +726,10 @@ form .button {
 
     .sm-margin-r-0 {
         padding-right: 0;
+    }
+
+    .sm-columns-1 {
+        columns: 1;
     }
 
     .logo h2 {

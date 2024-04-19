@@ -1,11 +1,11 @@
 <!-- Since the post loop item uses a column class, make sure the parent container has a grid -->
 
-<a href="{{ post.url }}" class="mb-4 bg-stone-100 block">
-  <div class="grid grid-cols-4">
-    <div class="col-span-1 pb-1/1 relative">
+<a href="{{ post.url }}" class="margin-b-1 bg-stone-100 block">
+  <div class="grid">
+    <div class="col-3 pb-1/1 relative">
       <img src="{{ post.featured_image }}" class="lazy absolute inset-0 h-full w-full object-cover">
     </div>
-    <div class="col-span-3 p-4 self-center">
+    <div class="col-9 p-4 self-center">
       <p class="max-sm:hidden">
         {% for item in post.categories %}
         <span class="tag"> {{item}} </span>
