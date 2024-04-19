@@ -527,81 +527,6 @@ form .button {
     height: 100%;
 }
 
-/* SM - max-width in pixels approximately 768px */
-@media(max-width: 48em) {
-
-    .hide-sm {display: none; }
-
-    .right-sm {
-        text-align: right;
-        /* Aligns the hamburger menu to the right */
-        padding-right: 15px;
-        /* Adds some padding on the right */
-    }
-
-    header .col-1_sm-12-middle {
-        flex-basis: 20%;
-        /* Adjusts the hamburger menu column width */
-        max-width: 20%;
-        /* Adjusts the hamburger menu column max-width */
-    }
-
-    .flex-flip-sm { flex-direction: column-reverse; }
-
-    .bg-plant {
-        background-image: url('/images/stairs.png');
-    }
-
-    .bg-plant-2 {
-        background-image: url('/images/stairs.png');
-        background-position: 45% 50%;
-    }
-
-    .hero-title {
-        font-size: 2.2em;
-    }
-
-    .hero-text {
-        font-size: 1.2em;
-    }
-
-    .hero-nav {
-        padding-bottom: 18px;
-    }
-
-    .hero-div {
-        width: 100%;
-        /* Make the div take full width */
-        margin: 0 auto;
-        /* Center the div */
-        justify-content: center;
-        /* Horizontally center the content */
-        align-items: center;
-        /* Vertically center the content (if needed) */
-    }
-
-    .hero-pb {
-        padding-bottom: 30px;
-    }
-
-    .about-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .about-img {
-        width: 80px;
-        /* Adjust size as needed */
-        height: 80px;
-        /* Maintain aspect ratio */
-        margin-bottom: 1rem;
-        /* Space between image and text */
-    }
-
-}
-
 
 .show-xs,
 .show-sm,
@@ -673,9 +598,7 @@ form .button {
 /* ------- SM Media Query (48em / 768px) --------------- */
 /* - Styles added here will apply at devices smaller than 768px, or zoomed in equivalent */
 
-
-@media(max-width:48em) {
-
+@media (max-width: 48em) {
     html {
         font-size: 14px;
     }
@@ -688,6 +611,10 @@ form .button {
         display: block;
     }
 
+    .hide-sm {
+        display: none;
+    }
+
     .sm-text-center {
         text-align: center;
     }
@@ -696,8 +623,14 @@ form .button {
         text-align: left;
     }
 
-    .sm-text-right {
+    .sm-text-right,
+    .right-sm {
         text-align: right;
+    }
+
+    .right-sm {
+        padding-right: 15px;
+        /* Adds some padding on the right */
     }
 
     .sm-padded {
@@ -732,17 +665,62 @@ form .button {
         columns: 1;
     }
 
-    .logo h2 {
+    .logo h2,
+    .hero-title {
         font-size: 2rem;
+        /* Unified to the smaller specified size for '.logo h2' */
     }
 
     header h3 {
         font-size: 11vw;
     }
 
+    header .col-1_sm-12-middle {
+        flex-basis: 20%;
+        max-width: 20%;
+    }
 
+    .flex-flip-sm {
+        flex-direction: column-reverse;
+    }
 
+    .bg-plant,
+    .bg-plant-2 {
+        background-image: url('/images/stairs.png');
+    }
+
+    .bg-plant-2 {
+        background-position: 45% 50%;
+    }
+
+    .hero-text {
+        font-size: 1.2em;
+    }
+
+    .hero-nav,
+    .hero-pb {
+        padding-bottom: 18px;
+        /* Changed to the smaller value to resolve conflict */
+    }
+
+    .hero-div {
+        width: 100%;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-img {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 1rem;
+    }
 }
-
-
 
