@@ -2,7 +2,10 @@
 layout: post
 title: Island Paradise in the Seychelles
 subtitle: Discover the Tropical Beauty of Pristine Islands
-description: Immerse yourself in the breathtaking beauty of the Seychelles, where secluded beaches, turquoise waters, and vibrant coral reefs create a paradise for beach lovers and nature enthusiasts.
+description: >-
+  Immerse yourself in the breathtaking beauty of the Seychelles, where secluded
+  beaches, turquoise waters, and vibrant coral reefs create a paradise for beach
+  lovers and nature enthusiasts.
 author: Erick
 featured: true
 banner-image: /uploads/travel/seychelles-1.jpg
@@ -12,12 +15,14 @@ categories:
 featured_image: /uploads/travel/seychelles-1.jpg
 seo:
   title: Island Paradise in the Seychelles
-  description: Immerse yourself in the breathtaking beauty of the Seychelles, where secluded beaches, turquoise waters, and vibrant coral reefs create a paradise for beach lovers and nature enthusiasts.
+  description: >-
+    Immerse yourself in the breathtaking beauty of the Seychelles, where
+    secluded beaches, turquoise waters, and vibrant coral reefs create a
+    paradise for beach lovers and nature enthusiasts.
   social_image: /uploads/travel/seychelles-1.jpg
   keywords: Seychelles, tropical paradise, beach vacation, coral reefs, pristine islands
   hide-from-google: false
 ---
-
 # Island Paradise in the Seychelles
 
 *Discover the Tropical Beauty of Pristine Islands*
