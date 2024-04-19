@@ -9,8 +9,8 @@ author: Erick
 featured: true
 banner-image: /uploads/travel/new-york-1.jpg
 categories:
-  - travel
-  - usa
+  - business
+  - english
 featured_image: /uploads/travel/new-york-1.jpg
 seo:
   title: A Weekend Getaway in New York City
