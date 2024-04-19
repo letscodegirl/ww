@@ -7,8 +7,8 @@ author: Erick
 featured: true
 banner-image: /uploads/travel/madagascar-1.jpg
 categories:
-  - travel
-  - madagascar
+  - english
+  - business
 featured_image: /uploads/travel/madagascar-1.jpg
 seo:
   title: 'Madagascar: An Extraordinary Journey into the Wild'

@@ -7,8 +7,8 @@ author: Erick
 featured: true
 banner-image: /uploads/travel/seychelles-1.jpg
 categories:
-  - travel
-  - seychelles
+  - english
+  - business
 featured_image: /uploads/travel/seychelles-1.jpg
 seo:
   title: Island Paradise in the Seychelles
