@@ -2,7 +2,9 @@
 layout: post
 title: A Weekend Getaway in New York City
 subtitle: Embrace the Energy of the Big Apple
-description: Dive into the vibrant energy and iconic attractions of New York City during a memorable weekend escape filled with culture, art, and culinary delights.
+description: >-
+  Dive into the vibrant energy and iconic attractions of New York City during a
+  memorable weekend escape filled with culture, art, and culinary delights.
 author: Erick
 featured: true
 banner-image: /uploads/travel/new-york-1.jpg
@@ -12,13 +14,15 @@ categories:
 featured_image: /uploads/travel/new-york-1.jpg
 seo:
   title: A Weekend Getaway in New York City
-  description: Dive into the vibrant energy and iconic attractions of New York City during a memorable weekend escape filled with culture, art, and culinary delights.
+  description: >-
+    Dive into the vibrant energy and iconic attractions of New York City during
+    a memorable weekend escape filled with culture, art, and culinary delights.
   social_image: /uploads/travel/new-york-1.jpg
-  keywords: New York City, weekend getaway, cultural exploration, city break, iconic attractions
+  keywords: >-
+    New York City, weekend getaway, cultural exploration, city break, iconic
+    attractions
   hide-from-google: false
 ---
-
-
 New York City, the city that never sleeps, pulsates with a vibrant energy that lures travelers from around the world. From towering skyscrapers to world-class museums, Broadway shows to bustling street markets, the Big Apple offers an endless array of experiences. Dive into the heart of this metropolis during a memorable weekend getaway filled with culture, art, and culinary delights.
 
 ## Iconic Landmarks and Skyline Views
