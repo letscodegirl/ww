@@ -372,9 +372,9 @@ footer a:hover {
     margin-bottom: 2rem;
 }
 
-.test-p-1 {
-    /* padding-bottom: 50px; */
-}
+/* .test-p-1 {
+    padding-bottom: 50px;
+} */
 
 /* learn */
 
@@ -463,9 +463,9 @@ tbody tr:hover {
     display: block;
 }
 
-.text-center {
+/* .text-center {
     text-align: center;
-}
+} */
 
 
 
@@ -670,6 +670,10 @@ form .button {
         columns: 1;
     }
 
+    .sm-strong {
+        font-weight: bold;
+    }
+
     .logo h2,
     .hero-title {
         font-size: 2rem;
@@ -700,14 +704,20 @@ form .button {
 
     .hero-text {
         font-size: 1.2em;
-        color: whitesmoke;
+        /* color: whitesmoke; */
     }
 
-    .hero-nav,
+    .super-small-text {
+        font-size: 1em;
+    }
+
+
+
+    /* .hero-nav,
     .hero-pb {
         padding-bottom: 18px;
-        /* Changed to the smaller value to resolve conflict */
-    }
+        /* Changed to the smaller value to resolve conflict
+    } */
 
     .hero-div {
         width: 100%;
@@ -819,15 +829,15 @@ abbr:where([title]) {
 /*
 Remove the default font size and weight for headings.
 */
-h1,
+/* h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-    /* font-size: inherit; */
-    /* font-weight: inherit; */
-}
+    font-size: inherit;
+    font-weight: inherit;
+} */
 
 /*
 Reset links to optimize for opt-in styling instead of opt-out.
@@ -837,9 +847,7 @@ a {
     text-decoration: inherit;
 }
 
-/*
-Add the correct font weight in Edge and Safari.
-*/
+
 b,
 strong {
     font-weight: bolder;
@@ -937,16 +945,17 @@ select {
 1. Correct the inability to style clickable types in iOS and Safari.
 2. Remove default button styles.
 */
+
 button,
 [type='button'],
 [type='reset'],
 [type='submit'] {
     -webkit-appearance: button;
-    /* 1 */
+    /* Safari와 Chrome을 위한 설정 */
+    appearance: button;
+    /* 표준 속성 추가 */
     background-color: transparent;
-    /* 2 */
     background-image: none;
-    /* 2 */
 }
 
 /*
@@ -982,11 +991,13 @@ Correct the cursor style of increment and decrement buttons in Safari.
 1. Correct the odd appearance in Chrome and Safari.
 2. Correct the outline style in Safari.
 */
+
 [type='search'] {
     -webkit-appearance: textfield;
-    /* 1 */
+    /* Safari와 Chrome을 위한 설정 */
+    appearance: textfield;
+    /* 표준 속성 추가 */
     outline-offset: -2px;
-    /* 2 */
 }
 
 /*
@@ -1145,8 +1156,6 @@ h2 {
 }
 
 h3 {
-    /* font-size: 1.125rem; */
-    line-height: 1.75rem;
     line-height: 1.25;
 }
 
