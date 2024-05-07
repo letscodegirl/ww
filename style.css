@@ -194,7 +194,7 @@ h3 {
 
 h4 {
     font-size: 1.6rem;
-    font-weight: 400;
+    /* font-weight: 400; */
 }
 
 p  {
@@ -835,10 +835,10 @@ a {
 }
 
 
-b,
+/* b,
 strong {
     font-weight: bold;
-}
+} */
 
 /*
 1. Use the user's configured `mono` font family by default.
