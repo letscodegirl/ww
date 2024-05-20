@@ -37,24 +37,20 @@ about-video-id: lrM5CRg-O0I
 <section class="padded">
     <div class="capped-width">
 
-    {% for person in page.team %}
+        {% for person in page.team %}
 
-        <div class="flex-flip-alternate">
-            <div class="col-5 padded-2">
-                <img src="{{ person.profile_image }}" class="profile-image" />
-            </div>
-            <div class="col-7-middle padded-1 about-section">
+        <div class="profile-container">
+            <img src="{{ person.profile_image }}" class="profile-image" />
+            <div class="about-section">
                 <h3> {{ person.name }} </h3>
                 <p> <strong> {{ person.bio }} </strong></p>
                 <p> {{person.description }} </p>
             </div>
-
         </div>
 
-    {% endfor %}
+        {% endfor %}
 
     </div>
-
 </section>
 
 <section class="padded bg-green center">
