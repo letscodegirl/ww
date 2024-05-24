@@ -98,7 +98,7 @@ html {
 .right  { text-align: right; }
 
 .capped-width {
-    max-width: 1000px;
+    max-width: 900px;
     margin:auto;
 }
 
@@ -139,6 +139,22 @@ html {
 
 .floating-effect {
     animation: float 3s ease-in-out infinite;
+}
+
+.custom-slided {
+    position: relative;
+    animation: initial-slide 3s ease-in-out 1;
+}
+
+@keyframes initial-slide {
+    0% {
+        left: -50vw;
+        opacity: 0;
+    }
+    100% {
+        left: 0vw;
+        opacity: 1;
+    }
 }
 
 /* video hero banner */
@@ -2650,11 +2666,6 @@ a {
 
 /* General padding and layout for all screens */
 
-
-.capped-width {
-    max-width: 1200px;
-    margin: auto;
-}
 
 .profile-container {
     display: flex;
