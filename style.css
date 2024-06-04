@@ -2695,11 +2695,6 @@ a {
         align-items: start;
     }
 
-    .profile-image {
-        max-width: 100%;
-        /* Adjust based on layout */
-    }
-
     .about-section {
         padding-left: 100px;
         /* Space between image and text */
