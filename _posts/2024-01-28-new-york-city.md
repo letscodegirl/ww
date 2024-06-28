@@ -1,26 +1,29 @@
 ---
 layout: post
-title: A Weekend Getaway in New York City
-subtitle: Embrace the Energy of the Big Apple
+title: Decoding Sales Excellence
+subtitle:
 description: >-
-  Dive into the vibrant energy and iconic attractions of New York City during a
-  memorable weekend escape filled with culture, art, and culinary delights.
-author: Erick
+  What does it take to be a great salesperson? Traditional characteristics like
+  charisma, an extroverted personality, and the ability to close deals have long
+  been declared qualities belonging to great salespeople. 
+author: Erick Mendoza
 featured: true
-banner-image: /uploads/travel/new-york-1.jpg
+banner-image: /uploads/decoding-sales.jpg
 categories:
   - business
   - english
-featured_image: /uploads/travel/new-york-1.jpg
+  - sales training
+  - sales
+  - Building business relationships
+featured_image: /uploads/decoding-sales-1.jpg
 seo:
-  title: A Weekend Getaway in New York City
+  title: Decoding Sales Excellence (An opinion piece)
   description: >-
-    Dive into the vibrant energy and iconic attractions of New York City during
-    a memorable weekend escape filled with culture, art, and culinary delights.
-  social_image: /uploads/travel/new-york-1.jpg
-  keywords: >-
-    New York City, weekend getaway, cultural exploration, city break, iconic
-    attractions
+    What does it take to be a great salesperson? Traditional characteristics
+    like charisma, an extroverted personality, and the ability to close deals
+    have long been declared qualities belonging to great salespeople. 
+  social_image: /uploads/decoding-sales-2.jpg
+  keywords: Sales training, sales, building business relationship
   hide-from-google: false
 ---
 New York City, the city that never sleeps, pulsates with a vibrant energy that lures travelers from around the world. From towering skyscrapers to world-class museums, Broadway shows to bustling street markets, the Big Apple offers an endless array of experiences. Dive into the heart of this metropolis during a memorable weekend getaway filled with culture, art, and culinary delights.
