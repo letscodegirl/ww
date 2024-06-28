@@ -8,14 +8,14 @@ description: >-
   been declared qualities belonging to great salespeople. 
 author: Erick Mendoza
 featured: true
-banner-image:
+banner-image: /uploads/decoding-sales-3.jpg
 categories:
   - business
   - english
   - sales training
   - sales
   - Building business relationships
-featured_image: /uploads/decoding-sales-1.jpg
+featured_image: /uploads/decoding-sales-4.jpg
 seo:
   title: Decoding Sales Excellence (An opinion piece)
   description: >-
