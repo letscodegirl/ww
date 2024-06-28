@@ -8,7 +8,7 @@ description: >-
   been declared qualities belonging to great salespeople. 
 author: Erick Mendoza
 featured: true
-banner-image: /uploads/decoding-sales-3.jpg
+banner-image: /uploads/decoding-sales.jpg
 categories:
   - business
   - english
