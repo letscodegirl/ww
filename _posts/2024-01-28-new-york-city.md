@@ -15,7 +15,7 @@ categories:
   - sales training
   - sales
   - Building business relationships
-featured_image: /uploads/decoding-sales-1.jpg
+featured_image:
 seo:
   title: Decoding Sales Excellence (An opinion piece)
   description: >-
