@@ -7,80 +7,84 @@ icon1_path: /images/icons/flash.png
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Your Website Title</title>
-    <style>
-        /* Base styles */
-        .padded {
-            padding: 20px;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Website Title</title>
+  <style>
+    /* Base styles */
+    .padded {
+      padding: 20px;
+    }
 
-        .text-center {
-            text-align: center;
-        }
+    .text-center {
+      text-align: center;
+    }
 
-        /* Responsive styles */
-        @media (max-width: 768px) {
-            .grid-middle {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .grid-middle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 
-            .col-8_sm-10,
-            .col-4_sm-6_xs-12,
-            .col-7_sm-12,
-            .md\\:col-5_sm-12-middle,
-            .md\\:col-8_sm-12 {
-                width: 100%;
-                padding: 0 15px;
-            }
+      .col-*,  /* Target all grid columns with class starting with "col-" */
+        .hero-div,
+        .text-background,
+        .text-background-2 {
+        width: 100%;  /* Set width to 100% for smaller screens */
+        padding: 15px;  /* Adjust padding for better spacing */
+      }
 
-            .hero-title {
-                font-size: 1.5em;
-            }
+      .hero-title {
+        font-size: 1.2em;
+      }
 
-            .hero-text {
-                font-size: 1em;
-            }
+      .hero-text {
+        font-size: 0.9em;
+      }
 
-            .padded-b-2 {
-                padding-bottom: 10px;
-            }
+      .padded-b-2 {
+        padding-bottom: 10px;
+      }
 
-            .bg-image {
-                background-size: cover;
-            }
+      .bg-image {
+        background-size: cover;
+      }
 
-            .bg-meeting {
-                height: 200px;
-            }
+      .bg-meeting {
+        height: 200px;
+      }
 
-            .bg-plant-2 {
-                height: 300px;
-            }
+      .bg-plant-2 {
+        height: 300px;
+      }
 
-            .super-small-text {
-                font-size: 0.8em;
-            }
+      .super-small-text {
+        font-size: 0.8em;
+      }
 
-            .text-background,
-            .text-background-2 {
-                padding: 20px;
-            }
-        }
+      .hide-sm {  /* Hide elements on small screens */
+        display: none;
+      }
+    }
 
-        @media (max-width: 480px) {
-            .hero-title {
-                font-size: 1.2em;
-            }
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: 1.2em;
+      }
 
-            .hero-text {
-                font-size: 0.9em;
-            }
-        }
-    </style>
+      .hero-text {
+        font-size: 0.9em;
+      }
+    }
+
+    /* Image scaling */
+    img {
+      max-width: 100%;  /* Set max-width for all images */
+      height: auto;  /* Maintain aspect ratio */
+    }
+  </style>
 </head>
 <body>
     <section class="bg-image padded tall-80 grid-middle" style="background-image: url('{{page.banner_image_path}}');">
