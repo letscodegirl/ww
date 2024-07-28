@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Adventures in Wild Kenya
-subtitle: Embark on a Safari Experience like No Other
-description: Immerse yourself in the untamed beauty of Kenya's landscapes and encounter majestic wildlife on an unforgettable safari adventure.
+title: Executing a successful overseas convetion event
+subtitle: 
+description: How do you engage the crowd at overseas convention events, especially if your employees are non-native English speakers?
 author: Erick
 featured: true
 banner-image: /uploads/travel/kenya-1.jpg
