@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Executing a successful overseas convetion event
+title: Executing a successful overseas convention event
 subtitle:
 description: >-
   How do you engage the crowd at overseas convention events, especially if your
