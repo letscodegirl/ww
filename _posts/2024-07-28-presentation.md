@@ -54,7 +54,7 @@ Overall, research supports the strong link between effective non-verbal communic
 * Argyle, M., Salter, V., Nicholson, M., Burgess, M., & Fitzpatrick, P. (1977). The effects of nonverbal communication on perceptions of speaker credibility.
 * Lieberman, D. (2008). The power of a well-timed hand gesture.
 
-\============================================================================
+\=========================================================================
 
 RAMP’s Business English Skills Training (rampbizenglish.com) can train you to deliver impactful business presentations and teach strategic engagements to create a deeper connection with your audience. RAMP stands as the cornerstone for enhancing essential skills vital for success in today's business landscape. With a relentless focus on communication expertise, RAMP ensures clients master the art of effective interaction and engaging presentations. Our adaptable and agile training approach prepares you to navigate evolving business environments. With RAMP by your side, you’re not just trained for today's challenges—you’re prepared for success.
 
