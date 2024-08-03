@@ -1,21 +1,26 @@
 ---
 layout: post
-title: Business article coming soon
-subtitle:
-description: Coming soon
+title: Wandering Through History in Rome
+subtitle: Unveiling the Eternal City's Ancient Treasures
+description: >-
+  Immerse yourself in the grandeur of Rome, where ancient ruins, awe-inspiring
+  architecture, and timeless art beckon you to explore the rich history of the
+  Eternal City.
 author: Erick
 featured: true
 banner-image: /uploads/travel/rome-1.jpg
 categories:
   - english
   - business
-  - sales
 featured_image: /uploads/travel/rome-1.jpg
 seo:
-  title: Business Article
-  description: coming soon
+  title: Wandering Through History in Rome
+  description: >-
+    Immerse yourself in the grandeur of Rome, where ancient ruins, awe-inspiring
+    architecture, and timeless art beckon you to explore the rich history of the
+    Eternal City.
   social_image: /uploads/travel/rome-1.jpg
-  keywords: 'Business '
+  keywords: Rome, Italy, history, ancient ruins, architecture, art
   hide-from-google: false
 ---
 # Wandering Through History in Rome
