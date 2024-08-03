@@ -21,7 +21,7 @@ seo:
   keywords: Convention events, overseas convention, engaging the convention crowd
   hide-from-google: false
 ---
-# Executing a successful overseas convention event. (Coming soon)
+# Executing a successful overseas convention event.
 
 *by Erick Mendoza*&nbsp;
 
