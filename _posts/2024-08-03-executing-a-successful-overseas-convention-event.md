@@ -2,15 +2,14 @@
 layout: post
 title: Executing A Successful Overseas Convention Event
 subtitle:
-description: >-
-  
+description: ''
 author: Erick
 featured: true
-banner-image: /uploads/convention-event.jpg
+banner-image: /uploads/picture1-2.png
 categories:
   - business
   - english
-featured_image: /uploads/convention-event-1.jpg
+featured_image: /uploads/picture1-3.png
 seo:
   title: Executing a successful overseas convention event
   description: >-
