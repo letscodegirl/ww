@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Decoding Sales Excellence
+title:
 subtitle:
 description: >-
   What does it take to be a great salesperson? Traditional characteristics like
