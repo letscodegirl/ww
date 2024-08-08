@@ -1,6 +1,6 @@
 ---
 layout: post
-title:
+title: Executing A Successful Overseas Convention Event
 subtitle:
 description: >-
   How do you engage the crowd at overseas convention events, especially if your
