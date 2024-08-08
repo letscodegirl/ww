@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Executing A Successful Overseas Convention Event
+title:
 subtitle:
 description: ''
 author: Erick
