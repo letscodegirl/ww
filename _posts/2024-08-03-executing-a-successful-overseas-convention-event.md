@@ -3,8 +3,7 @@ layout: post
 title: Executing A Successful Overseas Convention Event
 subtitle:
 description: >-
-  How do you engage the crowd at overseas convention events, especially if your
-  employees are non-native English speakers?
+  
 author: Erick
 featured: true
 banner-image: /uploads/convention-event.jpg
