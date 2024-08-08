@@ -3,9 +3,7 @@ layout: post
 title:
 subtitle:
 description: >-
-  What does it take to be a great salesperson? Traditional characteristics like
-  charisma, an extroverted personality, and the ability to close deals have long
-  been declared qualities belonging to great salespeople. 
+  
 author: Erick Mendoza
 featured: true
 banner-image: /uploads/picture1.png
