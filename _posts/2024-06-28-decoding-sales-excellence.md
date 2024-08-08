@@ -17,7 +17,7 @@ categories:
   - Building business relationships
 featured_image: /uploads/picture1-1.png
 seo:
-  title: Decoding Sales Excellence (An opinion piece)
+  title:
   description:
   social_image: /uploads/decoding-sales-2.jpg
   keywords: Sales training, sales, building business relationship
