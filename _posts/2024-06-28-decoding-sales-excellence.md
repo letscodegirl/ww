@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Deconding Sales Excellence
+title: Decoding Sales Excellence
 subtitle:
 description: >-
   What does it take to be a great salesperson? Traditional characteristics like
@@ -17,8 +17,11 @@ categories:
   - Building business relationships
 featured_image: /uploads/picture1-1.png
 seo:
-  title:
-  description:
+  title: Decoding Sales Excellence
+  description: >-
+    What does it take to be a great salesperson? Traditional characteristics
+    like charisma, an extroverted personality, and the ability to close deals
+    have long been declared qualities belonging to great salespeople. 
   social_image: /uploads/decoding-sales-2.jpg
   keywords: Sales training, sales, building business relationship
   hide-from-google: false
