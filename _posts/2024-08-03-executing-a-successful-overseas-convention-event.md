@@ -5,11 +5,11 @@ subtitle:
 description: ''
 author: Erick
 featured: true
-banner-image: /uploads/picture1-2.png
+banner-image: /uploads/convention-event.jpg
 categories:
   - business
   - english
-featured_image: /uploads/picture1-3.png
+featured_image: /uploads/convention-event-1.jpg
 seo:
   title: Executing a successful overseas convention event
   description: >-
