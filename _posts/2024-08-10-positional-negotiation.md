@@ -74,4 +74,4 @@ Positional negotiation remains a prevalent strategy in business, offering clear 
 
 **RAMP’s Business English Skills Training** (rampbizenglish.com) can train you for better negotiation results. RAMP stands as the cornerstone for enhancing essential skills vital for success in today’s business landscape. RAMP guarantees clients master the art of effective negotiation with a relentless focus on strategic communication and skills expertise. Our adaptable and agile training approach prepares you to navigate evolving business environments.
 
-With RAMP by your side, you will be trained for today’s business challenges, and prepared for success. Come visit us at www.rampbizenglish.com for a free training session!!
+With RAMP by your side, you will be trained for today’s business challenges, and prepared for success. Come visit RAMP at www.rampbizenglish.com for a free training session!!
