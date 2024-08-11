@@ -9,6 +9,17 @@ banner-image: /uploads/convention-event.jpg
 categories:
   - business
   - english
+  - 비즈니스 영어 교육
+  - 비즈니스 영어 세일즈
+  - 비즈니스 영어 협상 교육
+  - 비즈니스 영어 발표 기술 교육
+  - 비즈니스 영어 회화 교육
+  - 비즈니스 영어
+  - 해외 컨벤션 이벤트 교육
+  - Business negotiation
+  - positional negotiation
+  - negotiation
+  - closing a deal
 featured_image: /uploads/convention-event-1.jpg
 seo:
   title: Executing a successful overseas convention event
@@ -16,7 +27,11 @@ seo:
     How to you engage a crowd in an overseas convention event, specially if your
     team of employees are non-native English speakers?
   social_image: /uploads/convention-event-2.jpg
-  keywords: Convention events, overseas convention, engaging the convention crowd
+  keywords: >-
+    비즈니스 영어 교육, 비즈니스 영어 세일즈, 비즈니스 영어 협상 교육, 비즈니스 영어 발표 기술 교육, 비즈니스 영어 회화 교육,
+    비즈니스 영어, 해외 컨벤션 이벤트 교육,Business negotiation, positional negotiation,
+    negotiation, business,closing a deal,Convention events, overseas convention,
+    engaging the convention crowd
   hide-from-google: false
 ---
 # Executing A Successful Overseas Convention Event
