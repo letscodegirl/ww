@@ -86,10 +86,10 @@ Therefore, any company or professional that needs or desires to do business with
 
 **References:**
 
-* Max, D. (2017). How Effective Communication Increases Productivity. *Harvard Business Review*. Available at: [https://hbr.org/](https://hbr.org/)
-* Bosma, N., & Kelley, D. (2019). Global Entrepreneurship Monitor 2018/2019 Global Report. *Global Entrepreneurship Research Association (GERA)*. Available at: [https://www.gemconsortium.org/](https://www.gemconsortium.org/)
-* EF Education First. (2023). EF English Proficiency Index. Available at: https://www.ef.com/epi/
-* ICCA. (2022). ICCA Statistics Report: Country & City Rankings. *International Congress and Convention Association*. Available at: [https://www.iccaworld.org/](https://www.iccaworld.org/)
+* *Max, D. (2017). How Effective Communication Increases Productivity. Harvard Business Review. Available at:* [*https://hbr.org/*](https://hbr.org/)
+* *Bosma, N., & Kelley, D. (2019). Global Entrepreneurship Monitor 2018/2019 Global Report. Global Entrepreneurship Research Association (GERA). Available at:* [*https://www.gemconsortium.org/*](https://www.gemconsortium.org/)
+* *EF Education First. (2023). EF English Proficiency Index. Available at: https://www.ef.com/epi/*
+* *ICCA. (2022). ICCA Statistics Report: Country & City Rankings. International Congress and Convention Association. Available at:* [*https://www.iccaworld.org/*](https://www.iccaworld.org/)
 
 &nbsp;
 
