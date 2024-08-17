@@ -44,7 +44,7 @@ seo:
     engaging the convention crowd
   hide-from-google: false
 ---
-## **<u>The Strategic Advantage of Business English Training for Non-Native Professionals, Startups, and Small Businesses</u>**
+## **<u>The Strategic Advantage of Business English Training for Non-Native English Speaking Professionals, Startups, and Small Businesses</u>**
 
 By Erick Mendoza
 
@@ -62,7 +62,7 @@ Startups are faced with numerous challenges. The issues can arise from securing 
 
 **RAMP** offers Business English training that will be modified or tailored to the needs of your employees and the industry you belong in. As such, it would be particularly beneficial for startups looking to pitch their ideas to investors, partners, or clients overseas to have Business English training. A pitch that is well-prepared and rehearsed, that is delivered in clear, proficient business English will serve as the difference between getting that funding or missing out on the opportunity.
 
-Additionally, presentation skills training can assist everyone in the company, from the founders to the employees, to express their vision more compellingly and persuasively. If you're at an industry event, product launch, or when you're on a virtual meeting, the ability to present confidently in English is a necessity because it will reflect not only your professionalism but also your credibility in the eyes of the stakeholders.
+Additionally, presentation skills training can assist everyone in the company, from the founders to the employees, to express their vision more compellingly and persuasively. If you’re at an industry event, product launch, or when you’re on a virtual meeting, the ability to present confidently in English is a necessity because it will reflect not only your professionalism but also your credibility in the eyes of the stakeholders.
 
 #### **3\. Empowering Small Businesses to Compete Globally**
 
@@ -87,11 +87,8 @@ Therefore, any company or professional that needs or desires to do business with
 **References:**
 
 * Max, D. (2017). How Effective Communication Increases Productivity. *Harvard Business Review*. Available at: [https://hbr.org/](https://hbr.org/)
-
 * Bosma, N., & Kelley, D. (2019). Global Entrepreneurship Monitor 2018/2019 Global Report. *Global Entrepreneurship Research Association (GERA)*. Available at: [https://www.gemconsortium.org/](https://www.gemconsortium.org/)
-
 * EF Education First. (2023). EF English Proficiency Index. Available at: https://www.ef.com/epi/
-
 * ICCA. (2022). ICCA Statistics Report: Country & City Rankings. *International Congress and Convention Association*. Available at: [https://www.iccaworld.org/](https://www.iccaworld.org/)
 
 &nbsp;
