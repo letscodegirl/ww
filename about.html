@@ -6,68 +6,61 @@ team:
         name: Erick Mendoza
         bio: Founder of RAMP
         description: >
-            <div style="font-family: mulish, sans-serif; font-size: 18px;
-            line-height: 1.5;"> <p style="font-size: 18px;">I’m Erick Mendoza
-            and I’m originally from San Francisco, California, USA.</p>
+            <div style="font-family: mulish, sans-serif; font-size: 18px; line-height: 1.5;">
+                <p style="font-size: 18px;">I’m Erick Mendoza, originally from San Francisco, California, USA.</p>
 
-            <p style="font-size: 18px;">With over <strong>25 years</strong> of
-            combined experience:</p>
+                <p style="font-size: 18px;">With over <strong>25 years</strong> of combined professional and academic experience, I bring a unique blend of sales expertise, cross-cultural communication, and training knowledge:</p>
 
-            <ul>
-                <p style="font-size: 18px;"><strong> - 15 years</strong> as a seasoned trainer and educator in Business English, Sales, negotiation, and Business Presentation skills.</p>
-                <p style="font-size: 18px;"><strong> - 10 years</strong> of business sales and management experience in the dynamic landscape of the San Francisco Bay area.</p>
-            <p style="font-size: 18px;"><strong> - University of Illinois,
-            Urbana-Champaign: Master's degree in Management.</strong>
-             -A Master's degree in <strong>Counseling.</strong>  
-            -<strong>Bachelor’s degree</strong> in
-            <strong>Psychology.</strong></p>
+                <ul>
+                    <p style="font-size: 18px;"><strong> - 15 years</strong> as a trainer and educator specializing in Sales, Negotiation, and Business Presentation Skills.</p>
+                    <p style="font-size: 18px;"><strong> - 10 years</strong> of hands-on business sales and management experience in the competitive San Francisco Bay Area market.</p>
+                    <p style="font-size: 18px;">
+                        <strong>Academic Background:</strong><br>
+                        - Master’s degree in Management (University of Illinois, Urbana-Champaign).<br>
+                        - Master’s degree in Counseling.<br>
+                        - Bachelor’s degree in Psychology.
+                    </p>
                 </ul>
-            <br>
-                <p style="font-size: 18px;">I will utilize this tapestry of experience and academic knowledge to deliver unparalleled training in Business sales, negotiation, and presentations skills to help you succeed. My tailored approach guarantees to elevate and refine your performance to new heights. With tailored training and solutions that matches your needs, success is not just achievable—it's inevitable.</p>
+
+                <br>
+                <p style="font-size: 18px;">This blend of real-world business experience and academic expertise allows me to design and deliver training that isn’t theoretical—it’s practical, tested, and designed to get results. My approach ensures startups and SMEs can sharpen their sales processes, master persuasive presentations, and win the confidence of investors and clients in global markets.</p>
             </div>
         profile_image: /images/eprofile.jpeg
 about-video-id: rAOMo5f-pbA
 ---
 <section class="tall-60 grid bg-green">
-    <div class="col-5-middle editable padded ">
-        <h2 class="hero-title">Mission &amp; Vision: </h2>
-        <p><em><strong>RAMP’s Mission is to provide training that solves problems you are worried about.&nbsp;</strong>&nbsp;</em></p>
-        <p><strong>RAMP</strong> started with an intent to bridge the gap for startsups, and small to mid-size companies, that lacked high-quality, industry-specific practical Business skills training that is only accessible to corporations with dedicated internal trainers. </p>
-        <p><strong>RAMP</strong> aims to unlock the potential of every company we work with, helping them thrive in today’s competitive global market.</p>
-        <p>By focusing on the needs of your specific industry, and delivering customized, research-driven training, <strong>RAMP</strong> will save you time and money. </p>
+    <div class="col-5-middle editable padded">
+        <h2 class="hero-title">Mission &amp; Vision</h2>
+        <p><em><strong>RAMP’s mission is to give startups and SMEs the tools to close deals, secure investment, and thrive in international markets.</strong></em></p>
+        <p><strong>RAMP</strong> was founded to bridge the gap for startups and small to mid-sized companies who often lack access to high-quality, industry-specific sales and presentation training that large corporations take for granted.</p>
+        <p>We believe every company—no matter its size—deserves access to proven strategies that drive growth. <strong>RAMP</strong> equips teams with the confidence and skills to pitch, negotiate, and sell in global business environments.</p>
+        <p>By tailoring training to your specific industry and goals, <strong>RAMP</strong> helps you accelerate growth, strengthen your team, and maximize your global opportunities.</p>
     </div>
-    <div class="col-7 bg-image bg-plant" style="background-image: url('{{page.banner_image}}');">
-
-    </div>
+    <div class="col-7 bg-image bg-plant" style="background-image: url('{{page.banner_image}}');"></div>
 </section>
 
 <section class="padded">
     <div class="capped-width">
 
         {% for person in page.team %}
-
         <div class="profile-container">
             <img src="{{ person.profile_image }}" class="profile-image" />
             <div class="about-section">
-                <h3> {{ person.name }} </h3>
-                <p> <strong> {{ person.bio }} </strong></p>
-                <p> {{person.description }} </p>
+                <h3>{{ person.name }}</h3>
+                <p><strong>{{ person.bio }}</strong></p>
+                <p>{{ person.description }}</p>
             </div>
         </div>
-
         {% endfor %}
 
     </div>
 </section>
 
 <section class="padded bg-green center">
-    <h2 class="editable hero-title">
-        RAMP Training Video (coming soon)
-    </h2>
-    <!-- <p class="emphasis editable hero-text">
-        RAMP B.E.S.T
-    </p> -->
+    <h2 class="editable hero-title">RAMP Training Video (coming soon)</h2>
     <div class="padded-1">
-        <div class='embed-container'><iframe src='https://www.youtube.com/embed/{{ page.about-video-id }}' frameborder='0' allowfullscreen></iframe></div>
+        <div class='embed-container'>
+            <iframe src='https://www.youtube.com/embed/{{ page.about-video-id }}' frameborder='0' allowfullscreen></iframe>
+        </div>
     </div>
 </section>
