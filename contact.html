@@ -20,18 +20,20 @@ banner_image: /images/contactsuit.png
     <p><em>Availability is limited, so reserve your session today.</em></p>
   </div>
 
- <form action="https://formspree.io/f/mnnaqeek" method="POST" enctype="application/x-www-form-urlencoded">
-  <input type="hidden" name="_redirect" value="https://www.rampbizenglish.com/thank-you" />
+  <form action="https://formspree.io/f/mnnaqeek" method="POST">
+    <!-- ✅ Corrected: Use _next for redirect -->
+    <input type="hidden" name="_next" value="https://www.rampbizenglish.com/thank-you" />
 
-  <label for="_name">Your Name</label>
-  <input type="text" name="name" id="_name" placeholder="Name" required />
+    <label for="_name">Your Name</label>
+    <input type="text" name="name" id="_name" placeholder="Name" required />
 
-  <label for="_replyto">Your Email</label>
-  <input type="email" name="email" id="_replyto" placeholder="Email" required />
+    <label for="_replyto">Your Email</label>
+    <input type="email" name="email" id="_replyto" placeholder="Email" required />
 
-  <label for="message">Share your goals and challenges</label>
-  <textarea name="message" id="message" placeholder="Help me tailor our session to your needs!" required></textarea>
+    <label for="message">Share your goals and challenges</label>
+    <textarea name="message" id="message" placeholder="Help me tailor our session to your needs!" required></textarea>
 
-  <button type="submit" class="button">SUBMIT</button>
-</form>
+    <button type="submit" class="button">SUBMIT</button>
+  </form>
 </section>
+
