@@ -1,77 +1,41 @@
 ---
 layout: default
 banner_image: /uploads/learn-image.jpg
-title:
+title: RAMP Insights
 seo:
-description:
+description: Expert insights on sales, presentations, negotiations, and conventions to help startups and SMEs succeed.
 social_image:
 twitter_card:
-keywords:
+keywords: sales training, business presentations, startup growth, negotiation tips, convention success
 hide-from-google: false
 ---
+
 <section class="tall-60 grid bg-green">
   <div class="col-7 bg-contact" style="background-image: url('{{page.banner_image}}');">
-
   </div>
   <div class="col-5-middle editable padded ">
-      <h2> Learn </h2>
-      <p> </p>
-      <p><strong>RAMP</strong>&nbsp;believes that training is the foundation of all progress. That’s why we are dedicated to providing comprehensive Business Communication skills training in sales, presentation skills, negotiation, and in the successful execution of convention events that will deliver results. </p>
-      <p>Please read one of the articles below and send an email if you have any questions or feedback.&nbsp;&nbsp;</p>
+      <h2> RAMP Insights </h2>
+      <p><strong>RAMP</strong> Insights is your go-to hub for strategies, best practices, and actionable tips that help businesses thrive in today’s competitive global market.</p>
+      <p>We focus on three critical areas where companies often struggle — and where the right training delivers the fastest impact:</p>
+      <ul style="font-size: 1.1rem; margin-left: 1rem;">
+        <li><strong>Sales:</strong> build strong client relationships, handle objections, and close deals effectively.</li>
+        <li><strong>Presentations:</strong> pitch ideas with confidence and win over investors, partners, and clients.</li>
+        <li><strong>Conventions:</strong> attract leads, stand out on the convention floor, and maximize ROI at global events.</li>
+      </ul>
+      <p>Explore our featured insights below, each designed to give you <strong>practical, results-driven strategies</strong> you can apply right away.</p>
+      <p><em>Want us to cover a specific topic?  
+      <a href="/contact"><strong>Let us know here.</strong></a></em></p>
   </div>
 </section>
 
-<!-- <section class="padded capped-width">
-  <div class="center editable margin-b-2">
-      <h2>Ready to Ramp Up?</h2>
-      <p> </p>
-      <p>Say goodbye to monotonous lectures. Our interactive sessions ensure you stay engaged and absorb more information. </p>
-  </div>
-
-<div class="table-container editable">
-    <table id="myTable">
-        <thead>
-            <tr>
-                <th>No</th>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Date</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>Post Title 1</td>
-                <td>Manager</td>
-                <td>2024-01-08</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Post Title 2</td>
-                <td>Manager</td>
-                <td>2024-01-08</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
-<div class="table-actions">
-  <input type="text" id="search-input" placeholder="Search..." />
-  <button id="submit-button">Submit</button>
-</div>
-
-</section> -->
-
 <section class="p-5p max-w-screen-2xl mx-auto text-dark-white">
-  <h2 class="serif tracking-wide uppercase text-center text-4xl mb-4"> RAMP Featured Articles </h2>
+  <h2 class="serif tracking-wide uppercase text-center text-4xl mb-4"> Featured RAMP Insights </h2>
   <div class="sm-columns-1 columns-3">
 
     {% for post in site.posts limit:12 %}
-
-    {% include post-loop-item-mixed-images.html %}
-
+      {% include post-loop-item-mixed-images.html %}
     {% endfor %}
 
   </div>
-
 </section>
+
