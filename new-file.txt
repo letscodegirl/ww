@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Testimonials | RAMP Business English</title>
+  <meta name="description" content="Client reviews and testimonials for RAMP Business English training." />
+</head>
+<body>
+  <!-- ===== Site Header / Navigation (replace with your site's shared header if you have one) ===== -->
+  <header>
+    <nav class="site-nav" aria-label="Main">
+      <ul class="menu">
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/services.html">Services</a></li>
+        <li><a href="/learn.html">Learn</a></li>
+        <li><a href="/testimonials.html" aria-current="page">Testimonials</a></li>
+        <li><a href="/pricing.html">Programs &amp; Pricing</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h1>Client Testimonials</h1>
+      <p>Results our clients in Korea and across APAC are achieving with RAMP.</p>
+
+      <!-- Example testimonials (replace with real ones) -->
+      <article class="testimonial">
+        <blockquote>
+          “Our sales team’s close rate improved within eight weeks. The negotiation drills mirror real buyer pushback.”
+        </blockquote>
+        <p><strong>Head of Sales, B2B SaaS</strong> — Daejeon</p>
+      </article>
+
+      <article class="testimonial">
+        <blockquote>
+          “We rebuilt our investor pitch in one sprint with Erick. Clear storyline, crisper English, better outcomes.”
+        </blockquote>
+        <p><strong>CEO, Healthtech Startup</strong> — Seoul</p>
+      </article>
+    </section>
+
+    <hr />
+
+    <!-- ===== Public submission form (goes to your CloudCannon Inbox for moderation) ===== -->
+    <section id="submit">
+      <h2>Share your experience</h2>
+      <p>Submit your testimonial. We’ll review and publish selected entries.</p>
+
+      <!-- Replace inbox_key value after you create an Inbox (see step 3). -->
+      <form method="post" action="/success.html">
+        <input type="hidden" name="inbox_key" value="testimonials_inbox">
+
+        <label for="name">Your name</label><br/>
+        <input id="name" name="name" type="text" required /><br/><br/>
+
+        <label for="company">Company / Role (optional)</label><br/>
+        <input id="company" name="company" type="text" /><br/><br/>
+
+        <label for="message">Your testimonial</label><br/>
+        <textarea id="message" name="message" rows="6" required></textarea><br/><br/>
+
+        <!-- Where to send a copy (optional). Change to your email. -->
+        <input type="hidden" name="_to" value="you@example.com">
+        <input type="hidden" name="_subject" value="New Testimonial Submission">
+        <!-- Spam honeypot -->
+        <input type="text" name="_gotcha" style="display:none">
+
+        <button type="submit">Submit</button>
+      </form>
+      <p style="font-size:0.9em;">Note: Submissions are moderated. We never publish without consent.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="y"></span> RAMP Business English</p>
+  </footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
