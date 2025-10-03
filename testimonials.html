@@ -1,16 +1,22 @@
 ---
 layout: default
 title: Testimonials
-banner_image_path: /images/testimonials-banner.jpg
+banner_image_path: /images/testimonial-image.png
 icon1_path: /images/icons/flash.png
 ---
+
 <main>
-  <!-- Hero Banner -->
-  <section style="background: url('{{ page.banner_image_path }}') center/cover no-repeat; padding: 6rem 2rem; text-align: center; color: white;">
-    <h1 style="font-family: 'Mulish', sans-serif; font-weight: 700; font-size: 3rem; margin-bottom: 1rem;">Client Testimonials</h1>
-    <p style="font-size: 1.25rem; max-width: 700px; margin: 0 auto;">
-      See how hotels and resorts across Southeast Asia are transforming guest experience with RAMP.
-    </p>
+  <!-- Hero Banner Section -->
+  <section style="background: url('{{ page.banner_image_path }}') center/cover no-repeat; padding: 6rem 2rem; text-align: center; color: white; position: relative;">
+    <div style="background: rgba(0,0,0,0.5); position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
+    <div style="position: relative; z-index: 1;">
+      <h1 style="font-family: 'Mulish', sans-serif; font-weight: 700; font-size: 3rem; margin-bottom: 1rem;">
+        Client Testimonials
+      </h1>
+      <p style="font-size: 1.25rem; max-width: 700px; margin: 0 auto;">
+        See how hotels and resorts across Southeast Asia are transforming guest experience with <strong>RAMP</strong>.
+      </p>
+    </div>
   </section>
 
   <!-- Testimonials Cards -->
