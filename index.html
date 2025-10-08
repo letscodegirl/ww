@@ -88,6 +88,23 @@ icon1_path: /images/icons/flash.png
       max-width: 100%;
       height: auto;
     }
+
+    /* Book link styling */
+    .book-link {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 20px;
+      background-color: #0073e6;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+
+    .book-link:hover {
+      background-color: #005bb5;
+    }
   </style>
 </head>
 <body>
@@ -199,6 +216,14 @@ icon1_path: /images/icons/flash.png
         </div>
     </section>
 
+    <!-- Book Promotion Section -->
+    <section class="padded text-center">
+      <h3 class="editable">READ THE RAMPOC SALES METHOD</h3>
+      <a href="https://www.amazon.com/dp/B0DZD9YL95" target="_blank" rel="noopener noreferrer" class="book-link editable">
+        📘 Get the Book on Amazon
+      </a>
+    </section>
+
     <!-- Testimonials -->
     <section class="bg-rust padded projects center hero-pb" id="projects">
         <h2 class="center hero-title hero-nav">Testimonials</h2>
@@ -206,14 +231,11 @@ icon1_path: /images/icons/flash.png
             <div class="grid md:grid-cols-2 p-2">
                 <div class="p-1">
                     <div class="card light-bg">
-                        <!-- ▼ Replace the image below with your own -->
-                        <!-- 1. Upload your new image to /uploads or /images in CloudCannon -->
-                        <!-- 2. Replace the src path below with your new file path, e.g. /uploads/new-photo.jpg -->
                         <img src="/images/resort image.png" class="profile mx-auto" alt="Resort photo" />
                         <p class="author editable hero-text">Jane</p>
                         <p class="company editable hero-text">Island Resort</p>
                         <p class="editable hero-text super-small-text">
-                            "Thanks to RAMP, our guest reviews are shining brighter than ever. From the time we say "hello" to "goodbye", our guest can feel the connection. Wished we could have done this sooner."
+                            "Thanks to RAMP, our guest reviews are shining brighter than ever. From the time we say 'hello' to 'goodbye', our guests can feel the connection. Wished we could have done this sooner."
                         </p>
                         <span> ★ ★ ★ ★ ★ </span>
                     </div>
