@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!------------ Google Tag Manager (head) ------------------------>
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-TFBFJFNM');</script>
+        <!------------ End Google Tag Manager ------------------------>
+
         <!------------ Technical Metadata ------------------------>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,20 +20,11 @@
         <!-- The title for SEO & browser tabs -->
         <title>{{ page.title }} | RAMP Hospitality Skills Training</title>
 
-        <!-- Viewport meta tag -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
         <!-- Gridlex -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gridlex/2.7.1/gridlex.min.css" />
-
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" integrity="sha512-WEQNv9d3+sqyHjrqUZobDhFARZDko2wpWdfcpv44lsypsSuMO0kHGd3MQ8rrsBn/Qa39VojphdU6CMkpJUmDVw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-        <!-- Fontawesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-        <!-- Google Fonts  -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet" />
@@ -39,6 +38,11 @@
         <link rel="stylesheet" href="/style.css" />
     </head>
     <body>
+
+        <!------------ Google Tag Manager (noscript) ------------------------>
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TFBFJFNM"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!------------ End Google Tag Manager ------------------------>
 
         <!-- ===== Header / Navigation ===== -->
         <header class="grid bg-dark">
@@ -54,26 +58,14 @@
             </div>
 
             <!-- Desktop navigation -->
-<nav class="col-6_sm-12-middle right padded-0 center-sm hide-sm">
-    <a class="nav-space" href="/about.html" {% if page.url == "/about.html" %}aria-current="page"{% endif %}>About</a>
-    <a class="nav-space" href="/services.html" {% if page.url == "/services.html" %}aria-current="page"{% endif %}>Services</a>
-    <a class="nav-space" href="/learn.html" {% if page.url == "/learn.html" %}aria-current="page"{% endif %}>Learn</a>
-    <a class="nav-space" href="/contact.html" {% if page.url == "/contact.html" %}aria-current="page"{% endif %}>Contact</a>
-    <a class="nav-space" href="/pricing.html" {% if page.url == "/pricing.html" %}aria-current="page"{% endif %}>Price and Programs</a>
-    <a class="nav-space" href="/testimonials.html" {% if page.url == "/testimonials.html" %}aria-current="page"{% endif %}>Testimonials</a>
-</nav>
-
-<!-- Mobile navigation -->
-<nav class="mobile-menu bg-featured padded">
-    <a href="/index.html">Home</a>
-    <a href="/about.html">About</a>
-    <a href="/services.html">Services</a>
-    <a href="/learn.html">Learn</a>
-    <a href="/contact.html">Contact</a>
-    <a href="/pricing.html">Price and Programs</a>
-    <a href="/testimonials.html">Testimonials</a>
-</nav>
-
+            <nav class="col-6_sm-12-middle right padded-0 center-sm hide-sm">
+                <a class="nav-space" href="/about.html" {% if page.url == "/about.html" %}aria-current="page"{% endif %}>About</a>
+                <a class="nav-space" href="/services.html" {% if page.url == "/services.html" %}aria-current="page"{% endif %}>Services</a>
+                <a class="nav-space" href="/learn.html" {% if page.url == "/learn.html" %}aria-current="page"{% endif %}>Learn</a>
+                <a class="nav-space" href="/contact.html" {% if page.url == "/contact.html" %}aria-current="page"{% endif %}>Contact</a>
+                <a class="nav-space" href="/pricing.html" {% if page.url == "/pricing.html" %}aria-current="page"{% endif %}>Price and Programs</a>
+                <a class="nav-space" href="/testimonials.html" {% if page.url == "/testimonials.html" %}aria-current="page"{% endif %}>Testimonials</a>
+            </nav>
 
             <!-- Mobile navigation -->
             <nav class="mobile-menu bg-featured padded">
@@ -81,9 +73,9 @@
                 <a href="/about.html">About</a>
                 <a href="/services.html">Services</a>
                 <a href="/learn.html">Learn</a>
-                <a href="/contact.html">Testimonials</a>
-                <a href="/pricing.html">Programs &amp; Pricing</a>
-                <a href="/testimonials.html">Contact</a>
+                <a href="/contact.html">Contact</a>
+                <a href="/pricing.html">Price and Programs</a>
+                <a href="/testimonials.html">Testimonials</a>
             </nav>
         </header>
 
@@ -116,17 +108,9 @@
         </footer>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
         <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js" integrity="sha512-C1zvdb9R55RAkl6xCLTPt+Wmcz6s+ccOvcr6G57lbm8M2fbgn2SUjUJbQ13fEyjuLViwe97uJvwa1EUf4F1Akw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
         <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
-        <!-- animate on scroll -->
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-13R44XQDCT"></script>
-        <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-13R44XQDCT'); </script>
 
         <script src="/main.js"> </script>
 
