@@ -1,83 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-TFBFJFNM');</script>
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TFBFJFNM');</script>
 
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <title>{{ page.title }} | RAMP Business Performance</title>
+    <title>{{ page.title }} | RAMP Business Performance</title>
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gridlex/2.7.1/gridlex.min.css" />
-        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <!-- Tailwind CSS Play CDN (Enables all block components to render perfectly) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    padding: { '5p': '5%' }
+                }
+            }
+        }
+    </script>
+
+    <!-- Library Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200..1000&display=swap" rel="stylesheet" />
+
+    <!-- Site Architecture Variables & Main Custom Styles -->
+    {% include inline-styles.html %}
+    <link rel="stylesheet" href="/style.css" />
+
+    <style>
+        body { font-family: 'Mulish', sans-serif; margin: 0; padding: 0; background-color: #ffffff; color: #333333; }
         
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        /* Persistent Navigation Fixes */
+        .site-header { background-color: #1c1c1c; position: relative; z-index: 100; width: 100%; }
+        .nav-link { color: #ffffff; text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: color 0.3s ease; padding: 0.5rem 1rem; }
+        .nav-link:hover { color: var(--featured-text, #c5a880); }
+        .nav-link.active { border-bottom: 2px solid #c5a880; color: #c5a880; }
+
+        /* Mobile Menu Setup override */
+        .mobile-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background-color: #262626; z-index: 99; padding: 1.5rem; border-top: 1px solid #333; }
+        .mobile-menu a { display: block; color: #ffffff; padding: 0.75rem 0; font-size: 1.1rem; border-bottom: 1px solid #333; }
+        .mobile-menu a:last-child { border-none; }
         
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200..1000&display=swap" rel="stylesheet" />
+        /* Hamburger State fixes */
+        .hamburger-button { color: white; cursor: pointer; font-size: 1.5rem; display: none; }
+        @media (max-width: 768px) {
+            .desktop-nav { display: none; }
+            .hamburger-button { display: block; }
+        }
+    </style>
+</head>
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TFBFJFNM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-        <link rel="stylesheet" href="/style.css" />
+    <!-- ===== Global Header Navigation ===== -->
+    <header class="site-header px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center">
+            <a href="/index.html" class="block max-w-[15rem] md:max-w-[18rem]">
+                <img src="/images/logo1.png" alt="RAMP Business Performance Logo" class="w-full h-auto" />
+            </a>
+        </div>
+        
+        <!-- Desktop view navigation tabs (Guaranteed Visible on screens > 768px wide) -->
+        <nav class="desktop-nav flex items-center space-x-2">
+            <a class="nav-link {% if page.url == '/about.html' %}active{% endif %}" href="/about.html">About</a>
+            <a class="nav-link {% if page.url == '/services.html' %}active{% endif %}" href="/services.html">Services</a>
+            <a class="nav-link {% if page.url == '/learn.html' %}active{% endif %}" href="/learn.html">Learn</a>
+            <a class="nav-link {% if page.url == '/testimonials.html' %}active{% endif %}" href="/testimonials.html">Testimonials</a>
+            <a class="nav-link {% if page.url == '/pricing.html' %}active{% endif %}" href="/pricing.html">Programs &amp; Pricing</a>
+            <a class="nav-link {% if page.url == '/contact.html' %}active{% endif %}" href="/contact.html">Contact</a>
+        </nav>
 
-        <style>
-            /* Fix for the navigation clashing */
-            body { margin: 0; padding: 0; }
-            /* This ensures the injected content from About page doesn't hide behind layout headers */
-            header { z-index: 100; position: relative; } 
-        </style>
-    </head>
-    <body>
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TFBFJFNM"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- Mobile Trigger Button -->
+        <div class="hamburger-button">
+            <i class="fas fa-bars"></i>
+        </div>
 
-        <header class="grid bg-dark">
-            <div class="col-6_sm-12-middle padded-0 center-sm">
-                <a href="/index">
-                    <h4 style="max-width: 22rem;"> <img src="/images/logo1.png" alt="RAMP Logo" /></h4>
-                </a>
+        <!-- Mobile Drawer Menu -->
+        <nav class="mobile-menu shadow-xl">
+            <a href="/index.html">Home</a>
+            <a href="/about.html">About</a>
+            <a href="/services.html">Services</a>
+            <a href="/learn.html">Learn</a>
+            <a href="/testimonials.html">Testimonials</a>
+            <a href="/pricing.html">Programs &amp; Pricing</a>
+            <a href="/contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- ===== Dynamic Viewport Injection ===== -->
+    <main class="w-full min-h-[60vh]">
+        {{ content }}
+    </main>
+
+    <!-- ===== Global Rebuilt Footer ===== -->
+    <footer class="bg-[#1c1c1c] text-white px-[5%] py-12 border-t border-zinc-800">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="text-center md:text-left space-y-4">
+                <img src="/images/logo1.png" alt="RAMP Logo" class="max-w-[16rem] mx-auto md:mx-0" />
+                <h4 class="text-[#c5a880] font-semibold tracking-wide uppercase text-sm">
+                    Business Communication Skills Training
+                </h4>
+                <p class="text-zinc-400 text-sm leading-relaxed">
+                    <i class="fas fa-envelope text-[#c5a880] mr-2"></i> connect@rampbizenglish.com<br class="md:hidden" />
+                    <span class="hidden md:inline class='mx-2'">|</span>
+                    <i class="fas fa-phone text-[#c5a880] mr-2"></i> +82-10-3361-0610
+                </p>
             </div>
             
-            <div class="col-6_sm-12-middle right padded-0 center-sm hide-sm">
-                <nav>
-                    <a class="nav-space" href="/about.html">About</a>
-                    <a class="nav-space" href="/services.html">Services</a>
-                    <a class="nav-space" href="/learn.html">Learn</a>
-                    <a class="nav-space" href="/contact.html">Contact</a>
-                    <a class="nav-space" href="/pricing.html">Pricing</a>
-                </nav>
+            <div class="flex flex-col items-center md:items-end space-y-4">
+                <h3 class="text-xl font-light tracking-wide text-zinc-200">Let's Connect.</h3>
+                <div class="flex space-x-6 text-2xl">
+                    <a href="https://www.linkedin.com/company/101993646/" class="hover:text-[#c5a880] transition-colors" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61558688188225" class="hover:text-[#c5a880] transition-colors" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
             </div>
-        </header>
+        </div>
+        <div class="max-w-7xl mx-auto text-center border-t border-zinc-800 mt-8 pt-6 text-xs text-zinc-500">
+            <p>&copy; 2026 RAMP Business Performance. All Rights Reserved.</p>
+        </div>
+    </footer>
 
-        <main>
-            {{ content }}
-        </main>
-
-        <footer class="grid bg-dark light-text padded" id="contact">
-            <div class="col-6_sm-12 padded center-sm">
-                <h2 style="max-width: 25rem;"> <img src="/images/logo1.png" /> </h2>
-                <p>connect@rampbizenglish.com<br />+82-10-3361-0610</p>
-            </div>
-            <div class="col-6_sm-12 center-sm right">
-                <nav>
-                    <a href="https://www.linkedin.com/company/101993646/"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://www.facebook.com/profile.php?id=61558688188225"><i class="fab fa-facebook-f"></i></a>
-                </nav>
-            </div>
-        </footer>
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script>
-            AOS.init(); // Initialize animations
-        </script>
-        <script src="/main.js"></script>
-    </body>
+    <!-- Scripts Engine -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/main.js"></script>
+</body>
 </html>
