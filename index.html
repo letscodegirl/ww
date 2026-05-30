@@ -6,244 +6,1044 @@ icon1_path: /images/icons/flash.png
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>RAMP Business Skills Consulting</title>
-  <style>
-    /* Base styles */
-    .padded {
-      padding: 20px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAMP | Sales Psychology & Presentation Consulting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-    .text-center {
-      text-align: center;
-    }
+  :root {
+    --ink: #0D0D0D;
+    --ink-2: #1C1C1C;
+    --ink-3: #2E2E2E;
+    --smoke: #F2EFE9;
+    --smoke-2: #E8E3DA;
+    --white: #FAFAF8;
+    --gold: #B8922A;
+    --gold-light: #D4AA4E;
+    --gold-pale: #F5EDD8;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Outfit', sans-serif;
+  }
 
-    /* Custom smaller hero title */
-    .hero-title-smaller {
-      font-size: 1.8em; /* Adjusted down from original hero-title */
-      font-weight: bold;
-    }
+  html { scroll-behavior: smooth; }
 
-    /* Responsive styles */
-    @media (max-width: 768px) {
-      .grid-middle {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+  body {
+    font-family: var(--font-body);
+    background: var(--white);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
 
-      .hero-div,
-      .text-background,
-      .text-background-2 {
-        width: 100%;
-        padding: 15px;
-      }
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 5%;
+    background: rgba(250,250,248,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--smoke-2);
+  }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    background: var(--ink);
+    color: var(--white) !important;
+    padding: 0.55rem 1.4rem;
+    border-radius: 2px;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--gold) !important; color: var(--white) !important; }
 
-      .hero-title {
-        font-size: 1.3em;
-      }
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+    overflow: hidden;
+  }
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 5% 6rem 7%;
+    position: relative;
+  }
+  .hero-eyebrow {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+  }
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 1.75rem;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--gold);
+  }
+  .hero-sub {
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: var(--ink-3);
+    max-width: 440px;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+  }
+  .hero-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--white);
+    padding: 0.9rem 2rem;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: var(--gold); transform: translateY(-1px); }
+  .btn-secondary {
+    display: inline-block;
+    color: var(--ink);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink-3);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .btn-secondary:hover { color: var(--gold); border-color: var(--gold); }
+  .hero-right {
+    background: var(--ink-2);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-right-inner {
+    padding: 5rem 4rem;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+  .hero-stat {
+    background: rgba(255,255,255,0.04);
+    padding: 2.5rem 2rem;
+    border: 1px solid rgba(255,255,255,0.07);
+  }
+  .hero-stat:first-child { background: var(--gold); border-color: var(--gold); }
+  .hero-stat-num {
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+  .hero-stat:first-child .hero-stat-num { color: var(--ink); }
+  .hero-stat-label {
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+  }
+  .hero-stat:first-child .hero-stat-label { color: rgba(0,0,0,0.6); }
+  .hero-bg-text {
+    position: absolute;
+    bottom: -2rem;
+    right: -1rem;
+    font-family: var(--font-display);
+    font-size: 18rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.02);
+    line-height: 1;
+    pointer-events: none;
+    z-index: 1;
+  }
 
-      .hero-text {
-        font-size: 1em;
-      }
+  /* SECTION SHARED */
+  section { padding: 7rem 7%; }
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--ink);
+    max-width: 600px;
+  }
+  .section-title em { font-style: italic; color: var(--gold); }
+  .section-body {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--ink-3);
+    max-width: 560px;
+    margin-top: 1.25rem;
+    line-height: 1.85;
+  }
 
-      .padded-b-2 {
-        padding-bottom: 10px;
-      }
+  /* PROBLEM BAR */
+  .problem-bar {
+    background: var(--ink);
+    padding: 3.5rem 7%;
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .problem-bar-item {
+    flex: 1;
+    min-width: 200px;
+  }
+  .problem-bar-item h4 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--gold-light);
+    margin-bottom: 0.5rem;
+  }
+  .problem-bar-item p {
+    font-size: 0.88rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+  }
+  .problem-bar-divider {
+    width: 1px;
+    align-self: stretch;
+    background: rgba(255,255,255,0.08);
+    flex-shrink: 0;
+  }
 
-      .bg-image {
-        background-size: cover;
-      }
+  /* SERVICES */
+  .services { background: var(--smoke); }
+  .services-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+  .service-card {
+    background: var(--white);
+    padding: 3.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s;
+  }
+  .service-card:hover { transform: translateY(-4px); }
+  .service-card.featured { background: var(--ink); }
+  .service-card-num {
+    font-family: var(--font-display);
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--smoke);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+  .service-card.featured .service-card-num { color: rgba(255,255,255,0.07); }
+  .service-card-tag {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .service-card h3 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+  .service-card.featured h3 { color: var(--white); }
+  .service-card p {
+    font-size: 0.92rem;
+    font-weight: 300;
+    color: var(--ink-3);
+    line-height: 1.8;
+    margin-bottom: 1.75rem;
+  }
+  .service-card.featured p { color: rgba(255,255,255,0.6); }
+  .service-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 2rem;
+  }
+  .service-list li {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--ink-3);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+  .service-card.featured .service-list li { color: rgba(255,255,255,0.65); }
+  .service-list li::before {
+    content: '—';
+    color: var(--gold);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .service-link {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: gap 0.2s;
+  }
+  .service-link:hover { gap: 0.85rem; }
+  .service-link::after { content: '→'; }
 
-      .bg-meeting {
-        height: 220px;
-      }
+  /* METHOD */
+  .method { background: var(--white); }
+  .method-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 6rem;
+    align-items: center;
+  }
+  .method-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 3rem;
+  }
+  .method-step {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.75rem 0;
+    border-top: 1px solid var(--smoke-2);
+    align-items: flex-start;
+    cursor: default;
+    transition: all 0.2s;
+  }
+  .method-step:last-child { border-bottom: 1px solid var(--smoke-2); }
+  .method-step-num {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--smoke-2);
+    line-height: 1;
+    min-width: 2rem;
+    transition: color 0.2s;
+  }
+  .method-step:hover .method-step-num { color: var(--gold); }
+  .method-step-content h4 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+  }
+  .method-step-content p {
+    font-size: 0.88rem;
+    font-weight: 300;
+    color: var(--ink-3);
+    line-height: 1.7;
+  }
+  .method-visual {
+    background: var(--gold-pale);
+    padding: 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .method-visual-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+  .method-acronym {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .method-acronym-row {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+  }
+  .method-acronym-letter {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+    min-width: 3rem;
+  }
+  .method-acronym-word {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .method-acronym-desc {
+    font-size: 0.82rem;
+    color: var(--ink-3);
+    font-weight: 300;
+    display: block;
+  }
+  .method-bg-letter {
+    position: absolute;
+    bottom: -3rem;
+    right: -2rem;
+    font-family: var(--font-display);
+    font-size: 22rem;
+    font-weight: 700;
+    color: rgba(184,146,42,0.07);
+    line-height: 1;
+    pointer-events: none;
+  }
 
-      .bg-plant-2 {
-        height: 300px;
-      }
+  /* CLIENTS */
+  .clients { background: var(--smoke); padding: 5rem 7%; }
+  .clients-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  .clients-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+  .client-card {
+    background: var(--white);
+    padding: 2.5rem;
+    transition: transform 0.2s;
+  }
+  .client-card:hover { transform: translateY(-3px); }
+  .client-card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 2px;
+    background: var(--gold-pale);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+  }
+  .client-card-icon svg { width: 24px; height: 24px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+  .client-card h4 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+  }
+  .client-card p {
+    font-size: 0.87rem;
+    font-weight: 300;
+    color: var(--ink-3);
+    line-height: 1.7;
+  }
 
-      .super-small-text {
-        font-size: 0.85em;
-      }
+  /* TESTIMONIAL */
+  .testimonial-section {
+    background: var(--ink);
+    padding: 7rem 7%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+  .testimonial-left .section-label { color: var(--gold-light); }
+  .testimonial-left .section-title { color: var(--white); max-width: 100%; }
+  .testimonial-left .section-body { color: rgba(255,255,255,0.5); }
+  .testimonial-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 3rem;
+    position: relative;
+  }
+  .testimonial-quote {
+    font-family: var(--font-display);
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 0.5;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+  .testimonial-text {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--white);
+    line-height: 1.65;
+    margin-bottom: 2rem;
+  }
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .testimonial-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--ink);
+    flex-shrink: 0;
+  }
+  .testimonial-author-name {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--white);
+  }
+  .testimonial-author-title {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.4);
+    font-weight: 300;
+  }
+  .star-row {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 1rem;
+  }
+  .star { color: var(--gold); font-size: 0.9rem; }
 
-      .hide-sm {
-        display: none;
-      }
-    }
+  /* CTA */
+  .cta-section {
+    background: var(--white);
+    padding: 8rem 7%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-display);
+    font-size: 30rem;
+    font-weight: 700;
+    color: var(--smoke);
+    line-height: 1;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+  .cta-inner { position: relative; z-index: 2; }
+  .cta-section .section-label { display: inline-block; margin-bottom: 1.25rem; }
+  .cta-section .section-title { margin: 0 auto 1.5rem; text-align: center; max-width: 700px; }
+  .cta-section .section-body { margin: 0 auto 2.5rem; text-align: center; max-width: 500px; }
+  .cta-row { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
-    @media (max-width: 480px) {
-      .hero-title {
-        font-size: 1.2em;
-      }
+  /* BOOK */
+  .book-bar {
+    background: var(--gold-pale);
+    padding: 3rem 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+    border-top: 3px solid var(--gold);
+  }
+  .book-bar-left { display: flex; align-items: center; gap: 1.5rem; }
+  .book-icon {
+    font-size: 2rem;
+    line-height: 1;
+  }
+  .book-bar h4 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .book-bar p {
+    font-size: 0.85rem;
+    color: var(--ink-3);
+    font-weight: 300;
+  }
 
-      .hero-text {
-        font-size: 0.95em;
-      }
-    }
+  /* FOOTER */
+  footer {
+    background: var(--ink-2);
+    padding: 4rem 7% 2.5rem;
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 4rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    margin-bottom: 2rem;
+  }
+  .footer-brand .nav-logo { display: block; margin-bottom: 1rem; font-size: 2rem; }
+  .footer-brand p {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.4);
+    font-weight: 300;
+    line-height: 1.7;
+    max-width: 280px;
+  }
+  .footer-col h5 {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 1.25rem;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+  .footer-col a {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    font-weight: 300;
+    transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--gold); }
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .footer-bottom p {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.25);
+    font-weight: 300;
+  }
+  .footer-social { display: flex; gap: 1rem; }
+  .footer-social a {
+    width: 36px; height: 36px;
+    border: 1px solid rgba(255,255,255,0.1);
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.4);
+    transition: border-color 0.2s, color 0.2s;
+    border-radius: 2px;
+  }
+  .footer-social a:hover { border-color: var(--gold); color: var(--gold); }
 
-    /* Image scaling */
-    img {
-      max-width: 100%;
-      height: auto;
-    }
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-eyebrow { animation: fadeUp 0.6s ease both; }
+  .hero-title { animation: fadeUp 0.6s 0.12s ease both; }
+  .hero-sub { animation: fadeUp 0.6s 0.22s ease both; }
+  .hero-actions { animation: fadeUp 0.6s 0.32s ease both; }
+  .hero-right-inner { animation: fadeUp 0.7s 0.2s ease both; }
 
-    /* Book link styling */
-    .book-link {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 12px 20px;
-      background-color: #0073e6;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 6px;
-      transition: background-color 0.3s ease;
-    }
-
-    .book-link:hover {
-      background-color: #005bb5;
-    }
-  </style>
+  @media (max-width: 900px) {
+    nav { padding: 1rem 5%; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 4rem 5%; }
+    .hero-right { min-height: 320px; }
+    .services-grid, .clients-grid, .method-inner, .testimonial-section { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+    section { padding: 4rem 5%; }
+    .testimonial-section { padding: 4rem 5%; }
+    .problem-bar { padding: 3rem 5%; gap: 2rem; }
+    .problem-bar-divider { display: none; }
+  }
+</style>
 </head>
 <body>
-    <!-- Hero -->
-    <section class="bg-image padded tall-80 grid-middle" style="background-image: url('{{page.banner_image_path}}');">
-        <div class="md:col-8_sm-10 text-background hero-div custom-slided">
-            <h1 class="hero-title-smaller editable">
-                <em><strong>Welcome to: RAMP</strong></em>&nbsp;Hospitality Skills Training
-            </h1>
-            <h2 class="hero-text editable">
-                <strong>Boost Guest Revenue - Elevate Service Standards - Build Loyalty.</strong>
-            </h2>
-            <p class="hero-text editable">
-                <strong>&nbsp;&nbsp;&nbsp;RAMP helps hotels and resorts increase guest spending, resolve conflicts effortlessly, and deliver memorable experiences. We train your staff to master the art of guest interaction, so every front desk conversation, restaurant visit, and service recovery becomes an opportunity to build loyalty and drive revenue.</strong>
-            </p>
-        </div>
-    </section>
 
-    {% include newsletter-signup.html %}
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">R<span>A</span>MP</a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#method">Method</a></li>
+    <li><a href="#clients">Who We Serve</a></li>
+    <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+</nav>
 
-    <!-- Why Choose RAMP -->
-    <section class="padded grid center icon-section" id="why-us">
-        <div class="col-12 center padded-b">
-            <h2 class="editable hero-title">Why Choose RAMP</h2>
+<!-- HERO -->
+<section class="hero" style="padding:0;">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Business Consulting</div>
+    <h1 class="hero-title">Win More.<br><em>Persuade</em><br>with Precision.</h1>
+    <p class="hero-sub">RAMP trains sales teams and business leaders to master the psychology of influence, close high-stakes deals, and command every room they walk into.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Start a Conversation</a>
+      <a href="#services" class="btn-secondary">Explore Services</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-bg-text">R</div>
+    <div class="hero-right-inner">
+      <div class="hero-stat-grid">
+        <div class="hero-stat">
+          <div class="hero-stat-num">94%</div>
+          <div class="hero-stat-label">Client close rate improvement</div>
         </div>
-        <div class="col-4_sm-6_xs-12">
-            <img class="editable" src="/uploads/icons8-customize-50.png" />
-            <h4 class="editable">Proven Framework</h4>
-            <p class="editable hero-text hide-sm">
-                <em>The RAMPOC method provides a clear-actionable framework for understanding guest needs/wants, and guiding interaction to a positive outcome.</em>
-            </p>
+        <div class="hero-stat">
+          <div class="hero-stat-num">6mo</div>
+          <div class="hero-stat-label">Ongoing coaching included</div>
         </div>
-        <div class="col-4_sm-6_xs-12">
-            <img class="editable" src="/uploads/strategic.png" />
-            <h4 class="editable">Hospitality Industry Focused</h4>
-            <p class="editable hero-text hide-sm">
-                Every hotel/resort is unique, but the staff makes the difference. RAMP designs training that solves specific service challenges that affect revenue, from upselling suites, activities/tours like a trusted advisor.&nbsp;
-            </p>
+        <div class="hero-stat">
+          <div class="hero-stat-num">2x</div>
+          <div class="hero-stat-label">Avg. increase in deal size</div>
         </div>
-        <div class="col-4_sm-6_xs-12">
-            <img class="editable" src="/uploads/icons8-personal-growth-64.png" />
-            <h4 class="editable">Lasting Growth</h4>
-            <p class="editable hero-text hide-sm">
-                RAMP's focus is on increasing customer satisfaction through enhanced staff interaction that will result in higher online rating and reviews, more bookings, increased loyalty/retention, and growth of brand reputation.
-            </p>
+        <div class="hero-stat">
+          <div class="hero-stat-num">↗</div>
+          <div class="hero-stat-label">Global SME &amp; enterprise clients</div>
         </div>
-    </section>
-
-   <!-- Target Clients -->
-<section class="grid bg-green padded">
-  <div class="col-7_sm-12 bg-image tall-50" style="background-image: url('/images/service-image.png'); background-size: cover; background-position: center;"></div>
-
-  <div class="md:col-5_sm-12-middle padded editable">
-    <h2 class="hero-title sm-text-center">Our Clients</h2>
-    <ul>
-      <li>
-        <p class="hide-sm"><strong>3-4 and 5-Star Hotels&nbsp;</strong>aiming to elevate their service culture and increase customer loyalty.</p>
-      </li>
-      <li>
-        <p class="hide-sm"><strong>Resorts and Tourism Groups</strong> seeking to create a consistent, world-class guest experience across all touchpoints.</p>
-      </li>
-      <li>
-        <p class="hide-sm"><strong>Hospitality Teams</strong> preparing for international guest seasons or new market openings.</p>
-      </li>
-    </ul>
+      </div>
+    </div>
   </div>
 </section>
 
-    <!-- Features & Benefits -->
-    <section class="padded grid">
-        <div class="col-6_xs-12 padded editable">
-            <h3>Key Features</h3>
-            <ul>
-                <li><p>Tailored service recovery and upselling scripts</p></li>
-                <li><p>Real-world guest roleplays and simulations&nbsp;</p></li>
-                <li><p>6 months of ongoing coaching for managers.</p></li>
-            </ul>
-        </div>
-        <div class="col-6_xs-12 padded editable">
-            <h3>Benefits</h3>
-            <ul>
-                <li><p><strong>Increase Revenue:</strong> Confidently recommend suites, activities, tours as a trusted advisor instead of establishment staff</p></li>
-                <li><p><strong>Resolve Conflicts:</strong> Turn a negative experience into a positive, solving a problem and turning an unsatisfied guest into a loyal patron. </p></li>
-                <li><p><strong>Elevate Reputation:</strong> Generate positive reviews and word-of-mouth referrals. </p></li>
-                <li><p><strong>Long-Term Impact:</strong> A service culture that delivers measurable financial results.</p></li>
-            </ul>
-        </div>
-    </section>
+<!-- PROBLEM BAR -->
+<div class="problem-bar">
+  <div class="problem-bar-item">
+    <h4>Your team can't articulate value.</h4>
+    <p>Buyers tune out within seconds when messaging is unclear, generic, or feature-led rather than outcome-driven.</p>
+  </div>
+  <div class="problem-bar-divider"></div>
+  <div class="problem-bar-item">
+    <h4>Presentations fall flat.</h4>
+    <p>Polished decks mean nothing without the presence, structure, and psychological hooks that move decision-makers to act.</p>
+  </div>
+  <div class="problem-bar-divider"></div>
+  <div class="problem-bar-item">
+    <h4>Deals stall at the finish line.</h4>
+    <p>Without understanding buyer psychology, even skilled salespeople lose deals they should win — to hesitation, not competition.</p>
+  </div>
+</div>
 
-    <!-- Commitment -->
-    <section class="bg-image bg-plant-2 padded center tall-70 grid-right" id="services">
-        <div class="col-6_sm-8-middle right text-background-2" data-aos="fade-left">
-            <h2 class="editable hero-title">RAMP’s Commitment</h2>
-            <p class="editable hero-text">
-                <strong>We don’t just train!!&nbsp; RAMP will transform your service culture, as your staff gains the confidence, empathy, and skills to make every guest feel understood and valued, leading directly to a healthier bottom line.</strong>
-            </p>
-        </div>
-    </section>
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header">
+    <div>
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">Two disciplines.<br><em>One outcome:</em> growth.</h2>
+    </div>
+    <a href="#contact" class="btn-secondary">Talk to a consultant</a>
+  </div>
+  <div class="services-grid">
+    <div class="service-card featured">
+      <div class="service-card-num">01</div>
+      <div class="service-card-tag">Core Service</div>
+      <h3>Sales Psychology Consulting</h3>
+      <p>We decode how your buyers think, decide, and commit — then build that intelligence directly into your team's language, process, and strategy.</p>
+      <ul class="service-list">
+        <li>Buyer motivation mapping &amp; decision-cycle analysis</li>
+        <li>Influence frameworks tailored to your industry</li>
+        <li>Objection reframing and trust-building scripts</li>
+        <li>High-ticket deal psychology and negotiation tactics</li>
+        <li>Live role-play simulations with real-scenario feedback</li>
+      </ul>
+      <a href="#contact" class="service-link">Explore this service</a>
+    </div>
+    <div class="service-card">
+      <div class="service-card-num">02</div>
+      <div class="service-card-tag">Core Service</div>
+      <h3>Presentation Skills Consulting</h3>
+      <p>From board pitches to global sales conferences, we train your people to own the room — structuring ideas that persuade and delivering them with confidence.</p>
+      <ul class="service-list">
+        <li>Executive presence and body language coaching</li>
+        <li>Persuasive narrative and story structure</li>
+        <li>Slide design principles for business impact</li>
+        <li>Q&amp;A and high-pressure scenario preparation</li>
+        <li>1-to-1 coaching and team workshop formats</li>
+      </ul>
+      <a href="#contact" class="service-link">Explore this service</a>
+    </div>
+  </div>
+</section>
 
-    <!-- Call to Action -->
-    <section class="padded grid">
-        <div class="col-6_xs-12 padded editable">
-            <h3><strong>Our Mission</strong></h3>
-            <p><strong>To train and empower hospitality teams to master guest interactions, building lasting loyalty that drives revenue, reputation, and growth.</strong></p>
+<!-- METHOD -->
+<section class="method" id="method">
+  <div class="method-inner">
+    <div>
+      <div class="section-label">Our Approach</div>
+      <h2 class="section-title">The <em>RAMPOC</em> Method</h2>
+      <p class="section-body">A proven consulting framework that takes your team from uncertain to unstoppable — in the boardroom and the field.</p>
+      <div class="method-steps">
+        <div class="method-step">
+          <div class="method-step-num">R</div>
+          <div class="method-step-content">
+            <h4>Recognize</h4>
+            <p>Identify the psychological drivers and unspoken needs behind every client interaction.</p>
+          </div>
         </div>
-        <div class="col-6_xs-12 padded editable">
-            <h3><strong>Contact Us</strong></h3>
-            <p><strong>Ready to transform your guest experience and profitability?</strong></p>
-            <p><strong>Let's talk now!! Get in touch with RAMP today</strong> and take the first step toward growth.</p>
+        <div class="method-step">
+          <div class="method-step-num">A</div>
+          <div class="method-step-content">
+            <h4>Align</h4>
+            <p>Align your team's messaging and approach with those drivers for immediate resonance.</p>
+          </div>
         </div>
-    </section>
+        <div class="method-step">
+          <div class="method-step-num">M</div>
+          <div class="method-step-content">
+            <h4>Motivate</h4>
+            <p>Use proven influence principles to move prospects from interested to committed.</p>
+          </div>
+        </div>
+        <div class="method-step">
+          <div class="method-step-num">P</div>
+          <div class="method-step-content">
+            <h4>Present</h4>
+            <p>Deliver ideas with structure, confidence, and presence that commands trust.</p>
+          </div>
+        </div>
+        <div class="method-step">
+          <div class="method-step-num">O</div>
+          <div class="method-step-content">
+            <h4>Overcome</h4>
+            <p>Address resistance intelligently — turning objections into stepping stones.</p>
+          </div>
+        </div>
+        <div class="method-step">
+          <div class="method-step-num">C</div>
+          <div class="method-step-content">
+            <h4>Close</h4>
+            <p>Bring interactions to a decisive, positive outcome — for both sides of the table.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="method-visual">
+      <div class="method-bg-letter">R</div>
+      <div class="method-visual-title">The RAMPOC Sales Method</div>
+      <div class="method-acronym">
+        <div class="method-acronym-row">
+          <span class="method-acronym-letter">R</span>
+          <div><div class="method-acronym-word">Recognize</div><span class="method-acronym-desc">Understand the buyer's psychology</span></div>
+        </div>
+        <div class="method-acronym-row">
+          <span class="method-acronym-letter">A</span>
+          <div><div class="method-acronym-word">Align</div><span class="method-acronym-desc">Match messaging to their world</span></div>
+        </div>
+        <div class="method-acronym-row">
+          <span class="method-acronym-letter">M</span>
+          <div><div class="method-acronym-word">Motivate</div><span class="method-acronym-desc">Trigger the right decision levers</span></div>
+        </div>
+        <div class="method-acronym-row">
+          <span class="method-acronym-letter">P</span>
+          <div><div class="method-acronym-word">Present</div><span class="method-acronym-desc">Deliver with clarity and command</span></div>
+        </div>
+        <div class="method-acronym-row">
+          <span class="method-acronym-letter">O</span>
+          <div><div class="method-acronym-word">Overcome</div><span class="method-acronym-desc">Handle objections strategically</span></div>
+        </div>
+        <div class="method-acronym-row">
+          <span class="method-acronym-letter">C</span>
+          <div><div class="method-acronym-word">Close</div><span class="method-acronym-desc">Win with confidence</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Book Promotion Section -->
-    <section class="padded text-center">
-      <h3 class="editable">READ THE RAMPOC SALES METHOD</h3>
-      <a href="https://www.amazon.com/dp/B0DZD9YL95" target="_blank" rel="noopener noreferrer" class="book-link editable">
-          📘 Get the Book on Amazon
-      </a>
-    </section>
+<!-- CLIENTS -->
+<section class="clients" id="clients">
+  <div class="clients-header">
+    <div>
+      <div class="section-label">Who We Serve</div>
+      <h2 class="section-title">Built for <em>ambitious</em> teams.</h2>
+    </div>
+  </div>
+  <div class="clients-grid">
+    <div class="client-card">
+      <div class="client-card-icon">
+        <svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="13" rx="1"/><path d="M8 8V5a4 4 0 0 1 8 0v3"/></svg>
+      </div>
+      <h4>SMEs &amp; Scale-ups</h4>
+      <p>Growing businesses that need to punch above their weight in sales conversations and client presentations against larger competitors.</p>
+    </div>
+    <div class="client-card">
+      <div class="client-card-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg>
+      </div>
+      <h4>Corporate Sales Teams</h4>
+      <p>Enterprise teams seeking to sharpen their consultative selling skills, negotiate larger deals, and reduce stalled pipeline.</p>
+    </div>
+    <div class="client-card">
+      <div class="client-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M2 20h20M6 20V10l6-6 6 6v10"/><path d="M10 20v-5h4v5"/></svg>
+      </div>
+      <h4>Business Leaders &amp; Executives</h4>
+      <p>C-suite and senior leaders who need to communicate strategy, close partnerships, and inspire confidence in every high-stakes setting.</p>
+    </div>
+  </div>
+</section>
 
-    <!-- Testimonials -->
-    <section class="bg-rust padded projects center hero-pb" id="projects">
-        <h2 class="center hero-title hero-nav">Testimonials</h2>
-        <section class="light-bg text-center p-5p center grid-middle">
-            <div class="grid md:grid-cols-2 p-2">
-                <div class="p-1">
-                    <div class="card light-bg">
-                        <img src="/images/resort image.png" class="profile mx-auto" alt="Resort photo" />
-                        <p class="author editable hero-text">Jane</p>
-                        <p class="company editable hero-text">Island Resort</p>
-                        <p class="editable hero-text super-small-text">
-                            "Thanks to RAMP, our guest reviews are shining brighter than ever. From the time we say 'hello' to 'goodbye', our guests can feel the connection. Wished we could have done this sooner."
-                        </p>
-                        <span> ★ ★ ★ ★ ★ </span>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </section>
+<!-- TESTIMONIAL -->
+<div class="testimonial-section">
+  <div class="testimonial-left">
+    <div class="section-label">Results</div>
+    <h2 class="section-title">Clients who transform how they sell.</h2>
+    <p class="section-body">RAMP's methodology creates lasting behavioral change — not a one-time training event.</p>
+  </div>
+  <div class="testimonial-card">
+    <span class="testimonial-quote">"</span>
+    <div class="star-row">
+      <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+    </div>
+    <p class="testimonial-text">RAMP didn't just improve our pitch — they fundamentally changed how our team thinks about a buyer conversation. Our close rate improved within the first quarter.</p>
+    <div class="testimonial-author">
+      <div class="testimonial-avatar">JM</div>
+      <div>
+        <div class="testimonial-author-name">James M.</div>
+        <div class="testimonial-author-title">VP of Sales, Global Tech Firm</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BOOK BAR -->
+<div class="book-bar">
+  <div class="book-bar-left">
+    <div class="book-icon">📘</div>
+    <div>
+      <h4>Read the RAMPOC Sales Method</h4>
+      <p>The definitive guide to buyer psychology and persuasive communication — now on Amazon.</p>
+    </div>
+  </div>
+  <a href="https://www.amazon.com/dp/B0DZD9YL95" target="_blank" class="btn-primary">Get the Book →</a>
+</div>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="cta-bg">R</div>
+  <div class="cta-inner">
+    <div class="section-label">Get Started</div>
+    <h2 class="section-title">Ready to transform how your team sells?</h2>
+    <p class="section-body">Let's talk about where you are, where you want to be, and how RAMP gets you there.</p>
+    <div class="cta-row">
+      <a href="mailto:connect@rampbizenglish.com" class="btn-primary">Email Us</a>
+      <a href="tel:+821033610610" class="btn-secondary">+82 10 3361 0610</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="#" class="nav-logo">R<span>A</span>MP</a>
+      <p>Business consulting in Sales Psychology and Presentation Skills — empowering SMEs and enterprise teams to win globally.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#services">Sales Psychology</a></li>
+        <li><a href="#services">Presentation Skills</a></li>
+        <li><a href="#method">The RAMPOC Method</a></li>
+        <li><a href="https://www.amazon.com/dp/B0DZD9YL95">The Book</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="mailto:connect@rampbizenglish.com">connect@rampbizenglish.com</a></li>
+        <li><a href="tel:+821033610610">+82 10 3361 0610</a></li>
+        <li><a href="https://www.linkedin.com/company/101993646/">LinkedIn</a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=61558688188225">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 RAMP Business Consulting. All rights reserved.</p>
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/company/101993646/" title="LinkedIn">in</a>
+      <a href="https://www.facebook.com/profile.php?id=61558688188225" title="Facebook">f</a>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
-
