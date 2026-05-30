@@ -1,150 +1,151 @@
----
-layout: default
-title: RAMP | The Psychology of Business Performance
-banner_image_path: /images/opaquemba.png
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TFBFJFNM');</script>
 
-<!-- ===== HERO SECTION ===== -->
-<section class="relative min-h-[80vh] flex items-center bg-cover bg-center px-[5%]" style="background-image: url('{{page.banner_image_path}}');">
-    <!-- Dark overlay for readability -->
-    <div class="absolute inset-0 bg-black/40"></div>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{{ page.title }} | RAMP: The Psychology of Business Performance</title>
+
+    <!-- Tailwind CSS Play CDN (Enables all block components to render perfectly) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    padding: { '5p': '5%' }
+                }
+            }
+        }
+    </script>
+
+    <!-- Library Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
-    <div class="relative z-10 max-w-4xl bg-white/95 p-8 md:p-12 shadow-2xl backdrop-blur-sm" data-aos="fade-right">
-        <h1 class="text-3xl md:text-5xl font-light leading-tight mb-4 text-zinc-900 editable">
-            <span class="font-bold">RAMP</span> | <span class="italic font-serif">The Psychology of Business Performance</span>
-        </h1>
-        <h2 class="text-xl md:text-2xl italic text-[#c5a880] mb-6 font-serif editable">
-            Applied Behavioral Science for Sales, Negotiation, Leadership, and Executive Communication.
-        </h2>
-        <p class="text-lg leading-relaxed text-zinc-700 editable">
-            Most organizations teach employees what to say. <span class="font-bold">RAMP</span> teaches professionals why people decide. Drawing on behavioral psychology, consumer behavior research, and the proprietary <span class="font-bold text-[#c5a880]">RAMPOC</span> Framework, we help organizations improve performance and build lasting influence.
-        </p>
-    </div>
-</section>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200..1000&display=swap" rel="stylesheet" />
 
-<!-- Newsletter Section Include -->
-{% include newsletter-signup.html %}
+    <!-- Site Architecture Variables & Main Custom Styles -->
+    {% include inline-styles.html %}
+    <link rel="stylesheet" href="/style.css" />
 
-<!-- ===== WHY RAMP (ICON SECTION) ===== -->
-<section class="py-20 px-[5%] bg-white text-center" id="why-us">
-    <h2 class="text-4xl font-serif mb-16 text-zinc-900 editable" data-aos="fade-up">Why Should You Work With RAMP</h2>
-    
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto">
-        <!-- Item 1 -->
-        <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="100">
-            <div class="w-20 h-20 mb-6 flex items-center justify-center bg-zinc-50 rounded-full shadow-sm">
-                <img src="/uploads/icons8-customize-50.png" alt="Science icon" class="w-10 h-10" />
-            </div>
-            <h4 class="text-xl font-bold mb-4 editable">Behavioral Science Foundation</h4>
-            <p class="text-zinc-600 leading-relaxed editable">
-                Grounded in psychology, influence science, and decades of research into how people build trust and make decisions.
-            </p>
-        </div>
+    <style>
+        body { font-family: 'Mulish', sans-serif; margin: 0; padding: 0; background-color: #ffffff; color: #333333; }
+        
+        /* Persistent Navigation Fixes */
+        .site-header { background-color: #1c1c1c; position: relative; z-index: 100; width: 100%; }
+        .nav-link { color: #ffffff; text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: color 0.3s ease; padding: 0.5rem 1rem; }
+        .nav-link:hover { color: var(--featured-text, #c5a880); }
+        .nav-link.active { border-bottom: 2px solid #c5a880; color: #c5a880; }
 
-        <!-- Item 2 -->
-        <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="200">
-            <div class="w-20 h-20 mb-6 flex items-center justify-center bg-zinc-50 rounded-full shadow-sm">
-                <img src="/uploads/strategic.png" alt="Strategic icon" class="w-10 h-10" />
-            </div>
-            <h4 class="text-xl font-bold mb-4 editable">Real Business Experience</h4>
-            <p class="text-zinc-600 leading-relaxed editable">
-                27 years spanning commercial banking, operations leadership, consulting, and executive education.
-            </p>
-        </div>
+        /* Mobile Menu Setup override */
+        .mobile-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background-color: #262626; z-index: 99; padding: 1.5rem; border-top: 1px solid #333; }
+        .mobile-menu a { display: block; color: #ffffff; padding: 0.75rem 0; font-size: 1.1rem; border-bottom: 1px solid #333; }
+        .mobile-menu a:last-child { border: none; }
+        
+        /* Hamburger State fixes */
+        .hamburger-button { color: white; cursor: pointer; font-size: 1.5rem; display: none; }
+        @media (max-width: 768px) {
+            .desktop-nav { display: none; }
+            .hamburger-button { display: block; }
+        }
+    </style>
+</head>
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TFBFJFNM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-        <!-- Item 3 -->
-        <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="300">
-            <div class="w-20 h-20 mb-6 flex items-center justify-center bg-zinc-50 rounded-full shadow-sm">
-                <img src="/uploads/icons8-personal-growth-64.png" alt="Growth icon" class="w-10 h-10" />
-            </div>
-            <h4 class="text-xl font-bold mb-4 editable">Practical Application</h4>
-            <p class="text-zinc-600 leading-relaxed editable">
-                Actionable frameworks professionals can immediately apply in sales, leadership, and business development.
-            </p>
-        </div>
-    </div>
-</section>
-
-<!-- ===== WHO WE HELP (MIDDLE IMAGE SECTION) ===== -->
-<section class="grid grid-cols-1 md:grid-cols-2">
-    <!-- Replace image below as needed -->
-    <div class="min-h-[450px] bg-cover bg-center" style="background-image: url('/images/service-image.png');">
-    </div>
-    
-    <div class="bg-[#1c1c1c] text-white p-12 md:p-20 flex flex-col justify-center">
-        <h2 class="text-4xl font-serif mb-8 text-[#c5a880] editable">Who We Help</h2>
-        <ul class="space-y-6 text-lg">
-            <li class="flex items-start">
-                <span class="text-[#c5a880] mr-4 text-2xl">→</span>
-                <span class="editable"><strong>Sales Teams</strong> seeking stronger conversion rates and deeper client relationships.</span>
-            </li>
-            <li class="flex items-start">
-                <span class="text-[#c5a880] mr-4 text-2xl">→</span>
-                <span class="editable"><strong>Business Leaders</strong> who want greater influence and communication effectiveness.</span>
-            </li>
-            <li class="flex items-start">
-                <span class="text-[#c5a880] mr-4 text-2xl">→</span>
-                <span class="editable"><strong>Executives</strong> delivering high-stakes presentations and negotiations.</span>
-            </li>
-        </ul>
-    </div>
-</section>
-
-<!-- ===== RAMPOC FRAMEWORK (BOTTOM IMAGE SECTION WITH CONTRAST FIX) ===== -->
-<section class="relative py-28 px-[5%] bg-zinc-900 bg-cover bg-fixed bg-center text-white" style="background-image: url('/images/placeholder-bottom.jpg');">
-    <!-- Enhanced Dark overlay to completely guarantee readability against dark backgrounds -->
-    <div class="absolute inset-0 bg-zinc-950/85"></div>
-    
-    <div class="relative z-10 max-w-4xl mx-auto text-center" data-aos="zoom-in">
-        <h2 class="text-4xl md:text-5xl font-serif mb-6 text-[#c5a880] editable">The RAMPOC Framework</h2>
-        <p class="text-lg md:text-xl leading-relaxed font-light text-zinc-100 editable">
-            Created by Erick Mendoza, <span class="text-[#c5a880] font-semibold">RAMPOC</span> combines behavioral psychology, consumer behavior, and real-world business experience to help professionals understand the hidden barriers behind decision-making. Rather than relying on scripts and tactics, RAMPOC teaches professionals how to diagnose uncertainty, identify resistance, and guide conversations toward confident decisions.
-        </p>
-    </div>
-</section>
-
-<!-- ===== MEET ERICK & PHILOSOPHY ===== -->
-<section class="py-20 px-[5%] bg-white">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
-        <div class="space-y-6">
-            <h3 class="text-3xl font-serif border-b-2 border-[#c5a880] inline-block pb-2 editable">Meet Erick Mendoza</h3>
-            <p class="text-zinc-700 leading-relaxed editable">
-                Business Consultant, Professor, Author, and Creator of the <span class="font-bold">RAMPOC Framework</span>. Erick combines 27 years of experience across commercial banking, commercial real estate, operations leadership, consulting, and higher education.
-            </p>
-            <p class="text-zinc-700 leading-relaxed editable">
-                He has managed commercial banking portfolios exceeding $20 million, negotiated landmark real estate transactions, led organizations with more than 100 employees, and taught sales, negotiation, consumer behavior, and business communication for over 17 years.
-            </p>
+    <!-- ===== Global Header Navigation ===== -->
+    <header class="site-header px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center">
+            <a href="/index.html" class="block max-w-[15rem] md:max-w-[18rem]">
+                <img src="/images/logo1.png" alt="RAMP Business Performance Logo" class="w-full h-auto" />
+            </a>
         </div>
         
-        <div class="bg-zinc-50 p-8 rounded-lg border-l-4 border-[#c5a880] flex flex-col justify-center">
-            <h3 class="text-3xl font-serif mb-4 editable">The RAMP Philosophy</h3>
-            <p class="text-xl italic text-zinc-600 mb-4 editable">"Every business result begins with a human decision."</p>
-            <p class="text-zinc-700 leading-relaxed editable">
-                Whether a customer buys, an executive approves a proposal, a stakeholder supports a strategy, or a team follows a leader, success depends on understanding how people think, decide, and act. RAMP helps organizations apply behavioral science to achieve measurable business outcomes.
-            </p>
+        <!-- Desktop view navigation tabs -->
+        <nav class="desktop-nav flex items-center space-x-1">
+            <a class="nav-link {% if page.url == '/services.html' %}active{% endif %}" href="/services.html">Services</a>
+            <a class="nav-link {% if page.url == '/pricing.html' %}active{% endif %}" href="/pricing.html">Programs &amp; Pricing</a>
+            <a class="nav-link {% if page.url == '/testimonials.html' %}active{% endif %}" href="/testimonials.html">Testimonials</a>
+            <a class="nav-link {% if page.url == '/about.html' %}active{% endif %}" href="/about.html">About</a>
+            <a class="nav-link {% if page.url == '/learn.html' %}active{% endif %}" href="/learn.html">Learn</a>
+            
+            <a class="ml-4 bg-[#c5a880] text-[#1c1c1c] font-semibold px-4 py-2 rounded shadow hover:bg-[#b4966c] transition-all" href="/contact.html">
+                Contact Us
+            </a>
+        </nav>
+
+        <!-- Mobile Trigger Button -->
+        <div class="hamburger-button">
+            <i class="fas fa-bars"></i>
         </div>
-    </div>
-</section>
 
-<!-- ===== CALL TO ACTION: THE BOOK ===== -->
-<section class="py-16 bg-[#c5a880] text-[#1c1c1c] text-center">
-    <h3 class="text-2xl font-bold mb-2 uppercase tracking-widest editable">THE RAMPOC METHOD</h3>
-    <p class="text-lg mb-8 font-serif editable">Understanding the Buyer's Crisis in Sales</p>
-    <a href="https://www.amazon.com/dp/B0DZD9YL95" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#1c1c1c] text-white px-10 py-4 text-base font-bold rounded shadow-xl hover:bg-zinc-800 transition-all">
-        📘 Get the Book on Amazon
-    </a>
-</section>
+        <!-- Mobile Drawer Menu -->
+        <nav class="mobile-menu shadow-xl">
+            <a href="/index.html">Home</a>
+            <a href="/services.html">Services</a>
+            <a href="/pricing.html">Programs &amp; Pricing</a>
+            <a href="/testimonials.html">Testimonials</a>
+            <a href="/about.html">About</a>
+            <a href="/learn.html">Learn</a>
+            <a href="/contact.html" class="bg-[#c5a880] text-[#1c1c1c] font-semibold text-center my-2 rounded">Contact Us</a>
+        </nav>
+    </header>
 
-<!-- ===== TESTIMONIAL PREVIEW (CONTRAST FIX) ===== -->
-<section class="py-24 bg-zinc-950 text-white text-center border-t border-zinc-900">
-    <h2 class="text-3xl font-serif mb-12 text-zinc-100 editable">What Clients and Learners Say</h2>
-    <div class="max-w-3xl mx-auto px-6">
-        <div class="text-[#c5a880] text-5xl mb-4">“</div>
-        <p class="text-xl md:text-2xl italic font-light leading-relaxed text-zinc-200 mb-8 editable">
-            "Erick's ability to connect behavioral science with practical business application transformed the way our team approaches communication, negotiation, and client relationships."
-        </p>
-        <div class="font-bold tracking-widest text-[#c5a880] uppercase tracking-wider editable">Corporate Client</div>
-        <div class="text-xs text-zinc-400 uppercase mt-2 editable">Executive Development Program</div>
-        <div class="text-[#c5a880] mt-4 text-sm tracking-widest">★ ★ ★ ★ ★</div>
-    </div>
-</section>
+    <!-- ===== Dynamic Viewport Injection ===== -->
+    <main class="w-full min-h-[60vh]">
+        {{ content }}
+    </main>
+
+    <!-- ===== Global Rebuilt Footer ===== -->
+    <footer class="bg-[#1c1c1c] text-white px-[5%] py-12 border-t border-zinc-800">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="text-center md:text-left space-y-4">
+                <img src="/images/logo1.png" alt="RAMP Logo" class="max-w-[16rem] mx-auto md:mx-0" />
+                <h4 class="text-[#c5a880] font-semibold tracking-wide uppercase text-sm">
+                    The Psychology of Business Performance
+                </h4>
+                <p class="text-zinc-400 text-sm leading-relaxed">
+                    <i class="fas fa-envelope text-[#c5a880] mr-2"></i> connect@rampbizenglish.com<br class="md:hidden" />
+                    <span class="hidden md:inline mx-2">|</span>
+                    <i class="fas fa-phone text-[#c5a880] mr-2"></i> +82-10-3361-0610
+                </p>
+            </div>
+            
+            <div class="flex flex-col items-center md:items-end space-y-4">
+                <h3 class="text-xl font-light tracking-wide text-zinc-200">Let's Connect.</h3>
+                <div class="flex space-x-6 text-2xl">
+                    <a href="https://www.linkedin.com/company/101993646/" class="hover:text-[#c5a880] transition-colors" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61558688188225" class="hover:text-[#c5a880] transition-colors" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto text-center border-t border-zinc-800 mt-8 pt-6 text-xs text-zinc-500">
+            <p>&copy; 2026 RAMP: The Psychology of Business Performance. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts Engine -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/main.js"></script>
+</body>
+</html>
