@@ -4,88 +4,399 @@ title: Programs & Pricing
 banner_image_path: /images/program price image.png
 icon1_path: /images/icons/flash.png
 ---
-<main>
-  <!-- Hero Section -->
-  <section style="background: url('/images/program price image.png) center/cover no-repeat; padding: 6rem 2rem; text-align: center; color: white;">
-    <h1 style="font-family: 'Mulish', sans-serif; font-weight: 700; font-size: 3rem; Color: black; margin-bottom: 1rem;">Programs & Pricing</h1>
-    <p style="font-size: 1.25rem; color: black; max-width: 600px; margin: 0 auto;">
-      Packages can be delivered on-site across Southeast Asia or online. Custom quotes are available for hotels, resorts, and tourism companies.
-    </p>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+
+  :root {
+    --ink: #0D0D0D;
+    --ink-2: #1C1C1C;
+    --ink-3: #3A3530;
+    --smoke: #F2EFE9;
+    --smoke-2: #E4DED4;
+    --white: #FAFAF8;
+    --gold: #B8922A;
+    --gold-light: #D4AA4E;
+    --gold-pale: #F5EDD8;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Outfit', sans-serif;
+  }
+
+  .pricing-page-wrapper {
+    font-family: var(--font-body);
+    background: var(--white);
+    color: var(--ink);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── ULTRA-COMPACT HERO BANNER ── */
+  .pricing-hero {
+    height: 180px; 
+    min-height: 180px !important;
+    display: flex; align-items: center;
+    padding: 0 5%;
+    position: relative; overflow: hidden;
+    background: var(--ink-2);
+  }
+  .pricing-hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background-image: url('{{ page.banner_image_path }}');
+    background-size: cover; background-position: center;
+    opacity: 0.25; 
+  }
+  .pricing-hero-content {
+    position: relative; z-index: 2; max-width: 800px;
+  }
+  .section-label {
+    display: inline-block;
+    font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.25rem;
+  }
+  .pricing-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3vw, 2.5rem); 
+    font-weight: 700; line-height: 1.1;
+    color: var(--white); margin-bottom: 0.25rem;
+  }
+  .pricing-hero p {
+    font-size: 0.95rem; font-weight: 300; color: rgba(255,255,255,0.7); margin: 0;
+  }
+
+  /* ── DISCLAIMER BAR ── */
+  .disclaimer-bar {
+    background: var(--gold-pale);
+    border-bottom: 1px solid var(--smoke-2);
+    padding: 1rem 5%;
+    text-align: center;
+  }
+  .disclaimer-bar p {
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink-3);
+    margin: 0;
+  }
+
+  /* ── PRICING MATRIX GRID ── */
+  .pricing-grid-section {
+    padding: 6rem 5% 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--smoke-2);
+  }
+  .price-card {
+    background: var(--smoke);
+    padding: 3.5rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s, background 0.2s;
+  }
+  .price-card:hover {
+    transform: translateY(-4px);
+    background: var(--white);
+  }
+  .price-card.featured {
+    background: var(--ink-2);
+    color: var(--white);
+  }
+  .price-card.featured:hover {
+    background: var(--ink);
+  }
+  .price-meta {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .price-card h2 {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+    color: var(--ink);
+  }
+  .price-card.featured h2 {
+    color: var(--white);
+  }
+  .price-card .tagline {
+    font-size: 0.88rem;
+    font-weight: 300;
+    color: var(--ink-3);
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+  .price-card.featured .tagline {
+    color: rgba(255,255,255,0.6);
+  }
+  .features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 3rem 0;
+    border-top: 1px solid var(--smoke-2);
+  }
+  .price-card.featured .features-list {
+    border-top-color: rgba(255,255,255,0.1);
+  }
+  .features-list li {
+    font-size: 0.88rem;
+    font-weight: 300;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--smoke-2);
+    color: var(--ink-2);
+    display: flex;
+    gap: 0.5rem;
+  }
+  .price-card.featured .features-list li {
+    border-bottom-color: rgba(255,255,255,0.07);
+    color: rgba(255,255,255,0.75);
+  }
+  .features-list li::before {
+    content: "—";
+    color: var(--gold);
+  }
+  .price-block {
+    margin-bottom: 1.5rem;
+  }
+  .price-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink-3);
+    display: block;
+  }
+  .price-card.featured .price-label {
+    color: rgba(255,255,255,0.4);
+  }
+  .price-amount {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .price-card.featured .price-amount {
+    color: var(--gold-light);
+  }
+  .btn-quote {
+    display: block;
+    text-align: center;
+    background: var(--ink);
+    color: var(--white);
+    padding: 0.9rem 1.5rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .price-card.featured .btn-quote {
+    background: var(--gold);
+  }
+  .price-card.featured .btn-quote:hover {
+    background: var(--gold-light);
+    color: var(--ink);
+  }
+  .price-card:not(.featured) .btn-quote:hover {
+    background: var(--gold);
+  }
+
+  /* ── VALUE PROPOSITION SECTION ── */
+  .value-proposition {
+    background: var(--white);
+    padding: 6rem 5%;
+    text-align: center;
+    border-top: 1px solid var(--smoke-2);
+  }
+  .value-inner {
+    max-width: 750px;
+    margin: 0 auto;
+  }
+  .value-proposition h2 {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 1rem;
+  }
+  .value-subtitle {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--ink-3);
+    margin-bottom: 3rem;
+  }
+  .value-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 3.5rem;
+    max-width: 600px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .value-list li {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--ink-2);
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+  .value-list li::before {
+    content: "✓";
+    color: var(--gold);
+    font-weight: 700;
+  }
+  .btn-primary {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--white);
+    padding: 1rem 2.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover {
+    background: var(--gold);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .pricing-hero { height: auto; padding: 3.5rem 5%; text-align: center; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .value-list { padding: 0 1rem; }
+  }
+</style>
+
+<div class="pricing-page-wrapper">
+
+  <!-- HERO SECTION -->
+  <section class="pricing-hero">
+    <div class="pricing-hero-bg"></div>
+    <div class="pricing-hero-content">
+      <div class="section-label">Investment Architecture</div>
+      <h1>Programs &amp; Pricing</h1>
+      <p>Flexible deployment modules scalable for corporate teams, international boards, and digital distribution.</p>
+    </div>
   </section>
 
-  <!-- Programs / Packages -->
-  <section style="padding: 4rem 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
-    
-    <article style="background-color: #f8fafc; padding: 2rem; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-      <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">The RAMP Trust Builder (Teams)</h2>
-      <p>Build Unbreakable Guest Trust That Turns Staff into Trusted Advisors.</p>
-      <ul style="margin: 1rem 0 1rem 1.5rem;">
-        <li>2 × 3-hour or 3 x 2 hour workshops</li>
-        <li>Turn every front desk/restaurant/concierge staff interaction into a trust building opportunity</li>
-        <li>Transform staff from order-takers to trusted advisors</li>
-      <li>additional time spent observing live staff-guest interactions for training improvements</li>
-      </ul>
-      <p><strong>Starting at:$2,900 USD</strong></p>
-      <p><a href="/contact.html" style="color: #1d4ed8; font-weight: 600;">Request quote</a></p>
-    </article>
+  <!-- TRAVEL COST DISCLAIMER BAR -->
+  <div class="disclaimer-bar">
+    <p>** Please Note: The client shall bear all structural costs of travel, meals, and accommodation for all on-site deployments. **</p>
+  </div>
 
-    <article style="background-color: #f8fafc; padding: 2rem; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-      <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">The RAMP Revenue Architect</h2>
-      <p>Transform your staff from order-takers to revenue consultants.</p>
-      <ul style="margin: 1rem 0 1rem 1.5rem;">
-        <li>4 × 2.5 hour intensive sessions</li>
-        <li>Assessing Guest needs/wants techniques</li>
-        <li>Upselling simulations for suites, amenities, tours</li>
-       <li>Adding persuasion techniques</li>
-        <li>Guiding guest/clients to upgrades or tour/activity reservations without selling</li>
-      </ul>
-      <p><strong>Starting at: $3,900 USD</strong></p>
-      <p><a href="/contact.html" style="color: #1d4ed8; font-weight: 600;">Request quote</a></p>
-    </article>
+  <!-- PROGRAMS & PRICING GRID -->
+  <section class="pricing-grid-section">
+    <div class="pricing-grid">
+      
+      <!-- PROGRAM 1: FULL SALES MASTERY -->
+      <article class="price-card featured">
+        <div>
+          <div class="price-meta">Program I • Complete Pipeline Blueprint</div>
+          <h2>Structural Persuasion Masterclass</h2>
+          <p class="tagline">The definitive end-to-end commercial team alignment curriculum. Deconstructs buyer risk-aversion mechanics and maps the full RAMPOC diagnostic framework.</p>
+          
+          <ul class="features-list">
+            <li>End-to-end engineering of the full RAMPOC method</li>
+            <li>In-depth profiling of late-stage buyer crises</li>
+            <li>Interactive live-deal simulation and pipeline stress-tests</li>
+            <li>Post-workshop evaluation metrics tracking</li>
+          </ul>
+        </div>
+        <div>
+          <div class="price-block">
+            <span class="price-label">Starting Investment</span>
+            <span class="price-amount">$1,200 <span style="font-size: 1rem; font-weight: 300; font-family: var(--font-body);">USD</span></span>
+          </div>
+          <a href="/contact.html" class="btn-quote">Request Proposal</a>
+        </div>
+      </article>
 
-<article style="background-color: #f8fafc; padding: 2rem; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-      <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">The RAMP Service Alchemist</h2>
-      <p>Turn complaints into gold by mastering de-escalation and loyalty loops</p>
-      <ul style="margin: 1rem 0 1rem 1.5rem;">
-        <li>2 × 3-hour intensive sessions</li>
-        <li>Trains staff in advanced psychological de-escalation techniques</li>
-        <li>transforming angry guests into your most loyal advocates</li>
-        <li>Generate powerful and positive guest reviews</li>
-      </ul>
-      <p><strong>Starting at: $2,500 USD</strong></p>
-      <p><a href="/contact.html" style="color: #1d4ed8; font-weight: 600;">Request quote</a></p>
-    </article>
+      <!-- PROGRAM 2: PRESENTATION SKILLS -->
+      <article class="price-card">
+        <div>
+          <div class="price-meta">Program II • Delivery Mechanics</div>
+          <h2>Executive Delivery Rhythm Masterclass</h2>
+          <p class="tagline">Engineered for executive leaders and key presenters. Leaves corporate platitudes behind to master the precise non-verbal pacing and voice intonation metrics of authority.</p>
+          
+          <ul class="features-list">
+            <li>Vocal intonation modeling and variable speed parameters</li>
+            <li>Micro-expression assessment and audience feedback tracking</li>
+            <li>Deliberate body language and spatial control rules</li>
+            <li>High-stress executive defense scenario testing</li>
+          </ul>
+        </div>
+        <div>
+          <div class="price-block">
+            <span class="price-label">Starting Investment</span>
+            <span class="price-amount">$800 <span style="font-size: 1rem; font-weight: 300;">USD</span></span>
+          </div>
+          <a href="/contact.html" class="btn-quote">Request Proposal</a>
+        </div>
+      </article>
 
-    <article style="background-color: #f8fafc; padding: 2rem; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-      <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">The RAMP APEX Mastery Program</h2>
-      <p>The complete staff transformation suite.</p>
-      <ul style="margin: 1rem 0 1rem 1.5rem;">
-        <li>8 × 2.5-hour intensive sessions</li>
-        <li>Includes all three programs:</li>
-        <li>The RAMP Trust Builder</li>
-        <li>The RAMP Revenue Architect</li>
-        <li>The RAMP Service Alchemist</li>
-      </ul>
-      <p><strong>Starting at: $5,500 USD</strong></p>
-      <p><a href="/contact.html" style="color: #1d4ed8; font-weight: 600;">Request quote</a></p>
-    </article>
-    
+      <!-- PROGRAM 3: BUYER CRISIS ONLY -->
+      <article class="price-card">
+        <div>
+          <div class="price-meta">Program III • Pipeline Intervention</div>
+          <h2>The Buyer Crisis Intensive</h2>
+          <p class="tagline">A tactical, surgical intervention program focused exclusively on dismantling enterprise contract standoffs, defense posture, and systemic stalling loops.</p>
+          
+          <ul class="features-list">
+            <li>Isolation of structural vs. psychological pipeline stalls</li>
+            <li>Asymmetric reframing strategies for risk aversion</li>
+            <li>Dismantling late-stage procurement deadlocks</li>
+            <li>Mitigation mechanics for corporate gatekeepers</li>
+          </ul>
+        </div>
+        <div>
+          <div class="price-block">
+            <span class="price-label">Starting Investment</span>
+            <span class="price-amount">$1,000 <span style="font-size: 1rem; font-weight: 300;">USD</span></span>
+          </div>
+          <a href="/contact.html" class="btn-quote">Request Proposal</a>
+        </div>
+      </article>
+
+    </div>
   </section>
 
-  <!-- Custom Enterprise Section -->
-  <section style="padding: 2rem; text-align: center; margin-top: 2rem;">
-    <h2 style="font-size: 1.75rem; margin-bottom: 1rem;">Why Invest in RAMP Training</h2>
-    <p style="max-width: 600px; margin: 0 auto 1rem;">
-      Unlike generic trainers, I bring:
-<ul style="margin: 1rem 0 1rem 1.5rem;">
-        <li>10 years of high-stakes sales experience</li>
-        <li>15 years of university-level teaching expertise</li>
-        <li>Master's degrees in both Counseling and Management</li>
-        <li>A proven sales methodology (RAMPOC) detailed in my book which is based on research and experience</li>
-  <li>Deep understanding of Human Psychology and behavior.</li>
+  <!-- WHY INVEST SECTION -->
+  <section class="value-proposition">
+    <div class="value-inner">
+      <h2>Why Invest in RAMP Architecture</h2>
+      <p class="value-subtitle">Bridging corporate practitioner depth with behavioral science metrics.</p>
+      
+      <ul class="value-list">
+        <li><strong>Proven Field Experience:</strong> Backed by over 10 years of business consulting, operations, and complex B2B sales management based in the San Francisco Bay Area.</li>
+        <li><strong>Academic Rigor:</strong> Backed by over a decade of university-level instruction in Sales Management, Presentation Skills, and Consumer Behavior, consistently evaluated in the Top 100 professors.</li>
+        <li><strong>Cross-Disciplinary Foundation:</strong> Built on dual Master's Degrees in both Business Management (UIUC Gies College of Business) and Counseling, yielding unmatched human psychology insights.</li>
+        <li><strong>Empirical Methodology:</strong> Utilizes structured proprietary architectures like the RAMPOC sales method and Hosmer's ELSP framework to protect corporate trust, ethics, and premium value.</li>
       </ul>
-</p><p><strong>Ready to Transform your guest experience?</strong></p>
-    <p></p>
-    <a href="/contact.html" style="display: inline-block; background-color: #1d4ed8; color: white; padding: 0.75rem 2rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none; transition: background-color 0.3s;">Contact Us</a>
+
+      <p style="font-weight: 500; margin-bottom: 1.5rem; color: var(--ink);">Ready to optimize your team's commercial and delivery performance metrics?</p>
+      <a href="/contact.html" class="btn-primary">Initiate Capability Assessment</a>
+    </div>
   </section>
-</main>
+
+</div>
