@@ -1,93 +1,394 @@
 ---
 layout: default
+title: Services & Programs
 features:
+  - title: "Enterprise Sales Architecture"
+    description: "Systematize your team's commercial approach using the RAMPOC method mapped directly to the buyer's psychological crisis."
+    featured_image: "/images/services-sales.jpg"
+  - title: "Executive Delivery Rhythm"
+    description: "Master non-verbal communication, voice intonation, and structural pacing to command high-stakes presentations."
+    featured_image: "/images/services-presentation.jpg"
+  - title: "The Buyer Crisis Intensive"
+    description: "A precision program engineered exclusively to dismantle defensive posturing, stall mechanisms, and pipeline stagnation."
+    featured_image: "/images/services-crisis.jpg"
 ---
-<!-- Hero / Intro Section -->
-<section class="bg-image bg-plant-2 padded tall-70 grid-middle-right" style="position: relative;">
-  <div class="col-6_sm-10 editable right text-background-2" style="background: rgba(255,255,255,0.85); padding: 2rem; border-radius: 0.5rem;">
-    <h2><strong>Who We Serve</strong></h2>
-    <ul>
-      <li>
-        <h4>
-          <em><strong>Hotels &amp; Resorts</strong>:</em>
-          aiming to increase guest spending, improve online reviews, and build a service culture that drives repeat business.
-        </h4>
-      </li>
-      <li>
-        <h4>
-          <strong>Tourism Companies:</strong>
-          seeking to train staff in consultative selling and service recovery to create memorable guest experiences.
-        </h4>
-        <p>
-          <strong>RAMP equips hospitality teams to increase revenue, resolve conflicts, and deliver exceptional service, turning everyday interactions into loyal relationships.</strong>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+
+  :root {
+    --ink: #0D0D0D;
+    --ink-2: #1C1C1C;
+    --ink-3: #3A3530;
+    --smoke: #F2EFE9;
+    --smoke-2: #E4DED4;
+    --white: #FAFAF8;
+    --gold: #B8922A;
+    --gold-light: #D4AA4E;
+    --gold-pale: #F5EDD8;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Outfit', sans-serif;
+  }
+
+  .services-page-wrapper {
+    font-family: var(--font-body);
+    background: var(--white);
+    color: var(--ink);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── INTRO HERO SECTION ── */
+  .services-hero {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    background: var(--smoke);
+    min-height: 480px;
+  }
+  .services-hero-image {
+    background-image: url('/images/services-hero.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  .services-hero-content {
+    padding: 5rem 4.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .section-label {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .services-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+  .target-audience-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .target-audience-list li strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .target-audience-list p {
+    font-size: 0.95rem;
+    color: var(--ink-3);
+    margin: 0.25rem 0 0 0;
+    font-weight: 300;
+  }
+  .hero-statement {
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--ink-2);
+    border-left: 2px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-top: 1rem;
+  }
+
+  /* ── CORE SERVICES GRID ── */
+  .services-feed-section {
+    padding: 6rem 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .services-feed-section h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: center;
+    color: var(--ink);
+    margin-bottom: 4rem;
+  }
+  .services-grid-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  .service-brief-card {
+    background: var(--white);
+    border: 1px solid var(--smoke-2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .service-brief-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.03);
+  }
+  .card-img-wrapper {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background: var(--smoke-2);
+  }
+  .card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .card-body-wrapper {
+    padding: 2rem;
+  }
+  .card-body-wrapper h3 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.75rem;
+  }
+  .card-body-wrapper p {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--ink-3);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ── DETAILED BLUEPRINTS ── */
+  .blueprints-section {
+    background: var(--smoke);
+    padding: 6rem 5%;
+    border-top: 1px solid var(--smoke-2);
+  }
+  .blueprints-container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .blueprints-section h2 {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 3.5rem;
+    border-bottom: 1px solid var(--smoke-2);
+    padding-bottom: 1rem;
+  }
+  .blueprint-item {
+    margin-bottom: 4.5rem;
+  }
+  .blueprint-item:last-child {
+    margin-bottom: 3rem;
+  }
+  .blueprint-meta {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+  }
+  .blueprint-item h3 {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+  .blueprint-tagline {
+    font-size: 1.05rem;
+    font-style: italic;
+    font-family: var(--font-display);
+    color: var(--ink-2);
+    margin-bottom: 1.25rem;
+  }
+  .blueprint-desc {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--ink-3);
+    margin-bottom: 1.5rem;
+    line-height: 1.65;
+  }
+  .blueprint-outcomes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem 1.5rem;
+  }
+  .blueprint-outcomes li {
+    font-size: 0.88rem;
+    font-weight: 400;
+    color: var(--ink-2);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .blueprint-outcomes li::before {
+    content: "▫";
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  /* ── CTA BAR ── */
+  .cta-banner {
+    background: var(--ink-2);
+    color: var(--white);
+    text-align: center;
+    padding: 4rem 2rem;
+    border-top: 3px solid var(--gold);
+  }
+  .cta-banner h3 {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+  }
+  .cta-button {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--white);
+    padding: 1rem 2.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .cta-button:hover {
+    background: var(--gold-light);
+    color: var(--ink);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    .services-grid-layout { grid-template-columns: repeat(2, 1fr); }
+    .blueprint-outcomes { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 768px) {
+    .services-hero { grid-template-columns: 1fr; }
+    .services-hero-image { height: 250px; }
+    .services-hero-content { padding: 3.5rem 5%; }
+    .services-grid-layout { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="services-page-wrapper">
+
+  <!-- INTRO HERO SECTION -->
+  <section class="services-hero">
+    <div class="services-hero-image"></div>
+    <div class="services-hero-content">
+      <div class="section-label">Target Architecture</div>
+      <h1>Who We Optimize</h1>
+      
+      <ul class="target-audience-list">
+        <li>
+          <strong>Enterprise Sales Teams &amp; Commercial Units</strong>
+          <p>Engineered for organizations struggling with lengthy procurement cycles, complex buying committees, and margin degradation during contract validation.</p>
+        </li>
+        <li>
+          <strong>Executives, Directors, &amp; Key Presenters</strong>
+          <p>Designed for corporate leaders who must command capital allocation meetings, high-stakes keynotes, and critical cross-border partnerships.</p>
+        </li>
+      </ul>
+
+      <p class="hero-statement">
+        RAMP bridges clinical behavioral science and real-world execution, shifting teams from passive delivery to commanding structural control over the room.
+      </p>
+    </div>
+  </section>
+
+  <!-- DYNAMIC CORE SERVICES GRID -->
+  <section class="services-feed-section">
+    <h2>Our Core Frameworks</h2>
+
+    <div class="services-grid-layout">
+      {% for feature in page.features %}
+      <article class="service-brief-card">
+        <div class="card-img-wrapper">
+          <img src="{{ feature.featured_image }}" alt="{{ feature.title }}" />
+        </div>
+        <div class="card-body-wrapper">
+          <h3>{{ feature.title }}</h3>
+          <p>{{ feature.description }}</p>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- DETAILED FRAMEWORK BLUEPRINTS -->
+  <section class="blueprints-section">
+    <div class="blueprints-container">
+      <h2>Detailed Training Curricula</h2>
+
+      <!-- PROGRAM 1: FULL SALES TRAINING -->
+      <div class="blueprint-item">
+        <div class="blueprint-meta">Program I • Enterprise Commercial Architecture</div>
+        <h3>The RAMP Masterclass: Structural Persuasion &amp; The Buyer Crisis</h3>
+        <p class="blueprint-tagline">Deconstruct the hidden psychological crises that stall enterprise pipelines.</p>
+        <p class="blueprint-desc">
+          A comprehensive end-to-end sales methodology covering relationship mechanics, behavioral diagnostic profiling, and advanced value alignment. This curriculum maps the RAMPOC framework entirely against the buyer's internal tension points to eliminate defensive posturing and preserve margin velocity.
         </p>
-      </li>
-    </ul>
-  </div>
-</section>
-
-<!-- Services Grid -->
-<section class="padded bg-light" style="padding: 4rem 2rem; background-color: #f8fafc;">
-  <h2 style="text-align: center; margin-bottom: 2rem;"><strong>Our Core Services</strong></h2>
-
-  <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
-    {% for feature in page.features %}
-    <article style="background: white; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; display: flex; flex-direction: column;">
-      <img src="{{ feature.featured_image }}" alt="{{ feature.title }}" style="width: 100%; height: 200px; object-fit: cover;" />
-      <div style="padding: 1.5rem;">
-        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">{{ feature.title }}</h3>
-        <p style="font-size: 1rem; line-height: 1.5;">{{ feature.description }}</p>
+        <ul class="blueprint-outcomes">
+          <li>Deconstruct buyer risk-aversion mechanics</li>
+          <li>Systematize the full RAMPOC framework</li>
+          <li>Isolate and diagnostic-profile hidden objections</li>
+          <li>Defend premium enterprise pricing models</li>
+        </ul>
       </div>
-    </article>
-    {% endfor %}
-  </div>
-</section>
 
-<!-- Detailed Service Descriptions -->
-<section class="padded bg-green editable" style="padding: 4rem 2rem; background-color: #e2f0e7;">
-    <h2><strong>Detailed Training Programs</strong></h2>
-    <h4><strong>1. RAMP Trust Builder: Creating Guest Connection That Increases Spending</strong></h4>
-    <ul>
-        <li>
-            <p><em>Increase Guest Spending by 15-30% Through Proven Connection Techniques.</em></p>
-        </li>
-    </ul>
-    <ul>
-        <li>
-            <p><em>Turn every front desk/restaurant/Concierge staff interaction into a revenue opportunity</em></p>
-        </li>
-        <li>
-            <p><em>Reduce guest price sensitivity through trust-building</em></p>
-        </li>
-        <li>
-            <p><em>Create loyal guests who spend more and return more often</em></p>
-        </li>
-        <li>
-            <p><em>Transform staff from order-takers to revenue drivers</em> </p>
-        </li>
-    </ul>
-    <p></p>
-    <h4><em><strong>2. </strong></em><strong>The RAMP Revenue Architect: Systemizing Upsells That Feel Like Service</strong><em><strong>:</strong></em></h4>
-    <p> <em>Transform your staff from order-takers to revenue consultants. This program provides a systematic approach to diagnosing guest needs and matching them with perfect solutions that feel like personalized service, not sales pitches. Your staff will also learn how to handle guest concerns and effective closing so we can turn every guest interaction into a natural revenue opportunity.</em> </p>
-    <p></p>
-    <h4><strong>3. The RAMP Service Alchemist:</strong></h4>
-    <p> <em>Even the best hotels have service failures. The difference between good and great is turning a disaster into a legendary recovery story. This program trains your staff in advanced psychological de-escalation techniques, transforming angry guests into your most loyal advocates and generating powerful, positive review</em>s. </p>
-    <p></p>
-    <h4><strong>4. The RAMP Apex Program:&nbsp;The Ultimate Transformation in Guest Experience and Profitability</strong></h4>
-    <p><em>Includes all three:</em></p>
-    <ul>
-        <li>
-            <p><em><strong>Program 1:</strong> The RAMP Trust Builder</em></p>
-        </li>
-    </ul>
-    <ul>
-        <li>
-            <p><em><strong>Program 2:</strong> The RAMP Revenue Architect</em></p>
-        </li>
-        <li>
-            <p><em><strong>Program 3:</strong> The RAMP Service Alchemist</em></p>
-            <p></p>
-        </li>
-    </ul>
-    <h3>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Book your Free Hospitality Assessment now.</h3>
-</section>
+      <!-- PROGRAM 2: PRESENTATION SKILLS -->
+      <div class="blueprint-item">
+        <div class="blueprint-meta">Program II • Corporate Performance Dynamics</div>
+        <h3>Executive Delivery Rhythm &amp; Non-Verbal Presence</h3>
+        <p class="blueprint-tagline">Master the structural metrics of high-stakes presentation mechanics.</p>
+        <p class="blueprint-desc">
+          An intensive training regimen built specifically for high-level corporate communicators. This program leaves behind standard presentation platitudes to focus entirely on the physical metrics of authority: micro-expressions, tactical delivery rhythm, spatial positioning, active audience analysis, and voice intonation control.
+        </p>
+        <ul class="blueprint-outcomes">
+          <li>Optimize vocal intonation and delivery speed</li>
+          <li>Real-time audience tracking &amp; alignment adjustment</li>
+          <li>Structural pacing rules for high-stress defense</li>
+          <li>Command presence via deliberate non-verbal cues</li>
+        </ul>
+      </div>
+
+      <!-- PROGRAM 3: BUYER CRISIS ONLY -->
+      <div class="blueprint-item">
+        <div class="blueprint-meta">Program III • Strategic Intervention Architecture</div>
+        <h3>The Buyer Crisis Breakthrough</h3>
+        <p class="blueprint-tagline">Isolate and dismantle deadlocks when the deal hangs in the balance.</p>
+        <p class="blueprint-desc">
+          An advanced, tactical surgical strike module engineered exclusively for accounts stuck in deadlocks, radio silence, or standard bureaucratic stalling loops. Teams learn behavioral economics-backed frameworks to re-engineer risk, disrupt the status-quo bias, and break past the psychological wall buyers build near the close.
+        </p>
+        <ul class="blueprint-outcomes">
+          <li>Disrupt systemic organizational procurement inertia</li>
+          <li>Diagnose structural vs. psychological stalls</li>
+          <li>Deploy tactical asymmetric framing mechanisms</li>
+          <li>Neutralize late-stage negotiation standoffs</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INTERACTIVE CALL TO ACTION -->
+  <section class="cta-banner">
+    <h3>Initiate an Organizational Capabilities Evaluation</h3>
+    <a href="/contact.html" class="cta-button">Request Briefing</a>
+  </section>
+
+</div>
