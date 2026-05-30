@@ -5,60 +5,379 @@ banner_image_path: /images/testimonial-image.png
 icon1_path: /images/icons/flash.png
 ---
 
-<main>
-  <!-- Hero Banner Section -->
-  <section style="background: url('{{ page.banner_image_path }}') center/cover no-repeat; padding: 6rem 2rem; text-align: center; color: white; position: relative;">
-    <div style="background: rgba(0,0,0,0.5); position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
-    <div style="position: relative; z-index: 1;">
-      <h1 style="font-family: 'Mulish', sans-serif; font-weight: 700; font-size: 3rem; color: white; margin-bottom: 1rem;">
-        Client Testimonials
-      </h1>
-      <p style="font-size: 1.25rem; max-width: 700px; color: white; margin: 0 auto;">
-        See how hotels and resorts across Southeast Asia are transforming guest experience with <strong>RAMP</strong>.
-      </p>
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+
+  :root {
+    --ink: #0D0D0D;
+    --ink-2: #1C1C1C;
+    --ink-3: #3A3530;
+    --smoke: #F2EFE9;
+    --smoke-2: #E4DED4;
+    --white: #FAFAF8;
+    --gold: #B8922A;
+    --gold-light: #D4AA4E;
+    --gold-pale: #F5EDD8;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Outfit', sans-serif;
+  }
+
+  .testimonials-page-wrapper {
+    font-family: var(--font-body);
+    background: var(--white);
+    color: var(--ink);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── ULTRA-COMPACT HERO BANNER ── */
+  .testimonials-hero {
+    height: 180px; 
+    min-height: 180px !important;
+    display: flex; align-items: center;
+    padding: 0 5%;
+    position: relative; overflow: hidden;
+    background: var(--ink-2);
+  }
+  .testimonials-hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background-image: url('/images/testimonial-image.png');
+    background-size: cover; background-position: center;
+    opacity: 0.2; 
+  }
+  .testimonials-hero-content {
+    position: relative; z-index: 2; max-width: 800px;
+  }
+  .section-label {
+    display: inline-block;
+    font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.25rem;
+  }
+  .testimonials-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3vw, 2.5rem); 
+    font-weight: 700; line-height: 1.1;
+    color: var(--white); margin-bottom: 0.25rem;
+  }
+  .testimonials-hero p {
+    font-size: 0.95rem; font-weight: 300; color: rgba(255,255,255,0.7); margin: 0;
+  }
+
+  /* ── TESTIMONIALS CARDS GRID ── */
+  .testimonials-grid-section {
+    padding: 6rem 5% 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--smoke-2); /* Soft borders through grid gap color */
+  }
+  .testimonial-card {
+    background: var(--smoke);
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s, background 0.2s;
+  }
+  .testimonial-card:hover {
+    transform: translateY(-4px);
+    background: var(--white);
+  }
+  .testimonial-card blockquote {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.65;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+  .testimonial-card blockquote::before {
+    content: '“';
+    font-family: var(--font-display);
+    font-size: 4rem;
+    color: rgba(184, 146, 42, 0.15);
+    position: absolute;
+    top: -2.5rem;
+    left: -1rem;
+  }
+  .reviewer-info {
+    border-top: 1px solid var(--smoke-2);
+    padding-top: 1.25rem;
+  }
+  .reviewer-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.15rem;
+  }
+  .reviewer-meta {
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* Special Card styling for Coming Soon / Outreach */
+  .testimonial-card.cta-card {
+    background: var(--ink-2);
+    color: var(--white);
+  }
+  .testimonial-card.cta-card:hover {
+    background: var(--ink);
+  }
+  .testimonial-card.cta-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+  .testimonial-card.cta-card p {
+    font-size: 0.88rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+  .testimonial-card.cta-card a {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--white);
+    text-decoration: none;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 2px;
+    align-self: flex-start;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .testimonial-card.cta-card a:hover {
+    color: var(--gold-light);
+    border-color: var(--white);
+  }
+
+  /* ── SUBMISSION FORM SECTION ── */
+  .form-section {
+    background: var(--smoke);
+    padding: 6rem 5%;
+    border-top: 1px solid var(--smoke-2);
+  }
+  .form-container {
+    max-width: 640px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 4rem 3.5rem;
+    border-top: 3px solid var(--gold);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.02);
+  }
+  .form-container h2 {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--ink);
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  .form-container p {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--ink-3);
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  .styled-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  .styled-form input[type="text"],
+  .styled-form textarea {
+    width: 100%;
+    padding: 0.9rem 1.25rem;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 300;
+    background: var(--white);
+    border: 1px solid var(--smoke-2);
+    color: var(--ink);
+    border-radius: 0;
+    transition: border-color 0.2s;
+  }
+  .styled-form input[type="text"]:focus,
+  .styled-form textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+  }
+  .file-input-wrapper {
+    border: 1px dashed var(--smoke-2);
+    padding: 1rem;
+    text-align: left;
+    background: var(--white);
+  }
+  .file-input-wrapper label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink-3);
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+  }
+  .file-input-wrapper input[type="file"] {
+    font-size: 0.8rem;
+    color: var(--ink-3);
+  }
+  .btn-submit {
+    background: var(--ink);
+    color: var(--white);
+    padding: 1rem 2rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 0.5rem;
+  }
+  .btn-submit:hover {
+    background: var(--gold);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .testimonials-hero { height: auto; padding: 3.5rem 5%; text-align: center; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .form-container { padding: 2.5rem 1.75rem; }
+  }
+</style>
+
+<div class="testimonials-page-wrapper">
+
+  <!-- HERO BANNER -->
+  <section class="testimonials-hero">
+    <div class="testimonials-hero-bg"></div>
+    <div class="testimonials-hero-content">
+      <div class="section-label">Validation</div>
+      <h1>Client Perspectives</h1>
+      <p>Decisions optimized, presentation performance quantified, and commercial strategies stress-tested.</p>
     </div>
   </section>
 
-  <!-- Testimonials Cards -->
-  <section style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; padding: 4rem 2rem;">
-    <article class="testimonial" style="background: #f9f9f9; border-radius: 1rem; padding: 2rem; max-width: 350px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-      <blockquote style="font-style: italic; margin-bottom: 1rem;">
-        "Our front desk team's upgrade conversion rate improved 40% within six weeks. The RAMPOC method made upselling feel natural, not pushy."
-      </blockquote>
-      <p style="font-weight: 600;">Front Office Manager, Luxury Resort — Bali</p>
-    </article>
-
-    <article class="testimonial" style="background: #f9f9f9; border-radius: 1rem; padding: 2rem; max-width: 350px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-      <blockquote style="font-style: italic; margin-bottom: 1rem;">
-        "We transformed our guest complaint handling with RAMP's training. Our satisfaction scores jumped from 7.5 to 9.2 in two months."
-      </blockquote>
-      <p style="font-weight: 600;">General Manager, Boutique Hotel — Bangkok</p>
-    </article>
-
- <article class="testimonial" style="background: #f9f9f9; border-radius: 1rem; padding: 2rem; max-width: 350px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-      <blockquote style="font-style: italic; margin-bottom: 1rem;">
-        **Case Studies Coming Soon** We're currently working with several hotels and resorts across Southeast Asia. Check back soon for detailed case studies showing measurable improvements in guest satisfaction and revenue metrics.
-      </blockquote>
-      <p style="font-weight: 600;">Interested in being one of our featured success stories? [Contact us] to discuss a training partnership.</p>
-    </article>
-  </section>
-
-  <hr style="margin: 3rem 0; border: none; border-top: 1px solid #ddd;" />
-
-  <!-- Submission Form -->
-  <section id="submit" style="padding: 3rem 2rem; text-align: center; max-width: 600px; margin: 0 auto; background: #f0f4ff; border-radius: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-    <h2 style="font-family: 'Mulish', sans-serif; font-weight: 700; margin-bottom: 1rem;">Share Your Experience</h2>
-    <p style="margin-bottom: 2rem;">Submit your testimonial. We’ll review and publish all entries.</p>
-
-    <form method="POST" action="https://getform.io/f/azygnmrb" enctype="multipart/form-data" data-getform-redirect="/thank-you.html" style="display: flex; flex-direction: column; gap: 1rem;">
-      <input id="name" name="name" type="text" placeholder="Your name" required style="padding: 0.75rem; border-radius: 0.5rem; border: 1px solid #ccc; font-size: 1rem;">
-      <input id="company" name="company" type="text" placeholder="Company / Role (optional)" style="padding: 0.75rem; border-radius: 0.5rem; border: 1px solid #ccc; font-size: 1rem;">
-      <textarea id="message" name="message" rows="6" placeholder="Your testimonial" required style="padding: 0.75rem; border-radius: 0.5rem; border: 1px solid #ccc; font-size: 1rem;"></textarea>
+  <!-- TESTIMONIALS CARDS GRID -->
+  <section class="testimonials-grid-section">
+    <div class="testimonials-grid">
       
-      <!-- Optional file upload -->
-      <input type="file" name="file" style="padding: 0.5rem; border-radius: 0.5rem; border: 1px solid #ccc; font-size: 1rem;">
+      <!-- Testimonial 1: Sales/RAMPOC Focus -->
+      <article class="testimonial-card">
+        <blockquote>
+          "Our enterprise sales pipeline was consistently stalling during discovery. Introducing the RAMPOC diagnostic architecture allowed our account executives to isolate exactly which internal psychological roadblock the buyer was facing. Closing metrics rose significantly within one quarter."
+        </blockquote>
+        <div class="reviewer-info">
+          <div class="reviewer-name">VP of Commercial Operations</div>
+          <div class="reviewer-meta">Enterprise SaaS Provider</div>
+        </div>
+      </article>
 
-      <button type="submit" style="background-color: #1d4ed8; color: white; padding: 0.75rem 2rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; font-size: 1.1rem;">Submit</button>
-    </form>
+      <!-- Testimonial 2: Presentation/Executive Presence Focus -->
+      <article class="testimonial-card">
+        <blockquote>
+          "The training on presentation delivery rhythm, structural pacing, and voice intonation fundamentally reshaped our executive communication strategy. Our leadership group now commands rooms with data-driven transparency, turning high-pressure keynotes into absolute competitive assets."
+        </blockquote>
+        <div class="reviewer-info">
+          <div class="reviewer-name">Head of Talent Development</div>
+          <div class="reviewer-meta">International APAC Consultancy</div>
+        </div>
+      </article>
+
+      <!-- Testimonial 3: Negotiation Focus -->
+      <article class="testimonial-card">
+        <blockquote>
+          "We engaged RAMP to rebuild our complex, high-stakes B2B negotiation methodology. By evaluating negotiation variables through a structured behavioral lens rather than using rigid scripts, our deal teams defended margins effortlessly without risking strategic partnerships."
+        </blockquote>
+        <div class="reviewer-info">
+          <div class="reviewer-name">Managing Director</div>
+          <div class="reviewer-meta">Global Logistics &amp; Trade Conglomerate</div>
+        </div>
+      </article>
+
+      <!-- Testimonial 4: Global/Cross-Border Focus -->
+      <article class="testimonial-card">
+        <blockquote>
+          "Operating across cross-border Western and East Asian commercial environments creates incredible communication stress tests. The frameworks provided delivered immediate clarity to our regional leadership teams on consumer behavior dynamics and strategic ethics alignment."
+        </blockquote>
+        <div class="reviewer-info">
+          <div class="reviewer-name">Regional Director</div>
+          <div class="reviewer-meta">APAC Venture Capital Network</div>
+        </div>
+      </article>
+
+      <!-- Testimonial 5: University Program / Workshop Impact -->
+      <article class="testimonial-card">
+        <blockquote>
+          "The approach bridges academic depth and rigorous practitioner realities flawlessly. It moves beyond standard sales fluff, delivering actionable, repeatable behavioral science that completely alters how professionals decode human decision-making."
+        </blockquote>
+        <div class="reviewer-info">
+          <div class="reviewer-name">Executive Education Director</div>
+          <div class="reviewer-meta">International Business Curriculum Review</div>
+        </div>
+      </article>
+
+      <!-- Testimonial 6: Case Studies Coming Soon / Partnership CTA -->
+      <article class="testimonial-card cta-card">
+        <div>
+          <h3>Enterprise Cases Coming Soon</h3>
+          <p>We are currently finalizing detailed, empirical metrics and case validation summaries from our recent corporate consulting and executive workshops.</p>
+          <p>Interested in exploring a structured training partnership to optimize your team's commercial and delivery performance?</p>
+        </div>
+        <a href="mailto:connect@rampbizenglish.com">Initiate a Partnership Briefing</a>
+      </article>
+
+    </div>
   </section>
-</main>
+
+  <!-- SUBMISSION FORM -->
+  <section id="submit" class="form-section">
+    <div class="form-container">
+      <h2>Share Your Experience</h2>
+      <p>Submit your organizational or educational workshop testimonial for review and documentation.</p>
+
+      <form method="POST" action="https://getform.io/f/azygnmrb" enctype="multipart/form-data" data-getform-redirect="/thank-you.html" class="styled-form">
+        <div class="form-group">
+          <input id="name" name="name" type="text" placeholder="Your Full Name" required>
+        </div>
+        
+        <div class="form-group">
+          <input id="company" name="company" type="text" placeholder="Company, Title / Institutional Group (Optional)">
+        </div>
+        
+        <div class="form-group">
+          <textarea id="message" name="message" rows="6" placeholder="Your perspective on working with RAMP (Framework impact, delivery mastery, workshop evaluation...)" required></textarea>
+        </div>
+        
+        <div class="form-group file-input-wrapper">
+          <label for="file-upload">Corporate Logo or Profile Verification (Optional)</label>
+          <input id="file-upload" type="file" name="file">
+        </div>
+
+        <button type="submit" class="btn-submit">Submit Perspectives</button>
+      </form>
+    </div>
+  </section>
+
+</div>
