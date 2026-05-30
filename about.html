@@ -1,5 +1,6 @@
 ---
 layout: default
+title: About Roderick Mendoza | RAMP The Psychology of Business Performance
 banner_image: /uploads/target-client.jpg
 team:
 ---
@@ -8,7 +9,7 @@ team:
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About Erick Mendoza | RAMP The Psychology of Business Performance</title>
+  <title>About Roderick Mendoza | RAMP The Psychology of Business Performance</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
@@ -67,17 +68,16 @@ team:
     }
     .nav-cta:hover { background: var(--gold) !important; }
 
-    /* ── HERO BANNER ── */
+    /* ── HERO BANNER (RESIZED FOR CLEANER LOOK) ── */
     .about-hero {
-      min-height: 55vh;
+      min-height: 35vh; /* Reduced from 55vh to make the banner smaller */
       display: flex; align-items: flex-end;
-      padding: 100px 5% 5rem;
+      padding: 120px 5% 2.5rem; /* Tightened internal padding */
       position: relative; overflow: hidden;
       background: var(--ink-2);
     }
     .about-hero-bg {
       position: absolute; inset: 0; z-index: 0;
-      background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1400&q=80');
       background-size: cover; background-position: center 20%;
       opacity: 0.18;
     }
@@ -165,7 +165,7 @@ team:
       line-height: 1.65;
     }
 
-    /* ── PHILOSOPHY  (the big idea) ── */
+    /* ── PHILOSOPHY ── */
     .philosophy {
       background: var(--ink);
       padding: 7rem 5%;
@@ -467,28 +467,30 @@ team:
       .footer-top { grid-template-columns: 1fr; gap: 2rem; }
     }
     @media (max-width: 600px) {
-      .about-hero { min-height: 70vh; padding-bottom: 3rem; }
+      .about-hero { min-height: 40vh; padding-bottom: 3rem; }
       .stats-bar { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
+<!-- NAVIGATION TABS (MATCHED TO INDEX.HTML) -->
 <nav>
   <a href="index.html" class="nav-logo">R<span>A</span>MP</a>
   <ul class="nav-links">
-    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#why-us">Why Us</a></li>
+    <li><a href="index.html#services">Solutions</a></li>
     <li><a href="#framework">The Method</a></li>
-    <li><a href="index.html#contact" class="nav-cta">Let's Talk</a></li>
+    <li><a href="index.html#projects">Testimonials</a></li>
+    <li><a href="mailto:connect@rampbizenglish.com" class="nav-cta">Let's Talk</a></li>
   </ul>
 </nav>
 
-<!-- HERO BANNER -->
+<!-- HERO BANNER (LINKED DYNAMICALLY TO CLOUDCANNON WORKSPACE IMAGE) -->
 <section class="about-hero">
-  <div class="about-hero-bg"></div>
+  <div class="about-hero-bg" style="background-image: url('{{ page.banner_image }}');"></div>
   <div class="about-hero-content">
-    <div class="section-label">About Erick Mendoza</div>
+    <div class="section-label">About Roderick Mendoza</div>
     <h1>Not a sales trainer.<br /><em>A student of why<br />people say yes.</em></h1>
     <p class="about-hero-sub">27 years studying human behavior — in banks, boardrooms, universities, and negotiating tables across two continents. This is what that journey built.</p>
   </div>
@@ -497,9 +499,9 @@ team:
 <!-- INTRO SPLIT -->
 <div class="intro">
   <div class="intro-photo">
-    <img src="/images/AI Profile pic3.png" alt="Erick Mendoza — Founder of RAMP" />
+    <img src="/images/AI Profile pic3.png" alt="Roderick Mendoza — Founder of RAMP" />
     <div class="intro-photo-caption">
-      <h3>Erick Mendoza</h3>
+      <h3>Roderick Mendoza</h3>
       <p>Founder, RAMP Business Consulting</p>
     </div>
   </div>
@@ -507,7 +509,7 @@ team:
     <div class="section-label">Who I Am</div>
     <h2 class="intro-headline">Most people lose deals<br />before they open<br /><em>their mouths.</em></h2>
     <p class="intro-body">
-      I'm Erick Mendoza — originally from San Francisco, California. For over 27 years, I've been fascinated by one question: <strong>why do people decide the way they do?</strong>
+      I'm Roderick Mendoza — originally from San Francisco, California. For over 27 years, I've been fascinated by one question: <strong>why do people decide the way they do?</strong>
     </p>
     <p class="intro-body">
       That question took me from a Psychology degree into high-stakes commercial banking where I managed a <strong>$20M+ lending portfolio</strong>, into real estate where I closed one of the <strong>largest single retail lease in company history</strong>, and eventually to South Korea — where I've spent 17 years teaching Sales, Negotiation, and Consumer Behavior at the university level while building RAMP.
@@ -548,7 +550,7 @@ team:
     <div class="section-label">The Philosophy</div>
     <h2>Every buyer is navigating<br />an <em>internal crisis.</em><br />Your job is to resolve it.</h2>
     <p>
-      My approach to sales and communication is grounded in Erik Erikson's developmental psychology — the idea that at every stage of a decision, a buyer is experiencing a specific internal conflict. Trust vs. doubt. Confidence vs. Competence. Commitment vs. fear of loss.
+      My approach to sales and communication is grounded in developmental psychology framework principles — the idea that at every stage of a decision, a buyer is experiencing a specific internal conflict. Trust vs. doubt. Confidence vs. Competence. Commitment vs. fear of loss.
     </p>
     <p>
       Traditional sales training teaches you what to say at each stage. RAMP teaches you what the buyer is feeling at each stage — and how to respond to that feeling with precision. The result isn't just a higher close rate. It's a fundamentally different way of dealing with people in business and in life.
@@ -560,7 +562,7 @@ team:
       <div class="phil-pillar">
         <span class="phil-pillar-icon">🧠</span>
         <h4>Behavioral Science First</h4>
-        <p>Every RAMP technique is rooted in peer-reviewed psychology — Erikson's crisis model, Cialdini's influence principles, and modern decision neuroscience.</p>
+        <p>Every RAMP technique is rooted in peer-reviewed psychology — crisis modeling, foundational influence principles, and modern decision neuroscience.</p>
       </div>
       <div class="phil-pillar">
         <span class="phil-pillar-icon">🎯</span>
@@ -599,8 +601,8 @@ team:
       <h3>Thought Leader &amp; Educator</h3>
       <div class="cred-card-sub">South Korea, 2010–Present</div>
       <ul class="cred-list">
-        <li>Assistant Professor, Hannam University — Sales, Negotiation, Consumer Behavior, Corporate Ethics, Business Communication</li>
-        <li>Counseling Director, SolBridge International School of Business — built AACSB-required department from inception</li>
+        <li>Assistant Professor — Sales, Negotiation, Consumer Behavior, Corporate Ethics, Business Communication</li>
+        <li>Counseling Director — built university international support systems departments from inception</li>
         <li>Recognized Top 100 Professor by student evaluation every semester since 2014</li>
         <li>Published author: <em>RAMPOC: Understanding the Buyer's Crisis in Sales</em> — available on Amazon</li>
       </ul>
@@ -608,11 +610,11 @@ team:
     <div class="cred-card">
       <div class="cred-card-tag">Education</div>
       <h3>Academic Foundation</h3>
-      <div class="cred-card-sub">University of Illinois &amp; Saint Mary's College</div>
+      <div class="cred-card-sub">University of Illinois &amp; Private University</div>
       <ul class="cred-list">
         <li>M.S. in Business Management — GPA 3.96/4.0, Gies College of Business, University of Illinois Urbana-Champaign</li>
-        <li>M.S. in Counseling — SMC</li>
-        <li>B.S. in Psychology — SMC</li>
+        <li>M.S. in Counseling</li>
+        <li>B.S. in Psychology</li>
       </ul>
     </div>
     <div class="cred-card dark">
@@ -637,13 +639,13 @@ team:
       <div class="section-label">The Framework</div>
       <h2>RAMPOC — <em>A map of the<br />buyer's mind.</em></h2>
       <p>
-        RAMPOC is not a sales script. It's a diagnostic framework built on Erik Erikson's theory of psychological development — mapping the six stages of a buyer's internal crisis to six precise intervention strategies.
+        RAMPOC is not a sales script. It's a diagnostic framework mapping the six stages of a buyer's internal crisis to six precise intervention strategies.
       </p>
       <p>
         At each stage of a sales conversation, your buyer is navigating a specific internal conflict — starting with <em>trust</em>. The RAMPOC framework teaches you to identify which crisis the buyer is in, and respond with the exact strategy that resolves it. The result: a sale that feels natural on both sides of the table.
       </p>
       <p>
-        This methodology is actively taught in university-level sales curriculum at Hannam University and has been applied in corporate training engagements across South Korea and internationally.
+        This methodology is actively taught in university-level sales curriculum and has been applied in corporate training engagements internationally.
       </p>
       <div class="framework-book">
         <div class="framework-book-icon">📘</div>
@@ -680,7 +682,7 @@ team:
         <div class="stage-letter">P</div>
         <div>
           <h5>Persuasion</h5>
-          <p>Apply proven influence science — Cialdini's principles — in context, not as manipulation.</p>
+          <p>Apply proven influence science in context, not as manipulation.</p>
         </div>
       </div>
       <div class="stage">
@@ -704,7 +706,7 @@ team:
 <!-- VIDEO -->
 <section class="video-section">
   <div class="section-label">Hear It Directly</div>
-  <h2>Watch Erick explain<br /><em>the RAMP approach (Coming Soon)</em></h2>
+  <h2>Watch Roderick explain<br /><em>the RAMP approach (Coming Soon)</em></h2>
   <div class="video-wrap">
     <iframe src="https://www.youtube.com/embed/rAOMo5f-pbA" allowfullscreen></iframe>
   </div>
@@ -751,7 +753,7 @@ team:
     </div>
   </div>
   <div class="footer-bottom">
-    <p class="footer-copy">© 2025 RAMP Business Consulting. All rights reserved.</p>
+    <p class="footer-copy">© 2026 RAMP Business Consulting. All rights reserved.</p>
     <div class="footer-social">
       <a href="https://www.linkedin.com/in/roderick-m-023b0b61/">in</a>
       <a href="https://www.facebook.com/profile.php?id=61558688188225">f</a>
