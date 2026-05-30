@@ -3,148 +3,209 @@ layout: default
 title: RAMP | The Psychology of Business Performance
 banner_image_path: /images/opaquemba.png
 ---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RAMP | The Psychology of Business Performance</title>
+  <style>
+    .padded { padding: 20px; }
+    .text-center { text-align: center; }
+    .hero-title-smaller { font-size: 1.8em; font-weight: bold; }
 
-<!-- ===== HERO SECTION ===== -->
-<section class="relative min-h-[80vh] flex items-center bg-cover bg-center px-[5%]" style="background-image: url('{{page.banner_image_path}}');">
-    <!-- Dark overlay for readability -->
-    <div class="absolute inset-0 bg-black/40"></div>
-    
-    <div class="relative z-10 max-w-4xl bg-white/95 p-8 md:p-12 shadow-2xl backdrop-blur-sm" data-aos="fade-right">
-        <h1 class="text-3xl md:text-5xl font-light leading-tight mb-4 text-zinc-900 editable">
-            <span class="font-bold">RAMP</span> | <span class="italic font-serif">The Psychology of Business Performance</span>
-        </h1>
-        <h2 class="text-xl md:text-2xl italic text-[#c5a880] mb-6 font-serif editable">
-            Applied Behavioral Science for Sales, Negotiation, Leadership, and Executive Communication.
-        </h2>
-        <p class="text-lg leading-relaxed text-zinc-700 editable">
-            Most organizations teach employees what to say. <span class="font-bold">RAMP</span> teaches professionals why people decide. Drawing on behavioral psychology, consumer behavior research, and the proprietary <span class="font-bold text-[#c5a880]">RAMPOC</span> Framework, we help organizations improve performance and build lasting influence.
-        </p>
-    </div>
+    @media (max-width: 768px) {
+      .grid-middle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .hero-div, .text-background, .text-background-2 {
+        width: 100%;
+        padding: 15px;
+      }
+      .hero-title { font-size: 1.3em; }
+      .hero-text { font-size: 1em; }
+      .padded-b-2 { padding-bottom: 10px; }
+      .bg-image { background-size: cover; }
+      .bg-meeting { height: 220px; }
+      .bg-plant-2 { height: 300px; }
+      .super-small-text { font-size: 0.85em; }
+      .hide-sm { display: none; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-title { font-size: 1.2em; }
+      .hero-text { font-size: 0.95em; }
+    }
+
+    img { max-width: 100%; height: auto; }
+
+    .book-link {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 20px;
+      background-color: #0073e6;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+
+    .book-link:hover {
+      background-color: #005bb5;
+    }
+  </style>
+</head>
+<body>
+
+<section class="bg-image padded tall-80 grid-middle" style="background-image: url('{{page.banner_image_path}}');">
+  <div class="md:col-8_sm-10 text-background hero-div custom-slided">
+    <h1 class="hero-title-smaller editable">
+        <strong>RAMP | </strong><em>The Psychology of Business Performance</em>
+    </h1>
+    <h2 class="hero-text editable">
+        <em>Applied Behavioral Science for Sales, Negotiation, Leadership, and Executive Communication.</em>
+    </h2>
+    <p class="hero-text editable">
+        Most organizations teach employees what to say. <strong>RAMP</strong> teaches professionals why people decide. Drawing on behavioral psychology, consumer behavior research, executive leadership experience, and the proprietary <strong>RAMPOC</strong> Framework, we help organizations improve sales performance, strengthen leadership communication, enhance negotiation outcomes, and build lasting influence.
+    </p>
+  </div>
 </section>
 
-<!-- Newsletter Section Include -->
 {% include newsletter-signup.html %}
 
-<!-- ===== WHY RAMP (ICON SECTION) ===== -->
-<section class="py-20 px-[5%] bg-white text-center" id="why-us">
-    <h2 class="text-4xl font-serif mb-16 text-zinc-900 editable" data-aos="fade-up">Why Should You Work With RAMP</h2>
-    
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto">
-        <!-- Item 1 -->
-        <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="100">
-            <div class="w-20 h-20 mb-6 flex items-center justify-center bg-zinc-50 rounded-full shadow-sm">
-                <img src="/uploads/icons8-customize-50.png" alt="Science icon" class="w-10 h-10" />
-            </div>
-            <h4 class="text-xl font-bold mb-4 editable">Behavioral Science Foundation</h4>
-            <p class="text-zinc-600 leading-relaxed editable">
-                Grounded in psychology, influence science, and decades of research into how people build trust and make decisions.
-            </p>
-        </div>
+<section class="padded grid center icon-section" id="why-us">
+  <div class="col-12 center padded-b">
+    <h2 class="editable hero-title">
+        Why Should You Work With RAMP
+    </h2>
+  </div>
 
-        <!-- Item 2 -->
-        <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="200">
-            <div class="w-20 h-20 mb-6 flex items-center justify-center bg-zinc-50 rounded-full shadow-sm">
-                <img src="/uploads/strategic.png" alt="Strategic icon" class="w-10 h-10" />
-            </div>
-            <h4 class="text-xl font-bold mb-4 editable">Real Business Experience</h4>
-            <p class="text-zinc-600 leading-relaxed editable">
-                27 years spanning commercial banking, operations leadership, consulting, and executive education.
-            </p>
-        </div>
+  <div class="col-4_sm-6_xs-12">
+    <img class="editable" src="/uploads/icons8-customize-50.png" />
+    <h4 class="editable">Behavioral Science Foundation</h4>
+    <p class="editable hero-text hide-sm">
+      Grounded in psychology, consumer behavior, influence science, and decades of research into how people build trust, make decisions, and respond to persuasion.
+    </p>
+  </div>
 
-        <!-- Item 3 -->
-        <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="300">
-            <div class="w-20 h-20 mb-6 flex items-center justify-center bg-zinc-50 rounded-full shadow-sm">
-                <img src="/uploads/icons8-personal-growth-64.png" alt="Growth icon" class="w-10 h-10" />
-            </div>
-            <h4 class="text-xl font-bold mb-4 editable">Practical Application</h4>
-            <p class="text-zinc-600 leading-relaxed editable">
-                Actionable frameworks professionals can immediately apply in sales, leadership, and business development.
-            </p>
-        </div>
-    </div>
+  <div class="col-4_sm-6_xs-12">
+    <img class="editable" src="/uploads/strategic.png" />
+    <h4 class="editable">Real Business Experience</h4>
+    <p class="editable hero-text hide-sm">
+      27 years spanning commercial banking, commercial real estate, operations leadership, consulting, and executive education.
+    </p>
+  </div>
+
+  <div class="col-4_sm-6_xs-12">
+    <img class="editable" src="/uploads/icons8-personal-growth-64.png" />
+    <h4 class="editable">Practical Application</h4>
+    <p class="editable hero-text hide-sm">
+      Actionable frameworks professionals can immediately apply in sales, leadership, negotiation, presentations, and business development.
+    </p>
+  </div>
 </section>
 
-<!-- ===== WHO WE HELP (MIDDLE IMAGE SECTION) ===== -->
-<section class="grid grid-cols-1 md:grid-cols-2">
-    <!-- Replace image below as needed -->
-    <div class="min-h-[450px] bg-cover bg-center" style="background-image: url('/images/service-image.png');">
-    </div>
-    
-    <div class="bg-[#1c1c1c] text-white p-12 md:p-20 flex flex-col justify-center">
-        <h2 class="text-4xl font-serif mb-8 text-[#c5a880] editable">Who We Help</h2>
-        <ul class="space-y-6 text-lg">
-            <li class="flex items-start">
-                <span class="text-[#c5a880] mr-4 text-2xl">→</span>
-                <span class="editable"><strong>Sales Teams</strong> seeking stronger conversion rates and deeper client relationships.</span>
-            </li>
-            <li class="flex items-start">
-                <span class="text-[#c5a880] mr-4 text-2xl">→</span>
-                <span class="editable"><strong>Business Leaders</strong> who want greater influence and communication effectiveness.</span>
-            </li>
-            <li class="flex items-start">
-                <span class="text-[#c5a880] mr-4 text-2xl">→</span>
-                <span class="editable"><strong>Executives</strong> delivering high-stakes presentations and negotiations.</span>
-            </li>
-        </ul>
-    </div>
+<section class="grid bg-green padded">
+  <div class="col-7_sm-12 bg-image tall-50" style="background-image: url('/images/service-image.png'); background-size: cover; background-position: center;">
+  </div>
+
+  <div class="md:col-5_sm-12-middle padded editable">
+      <h2 class="hero-title sm-text-center">Who We Help</h2>
+      <ul>
+          <li>
+              <p class="hide-sm"><strong>Sales Teams</strong> seeking stronger conversion rates and deeper client relationships.</p>
+          </li>
+          <li>
+              <p class="hide-sm"><strong>Business Leaders</strong> who want greater influence and communication effectiveness.</p>
+          </li>
+          <li>
+              <p class="hide-sm"><strong>Executives</strong> delivering high-stakes presentations and negotiations.</p>
+          </li>
+          <li>
+              <p class="hide-sm"><strong>Organizations</strong> developing leadership and cross-cultural business capability.</p>
+          </li>
+      </ul>
+  </div>
 </section>
 
-<!-- ===== RAMPOC FRAMEWORK (BOTTOM IMAGE SECTION WITH CONTRAST FIX) ===== -->
-<section class="relative py-28 px-[5%] bg-zinc-900 bg-cover bg-fixed bg-center text-white" style="background-image: url('/images/placeholder-bottom.jpg');">
-    <!-- Enhanced Dark overlay to completely guarantee readability against dark backgrounds -->
-    <div class="absolute inset-0 bg-zinc-950/85"></div>
-    
-    <div class="relative z-10 max-w-4xl mx-auto text-center" data-aos="zoom-in">
-        <h2 class="text-4xl md:text-5xl font-serif mb-6 text-[#c5a880] editable">The RAMPOC Framework</h2>
-        <p class="text-lg md:text-xl leading-relaxed font-light text-zinc-100 editable">
-            Created by Erick Mendoza, <span class="text-[#c5a880] font-semibold">RAMPOC</span> combines behavioral psychology, consumer behavior, and real-world business experience to help professionals understand the hidden barriers behind decision-making. Rather than relying on scripts and tactics, RAMPOC teaches professionals how to diagnose uncertainty, identify resistance, and guide conversations toward confident decisions.
+<section class="padded grid">
+  <div class="col-6_xs-12 padded editable">
+    <h3>Solutions</h3>
+    <ul>
+      <li><p>Sales Psychology and the RAMPOC Framework</p></li>
+      <li><p>Executive Presentation Skills</p></li>
+      <li><p>Strategic Negotiation Programs</p></li>
+      <li><p>Leadership Communication Development</p></li>
+    </ul>
+  </div>
+
+  <div class="col-6_xs-12 padded editable">
+    <h3>Organizational Outcomes</h3>
+    <ul>
+      <li><p><strong>Improve Sales Performance:</strong> Build trust, influence decisions, and strengthen client relationships.</p></li>
+      <li><p><strong>Enhance Negotiation Results:</strong> Create better outcomes in high-stakes conversations.</p></li>
+      <li><p><strong>Increase Leadership Influence:</strong> Improve communication and stakeholder alignment.</p></li>
+      <li><p><strong>Develop Long-Term Capability:</strong> Equip professionals with transferable behavioral skills.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="bg-image bg-plant-2 padded center tall-70 grid-right" id="services">
+  <div class="col-6_sm-8-middle right text-background-2" data-aos="fade-left">
+    <h2 class="editable hero-title">The RAMPOC Framework</h2>
+    <p class="editable hero-text">
+        <strong> Created by Erick Mendoza, RAMPOC</strong> <strong>combines behavioral psychology, consumer behavior, and real-world business experience to help professionals understand the hidden barriers behind decision-making. Rather than relying on scripts and tactics, RAMPOC</strong> <strong>teaches professionals how to diagnose uncertainty, identify resistance, and guide conversations toward confident decisions. </strong>
+    </p>
+  </div>
+</section>
+
+<section class="padded grid">
+  <div class="col-6_xs-12 padded editable">
+      <h3><strong>Meet Erick Mendoza</strong></h3>
+      <p> Business Consultant, Professor, Author, and Creator of the <strong>RAMPOC Framework</strong>. Erick combines 27 years of experience across commercial banking, commercial real estate, operations leadership, consulting, and higher education. </p>
+      <p> He has managed commercial banking portfolios exceeding $20 million, negotiated landmark real estate transactions, led organizations with more than 100 employees, and taught sales, negotiation, consumer behavior, and business communication for over 17 years. </p>
+  </div>
+
+  <div class="col-6_xs-12 padded editable">
+      <h3><strong>The RAMP Philosophy</strong></h3>
+      <p> Every business result begins with a human decision. </p>
+      <p> Whether a customer buys, an executive approves a proposal, a stakeholder supports a strategy, or a team follows a leader, success depends on understanding how people think, decide, and act. </p>
+      <p> <em><strong>RAMP</strong></em> helps organizations apply behavioral science to achieve measurable business outcomes. </p>
+  </div>
+</section>
+
+<section class="padded text-center">
+  <h3 class="editable">THE RAMPOC METHOD</h3>
+  <p class="editable">
+    Understanding the Buyer's Crisis in Sales
+  </p>
+  <a href="https://www.amazon.com/dp/B0DZD9YL95" target="_blank" rel="noopener noreferrer" class="book-link editable">
+    📘 Get the Book on Amazon
+  </a>
+</section>
+
+<section class="bg-rust padded projects center hero-pb" id="projects">
+  <h2 class="center hero-title hero-nav">What Clients and Learners Say</h2>
+
+  <section class="light-bg text-center p-5p center grid-middle">
+    <div class="grid md:grid-cols-2 p-2">
+      <div class="p-1">
+        <div class="card light-bg">
+          <img src="/images/professional-testimonial.png" class="profile mx-auto" alt="Client photo" />
+          <p class="author editable hero-text">Corporate Client</p>
+          <p class="company editable hero-text">Executive Development Program</p>
+          <p class="editable hero-text super-small-text">
+            "Roderick's ability to connect behavioral science with practical business application transformed the way our team approaches communication, negotiation, and client relationships."
         </p>
-    </div>
-</section>
-
-<!-- ===== MEET ERICK & PHILOSOPHY ===== -->
-<section class="py-20 px-[5%] bg-white">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
-        <div class="space-y-6">
-            <h3 class="text-3xl font-serif border-b-2 border-[#c5a880] inline-block pb-2 editable">Meet Erick Mendoza</h3>
-            <p class="text-zinc-700 leading-relaxed editable">
-                Business Consultant, Professor, Author, and Creator of the <span class="font-bold">RAMPOC Framework</span>. Erick combines 27 years of experience across commercial banking, commercial real estate, operations leadership, consulting, and higher education.
-            </p>
-            <p class="text-zinc-700 leading-relaxed editable">
-                He has managed commercial banking portfolios exceeding $20 million, negotiated landmark real estate transactions, led organizations with more than 100 employees, and taught sales, negotiation, consumer behavior, and business communication for over 17 years.
-            </p>
+          <span> ★ ★ ★ ★ ★ </span>
         </div>
-        
-        <div class="bg-zinc-50 p-8 rounded-lg border-l-4 border-[#c5a880] flex flex-col justify-center">
-            <h3 class="text-3xl font-serif mb-4 editable">The RAMP Philosophy</h3>
-            <p class="text-xl italic text-zinc-600 mb-4 editable">"Every business result begins with a human decision."</p>
-            <p class="text-zinc-700 leading-relaxed editable">
-                Whether a customer buys, an executive approves a proposal, a stakeholder supports a strategy, or a team follows a leader, success depends on understanding how people think, decide, and act. RAMP helps organizations apply behavioral science to achieve measurable business outcomes.
-            </p>
-        </div>
+      </div>
     </div>
+  </section>
 </section>
 
-<!-- ===== CALL TO ACTION: THE BOOK ===== -->
-<section class="py-16 bg-[#c5a880] text-[#1c1c1c] text-center">
-    <h3 class="text-2xl font-bold mb-2 uppercase tracking-widest editable">THE RAMPOC METHOD</h3>
-    <p class="text-lg mb-8 font-serif editable">Understanding the Buyer's Crisis in Sales</p>
-    <a href="https://www.amazon.com/dp/B0DZD9YL95" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#1c1c1c] text-white px-10 py-4 text-base font-bold rounded shadow-xl hover:bg-zinc-800 transition-all">
-        📘 Get the Book on Amazon
-    </a>
-</section>
-
-<!-- ===== TESTIMONIAL PREVIEW (CONTRAST FIX) ===== -->
-<section class="py-24 bg-zinc-950 text-white text-center border-t border-zinc-900">
-    <h2 class="text-3xl font-serif mb-12 text-zinc-100 editable">What Clients and Learners Say</h2>
-    <div class="max-w-3xl mx-auto px-6">
-        <div class="text-[#c5a880] text-5xl mb-4">“</div>
-        <p class="text-xl md:text-2xl italic font-light leading-relaxed text-zinc-200 mb-8 editable">
-            "Erick's ability to connect behavioral science with practical business application transformed the way our team approaches communication, negotiation, and client relationships."
-        </p>
-        <div class="font-bold tracking-widest text-[#c5a880] uppercase tracking-wider editable">Corporate Client</div>
-        <div class="text-xs text-zinc-400 uppercase mt-2 editable">Executive Development Program</div>
-        <div class="text-[#c5a880] mt-4 text-sm tracking-widest">★ ★ ★ ★ ★</div>
-    </div>
-</section>
+</body>
+</html>
