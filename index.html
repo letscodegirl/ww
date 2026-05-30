@@ -3,636 +3,457 @@ layout: default
 banner_image_path: /images/mba3.png
 icon1_path: /images/icons/flash.png
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>RAMP | Sales Psychology & Presentation Consulting</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-    :root {
-      --ink: #0D0D0D;
-      --ink-2: #1C1C1C;
-      --ink-3: #3A3530;
-      --smoke: #F2EFE9;
-      --smoke-2: #E4DED4;
-      --white: #FAFAF8;
-      --gold: #B8922A;
-      --gold-light: #D4AA4E;
-      --gold-pale: #F5EDD8;
-      --font-display: 'Cormorant Garamond', Georgia, serif;
-      --font-body: 'Outfit', sans-serif;
-    }
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-    html { scroll-behavior: smooth; }
+  :root {
+    --ink: #0D0D0D;
+    --ink-2: #1C1C1C;
+    --ink-3: #3A3530;
+    --smoke: #F2EFE9;
+    --smoke-2: #E4DED4;
+    --white: #FAFAF8;
+    --gold: #B8922A;
+    --gold-light: #D4AA4E;
+    --gold-pale: #F5EDD8;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Outfit', sans-serif;
+  }
 
-    body {
-      font-family: var(--font-body);
-      background: var(--white);
-      color: var(--ink);
-      font-size: 16px;
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
+  html { scroll-behavior: smooth; }
 
-    /* ── NAV ── */
+  body {
+    font-family: var(--font-body);
+    background: var(--white);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.1rem 5%;
+    background: rgba(250,250,248,0.96);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--smoke-2);
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--gold); }
+
+  .nav-links {
+    display: flex;
+    gap: 2.2rem;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    text-decoration: none;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: var(--ink);
+    color: var(--white) !important;
+    padding: 0.5rem 1.3rem;
+    border-radius: 2px;
+  }
+
+  .hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 120px 5% 6rem;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1600&q=80');
+    background-size: cover;
+    background-position: center 30%;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg, rgba(13,13,13,0.88), rgba(13,13,13,0.55));
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 660px;
+  }
+
+  .hero-eyebrow,
+  .section-label {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+
+  .hero-title,
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 5vw, 4.8rem);
+    font-weight: 700;
+    line-height: 1.08;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+  }
+
+  .section-title.dark { color: var(--ink); }
+
+  .hero-title em,
+  .section-title em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.78);
+    max-width: 540px;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-actions,
+  .cta-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .btn-primary,
+  .btn-ghost,
+  .btn-outline,
+  .btn-gold {
+    display: inline-block;
+    padding: 0.9rem 2rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+  }
+
+  .btn-primary,
+  .btn-gold {
+    background: var(--gold);
+    color: var(--ink);
+  }
+
+  .btn-ghost {
+    border: 1px solid rgba(255,255,255,0.45);
+    color: var(--white);
+  }
+
+  .btn-outline {
+    border: 1px solid var(--ink-3);
+    color: var(--ink);
+  }
+
+  section,
+  .authority,
+  .book-bar,
+  footer {
+    padding: 6rem 5%;
+  }
+
+  .pain,
+  .objections {
+    background: var(--ink);
+  }
+
+  .services,
+  .clients,
+  .cta {
+    background: var(--smoke);
+  }
+
+  .why,
+  .testimonials {
+    background: var(--white);
+  }
+
+  .pain-header,
+  .clients-header,
+  .objections-header,
+  .cta {
+    text-align: center;
+  }
+
+  .pain-grid,
+  .clients-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 3rem;
+  }
+
+  .services-grid,
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    margin-top: 3rem;
+  }
+
+  .pain-card,
+  .client-card,
+  .service-card,
+  .testimonial-card {
+    padding: 2.5rem;
+    background: var(--white);
+  }
+
+  .pain-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .pain-card h4,
+  .service-card h3,
+  .client-card h4,
+  .authority-item h4,
+  .faq-q {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .pain-card h4,
+  .faq-q {
+    color: var(--gold-light);
+  }
+
+  .pain-card p,
+  .faq-a {
+    color: rgba(255,255,255,0.58);
+  }
+
+  .service-card.dark-card,
+  .testimonial-card.dark {
+    background: var(--ink);
+    color: var(--white);
+  }
+
+  .service-card.dark-card h3,
+  .testimonial-card.dark p,
+  .testimonial-card.dark .t-name {
+    color: var(--white);
+  }
+
+  .service-list {
+    list-style: none;
+    margin: 1.5rem 0;
+  }
+
+  .service-list li {
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--smoke-2);
+  }
+
+  .service-card.dark-card .service-list li {
+    border-bottom-color: rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.7);
+  }
+
+  .authority {
+    background: var(--gold-pale);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    text-align: center;
+    border-top: 3px solid var(--gold);
+  }
+
+  .why-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .why-img-wrap {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: var(--smoke-2);
+  }
+
+  .why-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .why-pillar {
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--smoke-2);
+  }
+
+  .faq-list {
+    max-width: 760px;
+    margin: 3rem auto 0;
+    text-align: left;
+  }
+
+  .faq-item {
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .testimonial-text {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-style: italic;
+  }
+
+  .book-bar {
+    background: var(--ink);
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  footer {
+    background: var(--ink-2);
+    color: rgba(255,255,255,0.55);
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  .footer-logo span { color: var(--gold); }
+
+  .footer-col ul {
+    list-style: none;
+  }
+
+  .footer-col a,
+  .authority a {
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .footer-bottom {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  @media (max-width: 960px) {
     nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 1.1rem 5%;
-      background: rgba(250,250,248,0.96);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--smoke-2);
+      flex-direction: column;
+      align-items: center;
+      gap: 0.9rem;
+      padding: 0.9rem 5%;
     }
-    .nav-logo {
-      font-family: var(--font-display);
-      font-size: 1.75rem; font-weight: 700;
-      letter-spacing: 0.1em; color: var(--ink);
-      text-decoration: none;
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.8rem 1rem;
     }
-    .nav-logo span { color: var(--gold); }
-    .nav-links { display: flex; gap: 2.2rem; list-style: none; align-items: center; }
+
     .nav-links a {
-      font-size: 0.82rem; font-weight: 500;
-      letter-spacing: 0.09em; text-transform: uppercase;
-      color: var(--ink-3); text-decoration: none;
-      transition: color 0.2s;
+      font-size: 0.72rem;
     }
-    .nav-links a:hover { color: var(--gold); }
+
     .nav-cta {
-      background: var(--ink) !important;
-      color: var(--white) !important;
-      padding: 0.5rem 1.3rem;
-      border-radius: 2px;
-      transition: background 0.2s !important;
-    }
-    .nav-cta:hover { background: var(--gold) !important; }
-
-    /* ── HERO  (R = Relationship — warm, direct, human) ── */
-    .hero {
-      min-height: 100vh;
-      position: relative;
-      display: flex; align-items: center;
-      padding: 100px 5% 6rem;
-      overflow: hidden;
-    }
-    .hero-bg {
-      position: absolute; inset: 0; z-index: 0;
-      background-image: url('https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1600&q=80');
-      background-size: cover; background-position: center 30%;
-    }
-    .hero-overlay {
-      position: absolute; inset: 0; z-index: 1;
-      background: linear-gradient(105deg, rgba(13,13,13,0.88) 0%, rgba(13,13,13,0.65) 55%, rgba(13,13,13,0.3) 100%);
-    }
-    .hero-content {
-      position: relative; z-index: 2;
-      max-width: 660px;
-    }
-    .hero-eyebrow {
-      display: flex; align-items: center; gap: 0.75rem;
-      font-size: 0.75rem; font-weight: 600;
-      letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--gold-light); margin-bottom: 1.5rem;
-    }
-    .hero-eyebrow::before {
-      content: ''; display: block;
-      width: 30px; height: 1px; background: var(--gold-light);
-    }
-    .hero-title {
-      font-family: var(--font-display);
-      font-size: clamp(2.8rem, 5vw, 4.8rem);
-      font-weight: 700; line-height: 1.08;
-      color: var(--white); margin-bottom: 1.5rem;
-    }
-    .hero-title em { font-style: italic; color: var(--gold-light); }
-    /* Warm, direct opening — speaks to the visitor personally (Relationship) */
-    .hero-sub {
-      font-size: 1.05rem; font-weight: 300;
-      color: rgba(255,255,255,0.75);
-      max-width: 520px; line-height: 1.85;
-      margin-bottom: 2.5rem;
-    }
-    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
-    .btn-primary {
-      display: inline-block;
-      background: var(--gold); color: var(--ink);
-      padding: 0.9rem 2rem;
-      font-size: 0.82rem; font-weight: 600;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      text-decoration: none; border-radius: 2px;
-      transition: background 0.2s, transform 0.15s;
-    }
-    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
-    .btn-ghost {
-      display: inline-block;
-      border: 1px solid rgba(255,255,255,0.4);
-      color: rgba(255,255,255,0.85);
-      padding: 0.9rem 2rem;
-      font-size: 0.82rem; font-weight: 500;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      text-decoration: none; border-radius: 2px;
-      transition: border-color 0.2s, color 0.2s;
-    }
-    .btn-ghost:hover { border-color: var(--gold-light); color: var(--gold-light); }
-    /* Social proof in hero — Authority + Consensus nudge */
-    .hero-trust {
-      position: absolute; bottom: 3rem; left: 5%; right: 5%;
-      z-index: 2;
-      display: flex; gap: 3rem; flex-wrap: wrap;
-    }
-    .hero-trust-item {
-      display: flex; align-items: center; gap: 0.75rem;
-    }
-    .hero-trust-num {
-      font-family: var(--font-display);
-      font-size: 2rem; font-weight: 700;
-      color: var(--gold-light); line-height: 1;
-    }
-    .hero-trust-label {
-      font-size: 0.75rem; font-weight: 300;
-      color: rgba(255,255,255,0.5);
-      letter-spacing: 0.05em; line-height: 1.4;
-      max-width: 110px;
+      padding: 0.45rem 0.9rem;
     }
 
-    /* ── PAIN POINTS  (A = Assessment — mirror their world back) ── */
-    .pain {
-      background: var(--ink);
-      padding: 5rem 5%;
-    }
-    .pain-header {
-      text-align: center;
-      margin-bottom: 3.5rem;
-    }
-    .section-label {
-      display: inline-block;
-      font-size: 0.72rem; font-weight: 600;
-      letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 0.85rem;
-    }
-    .section-title {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      font-weight: 700; line-height: 1.15;
-      color: var(--white);
-    }
-    .section-title em { font-style: italic; color: var(--gold-light); }
-    .section-title.dark { color: var(--ink); }
-    .pain-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-    }
-    .pain-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.07);
-      padding: 2.5rem 2rem;
-      transition: background 0.2s;
-    }
-    .pain-card:hover { background: rgba(184,146,42,0.08); }
-    .pain-card-icon {
-      font-size: 1.6rem; margin-bottom: 1rem; display: block;
-    }
-    .pain-card h4 {
-      font-family: var(--font-display);
-      font-size: 1.25rem; font-weight: 700;
-      color: var(--gold-light); margin-bottom: 0.6rem;
-    }
-    .pain-card p {
-      font-size: 0.88rem; font-weight: 300;
-      color: rgba(255,255,255,0.5); line-height: 1.75;
-    }
-    /* Empathy close — makes visitor feel seen, not sold to */
-    .pain-footer {
-      text-align: center; margin-top: 3rem;
-      font-family: var(--font-display);
-      font-size: 1.4rem; font-style: italic;
-      color: rgba(255,255,255,0.35);
-    }
-    .pain-footer span { color: var(--gold-light); }
-
-    /* ── SERVICES  (M = Matching — precise solutions for their exact problems) ── */
-    .services {
-      background: var(--smoke);
-      padding: 6rem 5%;
-    }
-    .services-header {
-      display: flex; justify-content: space-between;
-      align-items: flex-end; margin-bottom: 3.5rem;
-      flex-wrap: wrap; gap: 1.5rem;
-    }
-    .btn-outline {
-      display: inline-block;
-      border: 1px solid var(--ink-3); color: var(--ink);
-      padding: 0.65rem 1.5rem;
-      font-size: 0.8rem; font-weight: 500;
-      letter-spacing: 0.09em; text-transform: uppercase;
-      text-decoration: none; border-radius: 2px;
-      transition: border-color 0.2s, color 0.2s;
-    }
-    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
-    .services-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
-    }
-    .service-card {
-      background: var(--white);
-      padding: 3.5rem; position: relative;
-      overflow: hidden; transition: transform 0.25s;
-    }
-    .service-card:hover { transform: translateY(-5px); }
-    .service-card.dark-card { background: var(--ink); }
-    .service-num {
-      font-family: var(--font-display);
-      font-size: 4.5rem; font-weight: 700;
-      color: var(--smoke); line-height: 1;
-      margin-bottom: 1.25rem;
-    }
-    .service-card.dark-card .service-num { color: rgba(255,255,255,0.05); }
-    .service-tag {
-      font-size: 0.7rem; font-weight: 600;
-      letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 0.6rem;
-    }
-    .service-card h3 {
-      font-family: var(--font-display);
-      font-size: 1.9rem; font-weight: 700;
-      color: var(--ink); line-height: 1.2; margin-bottom: 0.85rem;
-    }
-    .service-card.dark-card h3 { color: var(--white); }
-    .service-card > p {
-      font-size: 0.9rem; font-weight: 300;
-      color: var(--ink-3); line-height: 1.8; margin-bottom: 1.5rem;
-    }
-    .service-card.dark-card > p { color: rgba(255,255,255,0.55); }
-    .service-list { list-style: none; margin-bottom: 2rem; }
-    .service-list li {
-      font-size: 0.85rem; font-weight: 400;
-      color: var(--ink-3); padding: 0.55rem 0;
-      border-bottom: 1px solid var(--smoke-2);
-      display: flex; align-items: flex-start; gap: 0.6rem;
-    }
-    .service-card.dark-card .service-list li {
-      color: rgba(255,255,255,0.6);
-      border-bottom-color: rgba(255,255,255,0.07);
-    }
-    .service-list li::before { content: '→'; color: var(--gold); flex-shrink: 0; }
-    .service-link {
-      font-size: 0.78rem; font-weight: 600;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--gold); text-decoration: none;
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      transition: gap 0.2s;
-    }
-    .service-link:hover { gap: 0.9rem; }
-    .service-link::after { content: '→'; }
-
-    /* ── AUTHORITY BAND  (P = Persuasion — Authority + Reciprocity) ── */
-    .authority {
-      background: var(--gold-pale);
-      border-top: 3px solid var(--gold);
-      padding: 4rem 5%;
-      display: grid;
-      grid-template-columns: 1fr 1px 1fr 1px 1fr;
-      gap: 3rem; align-items: center;
-    }
-    .authority-divider { background: rgba(184,146,42,0.3); align-self: stretch; }
-    .authority-item { text-align: center; }
-    .authority-item-icon { font-size: 2rem; margin-bottom: 0.75rem; display: block; }
-    .authority-item h4 {
-      font-family: var(--font-display);
-      font-size: 1.2rem; font-weight: 700;
-      color: var(--ink); margin-bottom: 0.4rem;
-    }
-    .authority-item p {
-      font-size: 0.83rem; font-weight: 300;
-      color: var(--ink-3); line-height: 1.65;
-    }
-    .authority-item a {
-      display: inline-block; margin-top: 0.75rem;
-      font-size: 0.78rem; font-weight: 600;
-      letter-spacing: 0.09em; text-transform: uppercase;
-      color: var(--gold); text-decoration: none;
-      border-bottom: 1px solid var(--gold); padding-bottom: 1px;
-      transition: opacity 0.2s;
-    }
-    .authority-item a:hover { opacity: 0.7; }
-
-    /* ── WHY RAMP  (P continued — Liking + Consensus) ── */
-    .why {
-      background: var(--white);
-      padding: 6rem 5%;
-    }
-    .why-inner {
-      display: grid; grid-template-columns: 1fr 1.1fr;
-      gap: 5rem; align-items: center;
-    }
-    .why-visual {
-      position: relative;
-    }
-    .why-img-wrap {
-      width: 100%; aspect-ratio: 4/5;
-      overflow: hidden; border-radius: 2px;
-      background: var(--smoke-2);
-    }
-    .why-img-wrap img {
-      width: 100%; height: 100%;
-      object-fit: cover; display: block;
-      transition: transform 0.5s;
-    }
-    .why-img-wrap:hover img { transform: scale(1.03); }
-    .why-badge {
-      position: absolute; bottom: -1.5rem; right: -1.5rem;
-      background: var(--gold);
-      padding: 1.75rem;
-      text-align: center;
-    }
-    .why-badge-num {
-      font-family: var(--font-display);
-      font-size: 2.6rem; font-weight: 700;
-      color: var(--ink); line-height: 1;
-    }
-    .why-badge-label {
-      font-size: 0.7rem; font-weight: 600;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: rgba(0,0,0,0.6);
-    }
-    .why-content { padding-bottom: 2rem; }
-    .why-content .section-title.dark { margin-bottom: 1.25rem; }
-    .why-lead {
-      font-size: 1rem; font-weight: 300;
-      color: var(--ink-3); line-height: 1.85;
-      margin-bottom: 2rem;
-    }
-    .why-pillars {
-      display: flex; flex-direction: column; gap: 0;
-    }
-    .why-pillar {
-      display: flex; gap: 1.25rem;
-      padding: 1.4rem 0;
-      border-top: 1px solid var(--smoke-2);
-      align-items: flex-start;
-    }
-    .why-pillar:last-child { border-bottom: 1px solid var(--smoke-2); }
-    .why-pillar-icon {
-      width: 40px; height: 40px; flex-shrink: 0;
-      background: var(--gold-pale);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem; border-radius: 2px;
-    }
-    .why-pillar h5 {
-      font-family: var(--font-display);
-      font-size: 1.1rem; font-weight: 700;
-      color: var(--ink); margin-bottom: 0.2rem;
-    }
-    .why-pillar p {
-      font-size: 0.85rem; font-weight: 300;
-      color: var(--ink-3); line-height: 1.7;
-    }
-
-    /* ── CLIENTS  (P — Consensus/Social Proof) ── */
-    .clients {
-      background: var(--smoke);
-      padding: 6rem 5%;
-    }
-    .clients-header {
-      text-align: center; margin-bottom: 3.5rem;
-    }
-    .clients-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
-    }
-    .client-card {
-      background: var(--white); padding: 2.5rem 2rem;
-      transition: transform 0.2s;
-    }
-    .client-card:hover { transform: translateY(-4px); }
-    .client-card-num {
-      font-family: var(--font-display);
-      font-size: 3rem; font-weight: 700;
-      color: var(--smoke-2); line-height: 1;
-      margin-bottom: 1rem;
-    }
-    .client-card h4 {
-      font-family: var(--font-display);
-      font-size: 1.25rem; font-weight: 700;
-      color: var(--ink); margin-bottom: 0.5rem;
-    }
-    .client-card p {
-      font-size: 0.85rem; font-weight: 300;
-      color: var(--ink-3); line-height: 1.75;
-    }
-
-    /* ── OBJECTION HANDLER  (O = Objection — pre-empt doubt) ── */
-    .objections {
-      background: var(--ink-2);
-      padding: 6rem 5%;
-    }
-    .objections-header { text-align: center; margin-bottom: 3.5rem; }
-    .objections-header .section-title { color: var(--white); }
-    .objections-header .obj-sub {
-      font-size: 0.95rem; font-weight: 300;
-      color: rgba(255,255,255,0.45); margin-top: 0.75rem;
-      font-style: italic;
-      font-family: var(--font-display); font-size: 1.15rem;
-    }
-    .faq-list { max-width: 760px; margin: 0 auto; }
-    .faq-item {
-      border-top: 1px solid rgba(255,255,255,0.07);
-      padding: 1.75rem 0;
-    }
-    .faq-item:last-child { border-bottom: 1px solid rgba(255,255,255,0.07); }
-    .faq-q {
-      font-family: var(--font-display);
-      font-size: 1.2rem; font-weight: 700;
-      color: var(--white); margin-bottom: 0.6rem;
-      cursor: default;
-    }
-    .faq-a {
-      font-size: 0.88rem; font-weight: 300;
-      color: rgba(255,255,255,0.5); line-height: 1.8;
-    }
-
-    /* ── TESTIMONIAL  (P — Social Proof) ── */
-    .testimonials {
-      background: var(--white);
-      padding: 6rem 5%;
-    }
-    .testimonials-header {
-      display: flex; justify-content: space-between;
-      align-items: flex-end; margin-bottom: 3rem;
-      flex-wrap: wrap; gap: 1.5rem;
-    }
-    .testimonials-grid {
-      display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px;
-    }
-    .testimonial-card {
-      background: var(--smoke); padding: 3rem;
-    }
-    .testimonial-card.dark { background: var(--ink); }
-    .stars {
-      color: var(--gold); font-size: 0.9rem;
-      letter-spacing: 2px; margin-bottom: 1.25rem; display: block;
-    }
-    .testimonial-text {
-      font-family: var(--font-display);
-      font-size: 1.2rem; font-style: italic; font-weight: 400;
-      color: var(--ink); line-height: 1.7; margin-bottom: 1.75rem;
-    }
-    .testimonial-card.dark .testimonial-text { color: var(--white); }
-    .testimonial-author { display: flex; align-items: center; gap: 0.85rem; }
-    .t-avatar {
-      width: 42px; height: 42px; border-radius: 50%;
-      background: var(--gold);
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-display); font-weight: 700;
-      font-size: 1rem; color: var(--ink); flex-shrink: 0;
-    }
-    .t-name { font-size: 0.88rem; font-weight: 500; color: var(--ink); }
-    .testimonial-card.dark .t-name { color: var(--white); }
-    .t-title { font-size: 0.76rem; font-weight: 300; color: var(--ink-3); }
-    .testimonial-card.dark .t-title { color: rgba(255,255,255,0.4); }
-
-    /* ── SOFT CLOSE CTA  (C = Close — low commitment ask, guided next step) ── */
-    .cta {
-      background: var(--smoke);
-      padding: 8rem 5%;
-      position: relative; overflow: hidden;
-      text-align: center;
-    }
-    .cta-bg-text {
-      position: absolute; top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      font-family: var(--font-display);
-      font-size: 28rem; font-weight: 700;
-      color: rgba(0,0,0,0.03); line-height: 1;
-      pointer-events: none; white-space: nowrap;
-    }
-    .cta-inner { position: relative; z-index: 2; }
-    .cta-inner .section-title.dark { margin: 0 auto 1rem; max-width: 680px; }
-    /* Soft close language — no "buy", no pressure, guided step */
-    .cta-sub {
-      font-size: 1rem; font-weight: 300; font-style: italic;
-      font-family: var(--font-display);
-      color: var(--ink-3); margin-bottom: 2.5rem;
-      font-size: 1.2rem;
-    }
-    .cta-row { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    /* Scarcity nudge */
-    .scarcity-note {
-      margin-top: 1.25rem;
-      font-size: 0.78rem; font-weight: 400;
-      color: var(--ink-3); letter-spacing: 0.05em;
-    }
-    .scarcity-note span { color: var(--gold); font-weight: 600; }
-
-    /* ── BOOK BAR  (P — Reciprocity: give value first) ── */
-    .book-bar {
-      background: var(--ink);
-      padding: 2.75rem 5%;
-      display: flex; align-items: center;
-      justify-content: space-between; gap: 2rem; flex-wrap: wrap;
-    }
-    .book-bar-left { display: flex; align-items: center; gap: 1.25rem; }
-    .book-emoji { font-size: 2.2rem; }
-    .book-bar h4 {
-      font-family: var(--font-display);
-      font-size: 1.2rem; font-weight: 700; color: var(--white);
-    }
-    .book-bar p { font-size: 0.83rem; color: rgba(255,255,255,0.45); font-weight: 300; }
-    .btn-gold {
-      display: inline-block;
-      background: var(--gold); color: var(--ink);
-      padding: 0.8rem 1.75rem;
-      font-size: 0.8rem; font-weight: 600;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      text-decoration: none; border-radius: 2px;
-      transition: background 0.2s; white-space: nowrap;
-    }
-    .btn-gold:hover { background: var(--gold-light); }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--ink-2); padding: 4rem 5% 2rem;
-    }
+    .pain-grid,
+    .services-grid,
+    .clients-grid,
+    .testimonials-grid,
+    .authority,
+    .why-inner,
     .footer-top {
-      display: grid; grid-template-columns: 1.6fr 1fr 1fr;
-      gap: 4rem; padding-bottom: 3rem;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      margin-bottom: 2rem;
+      grid-template-columns: 1fr;
     }
-    .footer-logo {
-      font-family: var(--font-display);
-      font-size: 1.8rem; font-weight: 700;
-      letter-spacing: 0.1em; color: var(--white);
-      text-decoration: none; display: block; margin-bottom: 0.85rem;
-    }
-    .footer-logo span { color: var(--gold); }
-    .footer-desc {
-      font-size: 0.83rem; color: rgba(255,255,255,0.35);
-      font-weight: 300; line-height: 1.75; max-width: 270px;
-    }
-    .footer-col h5 {
-      font-size: 0.7rem; font-weight: 600;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: rgba(255,255,255,0.25); margin-bottom: 1.1rem;
-    }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
-    .footer-col a {
-      font-size: 0.85rem; color: rgba(255,255,255,0.5);
-      text-decoration: none; font-weight: 300; transition: color 0.2s;
-    }
-    .footer-col a:hover { color: var(--gold); }
-    .footer-bottom {
-      display: flex; justify-content: space-between;
-      align-items: center; flex-wrap: wrap; gap: 1rem;
-    }
-    .footer-copy { font-size: 0.76rem; color: rgba(255,255,255,0.2); font-weight: 300; }
-    .footer-social { display: flex; gap: 0.75rem; }
-    .footer-social a {
-      width: 34px; height: 34px; border-radius: 2px;
-      border: 1px solid rgba(255,255,255,0.1);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.72rem; color: rgba(255,255,255,0.35);
-      text-decoration: none; transition: all 0.2s;
-    }
-    .footer-social a:hover { border-color: var(--gold); color: var(--gold); }
 
-    /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    .hero {
+      padding-top: 170px;
     }
-    .hero-eyebrow { animation: fadeUp 0.6s ease both; }
-    .hero-title    { animation: fadeUp 0.6s 0.1s ease both; }
-    .hero-sub      { animation: fadeUp 0.6s 0.2s ease both; }
-    .hero-actions  { animation: fadeUp 0.6s 0.3s ease both; }
-    .hero-trust    { animation: fadeUp 0.6s 0.4s ease both; }
+  }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 960px) {
-      .pain-grid, .services-grid, .clients-grid, .testimonials-grid,
-      .why-inner { grid-template-columns: 1fr; gap: 2px; }
-      .authority { grid-template-columns: 1fr; gap: 2rem; }
-      .authority-divider { display: none; }
-      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
-      .why-badge { right: 0; bottom: -1rem; }
-      nav .nav-links { display: none; }
-      .hero-trust { gap: 1.5rem; }
+  @media (max-width: 600px) {
+    .hero-title {
+      font-size: 2.35rem;
     }
-    @media (max-width: 600px) {
-      .hero-title { font-size: 2.4rem; }
-      section, .pain, .services, .why, .clients,
-      .objections, .testimonials, .cta { padding: 4rem 5%; }
-    }
-  </style>
-</head>
-<body>
 
-<!-- ── NAV ── -->
+    section,
+    .authority,
+    .book-bar,
+    footer {
+      padding: 4rem 5%;
+    }
+
+    .pain-card,
+    .client-card,
+    .service-card,
+    .testimonial-card {
+      padding: 2rem;
+    }
+  }
+</style>
+
 <nav>
   <a href="#" class="nav-logo">R<span>A</span>MP</a>
   <ul class="nav-links">
@@ -643,7 +464,6 @@ icon1_path: /images/icons/flash.png
   </ul>
 </nav>
 
-<!-- ── HERO  (R — Relationship: speak to them first, earn trust) ── -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
@@ -654,282 +474,211 @@ icon1_path: /images/icons/flash.png
       <em>We help you sell better.</em>
     </h1>
     <p class="hero-sub">
-      Most salespeople are skilled, driven, and motivated — yet still leave deals on the table. RAMP works with you to close that gap, using the science of buyer psychology and the art of powerful communication.
+      RAMP helps sales teams close the gap between skill and results using buyer psychology, persuasive communication, and practical coaching.
     </p>
     <div class="hero-actions">
       <a href="#contact" class="btn-primary">Start a Conversation</a>
       <a href="#services" class="btn-ghost">See How We Help</a>
     </div>
   </div>
-  <div class="hero-trust">
-    <div class="hero-trust-item">
-      <div class="hero-trust-num">94%</div>
-      <div class="hero-trust-label">Client close rate improvement</div>
-    </div>
-    <div class="hero-trust-item">
-      <div class="hero-trust-num">2×</div>
-      <div class="hero-trust-label">Average increase in deal value</div>
-    </div>
-    <div class="hero-trust-item">
-      <div class="hero-trust-num">6mo</div>
-      <div class="hero-trust-label">Ongoing coaching included</div>
-    </div>
-  </div>
 </section>
 
-<!-- ── PAIN POINTS  (A — Assessment: mirror their reality) ── -->
 <section class="pain">
   <div class="pain-header">
     <div class="section-label">Sound Familiar?</div>
     <h2 class="section-title">The gaps holding<br><em>your team back</em></h2>
   </div>
+
   <div class="pain-grid">
     <div class="pain-card">
-      <span class="pain-card-icon">💬</span>
       <h4>Your message isn't landing</h4>
-      <p>Prospects nod along then go quiet. Your team is talking about features when buyers need to hear about outcomes — and the gap costs you deals every week.</p>
+      <p>Prospects nod along, then go quiet. Your team may be explaining features when buyers need to hear outcomes.</p>
     </div>
     <div class="pain-card">
-      <span class="pain-card-icon">📊</span>
       <h4>Presentations don't convert</h4>
-      <p>Slides look professional. The delivery is solid. But decision-makers walk out uncommitted. Something between the pitch and the close is broken.</p>
+      <p>The slides look professional and the delivery is solid, but decision-makers still leave uncommitted.</p>
     </div>
     <div class="pain-card">
-      <span class="pain-card-icon">🤝</span>
-      <h4>Pipeline stalls at the last mile</h4>
-      <p>Deals reach late stages then stall. Buyers hesitate. Your team doesn't have the language to move them through doubt to decision — and the moment passes.</p>
+      <h4>Pipeline stalls late</h4>
+      <p>Deals reach the final stage, then hesitate. RAMP helps your team move buyers through doubt to decision.</p>
     </div>
   </div>
-  <p class="pain-footer">If any of this feels familiar, <span>you're in exactly the right place.</span></p>
 </section>
 
-<!-- ── SERVICES  (M — Matching: here's exactly what you need) ── -->
 <section class="services" id="services">
   <div class="services-header">
-    <div>
-      <div class="section-label">What We Do</div>
-      <h2 class="section-title dark">Precise solutions.<br><em>Real outcomes.</em></h2>
-    </div>
-    <a href="#contact" class="btn-outline">Talk to a consultant</a>
+    <div class="section-label">What We Do</div>
+    <h2 class="section-title dark">Precise solutions.<br><em>Real outcomes.</em></h2>
   </div>
+
   <div class="services-grid">
     <div class="service-card dark-card">
-      <div class="service-num">01</div>
-      <div class="service-tag">Core Service</div>
       <h3>Sales Psychology Consulting</h3>
-      <p>We decode how your buyers think, decide, and commit — then build that intelligence directly into your team's language, process, and strategy.</p>
+      <p>We decode how your buyers think, decide, and commit, then build that insight into your team's sales language and process.</p>
       <ul class="service-list">
-        <li>Buyer motivation mapping &amp; decision-cycle analysis</li>
-        <li>Influence frameworks tailored to your industry</li>
-        <li>Objection reframing and trust-building techniques</li>
-        <li>High-ticket deal psychology and negotiation tactics</li>
-        <li>Live role-play simulations with real-scenario feedback</li>
+        <li>Buyer motivation mapping</li>
+        <li>Decision-cycle analysis</li>
+        <li>Objection reframing</li>
+        <li>Trust-building techniques</li>
+        <li>Live role-play feedback</li>
       </ul>
-      <a href="#contact" class="service-link">Explore this service</a>
+      <a href="#contact" class="btn-gold">Explore this service</a>
     </div>
+
     <div class="service-card">
-      <div class="service-num">02</div>
-      <div class="service-tag">Core Service</div>
       <h3>Presentation Skills Consulting</h3>
-      <p>From boardroom pitches to global conferences, we train your people to own the room — structuring ideas that persuade and delivering them with presence.</p>
+      <p>We train your people to structure ideas that persuade and deliver them with presence in high-stakes rooms.</p>
       <ul class="service-list">
-        <li>Executive presence and body language coaching</li>
-        <li>Persuasive narrative and story structure</li>
-        <li>Slide design principles for business impact</li>
-        <li>High-pressure Q&amp;A and scenario preparation</li>
-        <li>1-to-1 coaching and team workshop formats</li>
+        <li>Executive presence coaching</li>
+        <li>Persuasive story structure</li>
+        <li>Slide design for impact</li>
+        <li>High-pressure Q&amp;A preparation</li>
+        <li>Team workshop formats</li>
       </ul>
-      <a href="#contact" class="service-link">Explore this service</a>
+      <a href="#contact" class="btn-outline">Explore this service</a>
     </div>
   </div>
 </section>
 
-<!-- ── AUTHORITY BAND  (P — Persuasion: Authority + Reciprocity) ── -->
 <div class="authority">
   <div class="authority-item">
-    <span class="authority-item-icon">📘</span>
     <h4>The RAMPOC Sales Method</h4>
-    <p>Our consulting framework is backed by a published methodology — now available on Amazon for teams to read before and after training.</p>
-    <a href="https://www.amazon.com/dp/B0DZD9YL95" target="_blank">Get the Book →</a>
+    <p>Our consulting framework is backed by a published methodology available on Amazon.</p>
+    <a href="https://www.amazon.com/dp/B0DZD9YL95" target="_blank">Get the Book</a>
   </div>
-  <div class="authority-divider"></div>
+
   <div class="authority-item">
-    <span class="authority-item-icon">🧠</span>
     <h4>Grounded in Behavioral Science</h4>
-    <p>Every technique we teach is rooted in proven research — from Cialdini's influence principles to modern decision-making psychology.</p>
+    <p>Every technique we teach is rooted in proven research and modern decision-making psychology.</p>
   </div>
-  <div class="authority-divider"></div>
+
   <div class="authority-item">
-    <span class="authority-item-icon">🌐</span>
     <h4>Global SME &amp; Enterprise Experience</h4>
-    <p>We work with businesses across industries and geographies — from growing SMEs to multinational sales teams seeking a measurable edge.</p>
+    <p>We work with growing businesses and established teams across industries and geographies.</p>
   </div>
 </div>
 
-<!-- ── WHY RAMP  (P — Liking: show who we are, build connection) ── -->
 <section class="why" id="why">
   <div class="why-inner">
-    <div class="why-visual">
-      <div class="why-img-wrap">
-        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80" alt="Business consulting session" />
-      </div>
-      <div class="why-badge">
-        <div class="why-badge-num">6+</div>
-        <div class="why-badge-label">Years of<br>Impact</div>
-      </div>
+    <div class="why-img-wrap">
+      <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80" alt="Business consulting session">
     </div>
-    <div class="why-content">
+
+    <div>
       <div class="section-label">Why RAMP</div>
       <h2 class="section-title dark">We don't just train.<br><em>We transform.</em></h2>
-      <p class="why-lead">Generic sales training changes behavior for a week. RAMP changes how your team thinks — permanently. Our approach is built on psychology, not scripts.</p>
-      <div class="why-pillars">
-        <div class="why-pillar">
-          <div class="why-pillar-icon">🎯</div>
-          <div>
-            <h5>Proven RAMPOC Framework</h5>
-            <p>A clear, actionable methodology that guides every buyer interaction from first contact to close — without ever feeling pushy.</p>
-          </div>
-        </div>
-        <div class="why-pillar">
-          <div class="why-pillar-icon">🔬</div>
-          <div>
-            <h5>Science-Backed Influence</h5>
-            <p>Built on Robert Cialdini's principles of persuasion — reciprocity, authority, consensus, scarcity, liking, and commitment.</p>
-          </div>
-        </div>
-        <div class="why-pillar">
-          <div class="why-pillar-icon">📈</div>
-          <div>
-            <h5>Lasting Growth</h5>
-            <p>Six months of ongoing coaching ensures your team embeds new behaviours until they become second nature — and show up in your numbers.</p>
-          </div>
-        </div>
+      <p>Generic sales training changes behavior for a week. RAMP changes how your team thinks, speaks, and sells.</p>
+
+      <div class="why-pillar">
+        <h4>Proven RAMPOC Framework</h4>
+        <p>A clear methodology that guides buyer conversations from first contact to close.</p>
+      </div>
+
+      <div class="why-pillar">
+        <h4>Science-Backed Influence</h4>
+        <p>Built on principles of persuasion, trust, authority, consensus, and commitment.</p>
+      </div>
+
+      <div class="why-pillar">
+        <h4>Lasting Growth</h4>
+        <p>Ongoing coaching helps new behaviors become part of the team's daily sales rhythm.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── WHO WE SERVE  (P — Consensus: they're like you) ── -->
 <section class="clients" id="clients">
   <div class="clients-header">
     <div class="section-label">Who We Serve</div>
     <h2 class="section-title dark">Built for <em>ambitious</em> teams.</h2>
-    <p style="font-size:0.92rem;color:var(--ink-3);font-weight:300;margin-top:0.5rem;">From scale-ups to global enterprises — if growth matters to you, RAMP was built for you.</p>
   </div>
+
   <div class="clients-grid">
     <div class="client-card">
-      <div class="client-card-num">01</div>
       <h4>SMEs &amp; Scale-ups</h4>
-      <p>Growing businesses that need to punch above their weight in sales conversations and client presentations — competing confidently against larger rivals.</p>
+      <p>Growing businesses that need to compete confidently against larger rivals.</p>
     </div>
+
     <div class="client-card">
-      <div class="client-card-num">02</div>
       <h4>Corporate Sales Teams</h4>
-      <p>Enterprise teams seeking sharper consultative selling, larger deal negotiation, and a proven system to move stalled pipeline forward.</p>
+      <p>Enterprise teams seeking sharper consultative selling and stronger deal movement.</p>
     </div>
+
     <div class="client-card">
-      <div class="client-card-num">03</div>
       <h4>Leaders &amp; Executives</h4>
-      <p>C-suite and senior leaders who need to communicate strategy, close high-value partnerships, and inspire confidence in every high-stakes room.</p>
+      <p>Senior leaders who need to communicate strategy and close high-value partnerships.</p>
     </div>
   </div>
 </section>
 
-<!-- ── OBJECTION HANDLER  (O — pre-empt doubt before it becomes a reason not to call) ── -->
 <section class="objections">
   <div class="objections-header">
     <div class="section-label">Before You Decide</div>
     <h2 class="section-title">Questions we hear <em>often</em></h2>
-    <p class="obj-sub">We'd rather answer them here than have them stop you from reaching out.</p>
   </div>
+
   <div class="faq-list">
     <div class="faq-item">
       <div class="faq-q">"We've done sales training before and it didn't stick."</div>
-      <div class="faq-a">Most training is event-based — a workshop, then nothing. RAMP includes six months of ongoing coaching so new behaviors are reinforced until they become permanent. We measure change in your numbers, not your feedback forms.</div>
+      <div class="faq-a">RAMP includes ongoing coaching, so new behaviors are reinforced until they become part of everyday selling.</div>
     </div>
+
     <div class="faq-item">
-      <div class="faq-q">"Our team is already experienced — will this be too basic?"</div>
-      <div class="faq-a">Experienced teams are often our best clients. They already have skill — RAMP adds the psychological layer that turns good salespeople into exceptional ones. The more skilled your team, the faster they absorb and apply what we teach.</div>
+      <div class="faq-q">"Our team is already experienced."</div>
+      <div class="faq-a">Experienced teams are often our best clients because they can apply the psychological layer quickly.</div>
     </div>
+
     <div class="faq-item">
-      <div class="faq-q">"We're not sure our budget can cover this right now."</div>
-      <div class="faq-a">We understand. That's why we offer a no-obligation consultation first. We'll be honest with you about expected return — if the numbers don't make sense for your situation, we'll tell you. We only work with clients we're confident we can help.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">"How do we know this works for our specific industry?"</div>
-      <div class="faq-a">Buyer psychology is universal — the principles of trust, decision-making, and influence apply regardless of industry. Every engagement starts with a deep assessment of your specific context, clients, and challenges, so the approach is always tailored.</div>
+      <div class="faq-q">"How do we know this works for our industry?"</div>
+      <div class="faq-a">Every engagement starts with an assessment of your specific market, clients, and challenges.</div>
     </div>
   </div>
 </section>
 
-<!-- ── TESTIMONIALS  (P — Social Proof/Consensus) ── -->
 <section class="testimonials" id="testimonials">
-  <div class="testimonials-header">
-    <div>
-      <div class="section-label">Results</div>
-      <h2 class="section-title dark">Clients who <em>transformed</em><br>how they sell.</h2>
-    </div>
-  </div>
+  <div class="section-label">Results</div>
+  <h2 class="section-title dark">Clients who <em>transformed</em><br>how they sell.</h2>
+
   <div class="testimonials-grid">
     <div class="testimonial-card dark">
-      <span class="stars">★ ★ ★ ★ ★</span>
-      <p class="testimonial-text">"RAMP didn't just improve our pitch — they fundamentally changed how our team thinks about a buyer conversation. Our close rate improved within the first quarter."</p>
-      <div class="testimonial-author">
-        <div class="t-avatar">JM</div>
-        <div>
-          <div class="t-name">James M.</div>
-          <div class="t-title">VP of Sales, Global Tech Firm</div>
-        </div>
-      </div>
+      <p class="testimonial-text">"RAMP changed how our team thinks about buyer conversations. Our close rate improved within the first quarter."</p>
+      <p class="t-name">James M., VP of Sales</p>
     </div>
+
     <div class="testimonial-card">
-      <span class="stars">★ ★ ★ ★ ★</span>
-      <p class="testimonial-text">"Before RAMP, our presentations were polished but forgettable. Now our team commands the room. Three major deals closed in the month after the program ended."</p>
-      <div class="testimonial-author">
-        <div class="t-avatar">SL</div>
-        <div>
-          <div class="t-name">Sarah L.</div>
-          <div class="t-title">Director of Business Development</div>
-        </div>
-      </div>
+      <p class="testimonial-text">"Before RAMP, our presentations were polished but forgettable. Now our team commands the room."</p>
+      <p class="t-name">Sarah L., Director of Business Development</p>
     </div>
   </div>
 </section>
 
-<!-- ── SOFT CLOSE CTA  (C — Close: guide, don't push) ── -->
 <section class="cta" id="contact">
-  <div class="cta-bg-text">RAMP</div>
-  <div class="cta-inner">
-    <div class="section-label">Next Step</div>
-    <h2 class="section-title dark">Let's find out if<br><em>we're the right fit.</em></h2>
-    <p class="cta-sub">No pitch. No pressure. Just an honest conversation about where your team is and where you want to be.</p>
-    <div class="cta-row">
-      <a href="mailto:connect@rampbizenglish.com" class="btn-primary">Send Us a Message</a>
-      <a href="tel:+821033610610" class="btn-outline">+82 10 3361 0610</a>
-    </div>
-    <p class="scarcity-note"><span>Limited consulting slots available</span> — we take on a small number of new clients each quarter to ensure quality.</p>
+  <div class="section-label">Next Step</div>
+  <h2 class="section-title dark">Let's find out if<br><em>we're the right fit.</em></h2>
+  <p>No pitch. No pressure. Just an honest conversation about where your team is and where you want to be.</p>
+
+  <div class="cta-row" style="justify-content:center; margin-top:2rem;">
+    <a href="mailto:connect@rampbizenglish.com" class="btn-primary">Send Us a Message</a>
+    <a href="tel:+821033610610" class="btn-outline">+82 10 3361 0610</a>
   </div>
 </section>
 
-<!-- ── BOOK BAR  (P — Reciprocity: give before you ask) ── -->
 <div class="book-bar">
-  <div class="book-bar-left">
-    <div class="book-emoji">📘</div>
-    <div>
-      <h4>Read the RAMPOC Sales Method</h4>
-      <p>The complete guide to buyer psychology and persuasive selling — available now on Amazon.</p>
-    </div>
+  <div>
+    <h4>Read the RAMPOC Sales Method</h4>
+    <p>The complete guide to buyer psychology and persuasive selling, available now on Amazon.</p>
   </div>
-  <a href="https://www.amazon.com/dp/B0DZD9YL95" target="_blank" class="btn-gold">Get the Book →</a>
+
+  <a href="https://www.amazon.com/dp/B0DZD9YL95" target="_blank" class="btn-gold">Get the Book</a>
 </div>
 
-<!-- ── FOOTER ── -->
 <footer>
   <div class="footer-top">
     <div>
       <a href="#" class="footer-logo">R<span>A</span>MP</a>
-      <p class="footer-desc">Business consulting in Sales Psychology and Presentation Skills — empowering SMEs and enterprise teams to win globally.</p>
+      <p>Business consulting in Sales Psychology and Presentation Skills.</p>
     </div>
+
     <div class="footer-col">
       <h5>Services</h5>
       <ul>
@@ -939,6 +688,7 @@ icon1_path: /images/icons/flash.png
         <li><a href="https://www.amazon.com/dp/B0DZD9YL95">The Book</a></li>
       </ul>
     </div>
+
     <div class="footer-col">
       <h5>Contact</h5>
       <ul>
@@ -949,14 +699,8 @@ icon1_path: /images/icons/flash.png
       </ul>
     </div>
   </div>
+
   <div class="footer-bottom">
-    <p class="footer-copy">© 2025 RAMP Business Consulting. All rights reserved.</p>
-    <div class="footer-social">
-      <a href="https://www.linkedin.com/company/101993646/">in</a>
-      <a href="https://www.facebook.com/profile.php?id=61558688188225">f</a>
-    </div>
+    <p>© 2023 RAMP Business Consulting. All rights reserved.</p>
   </div>
 </footer>
-
-</body>
-</html>
