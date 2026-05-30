@@ -51,9 +51,16 @@ features:
     min-height: 480px;
   }
   .services-hero-image {
-    background-image: url('/images/services-hero.jpg');
-    background-size: cover;
-    background-position: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: var(--smoke-2);
+  }
+  .services-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
   .services-hero-content {
     padding: 5rem 4.5rem;
@@ -283,7 +290,7 @@ features:
   }
   @media (max-width: 768px) {
     .services-hero { grid-template-columns: 1fr; }
-    .services-hero-image { height: 250px; }
+    .services-hero-image { height: 320px; }
     .services-hero-content { padding: 3.5rem 5%; }
     .services-grid-layout { grid-template-columns: 1fr; }
   }
@@ -293,7 +300,10 @@ features:
 
   <!-- INTRO HERO SECTION -->
   <section class="services-hero">
-    <div class="services-hero-image"></div>
+    <div class="services-hero-image">
+      <!-- Image tag injected cleanly here on the top-left side -->
+      <img src="/images/services-hero.jpg" alt="Corporate training environment and executive optimization architecture" />
+    </div>
     <div class="services-hero-content">
       <div class="section-label">Target Architecture</div>
       <h1>Who We Optimize</h1>
@@ -396,4 +406,5 @@ features:
     <a href="/contact.html" class="cta-button">Request Briefing</a>
   </section>
 
+</div>
 </div>
