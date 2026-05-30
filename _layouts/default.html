@@ -69,19 +69,24 @@
     <!-- ===== Global Header Navigation ===== -->
     <header class="site-header px-6 py-4 flex justify-between items-center">
         <div class="flex items-center">
+            <!-- Keeps the logo linking back to home -->
             <a href="/index.html" class="block max-w-[15rem] md:max-w-[18rem]">
                 <img src="/images/logo1.png" alt="RAMP Business Performance Logo" class="w-full h-auto" />
             </a>
         </div>
         
-        <!-- Desktop view navigation tabs (Guaranteed Visible on screens > 768px wide) -->
-        <nav class="desktop-nav flex items-center space-x-2">
-            <a class="nav-link {% if page.url == '/about.html' %}active{% endif %}" href="/about.html">About</a>
+        <!-- Desktop view navigation tabs (Strategic Conversion Order) -->
+        <nav class="desktop-nav flex items-center space-x-1">
             <a class="nav-link {% if page.url == '/services.html' %}active{% endif %}" href="/services.html">Services</a>
-            <a class="nav-link {% if page.url == '/learn.html' %}active{% endif %}" href="/learn.html">Learn</a>
-            <a class="nav-link {% if page.url == '/testimonials.html' %}active{% endif %}" href="/testimonials.html">Testimonials</a>
             <a class="nav-link {% if page.url == '/pricing.html' %}active{% endif %}" href="/pricing.html">Programs &amp; Pricing</a>
-            <a class="nav-link {% if page.url == '/contact.html' %}active{% endif %}" href="/contact.html">Contact</a>
+            <a class="nav-link {% if page.url == '/testimonials.html' %}active{% endif %}" href="/testimonials.html">Testimonials</a>
+            <a class="nav-link {% if page.url == '/about.html' %}active{% endif %}" href="/about.html">About</a>
+            <a class="nav-link {% if page.url == '/learn.html' %}active{% endif %}" href="/learn.html">Learn</a>
+            
+            <!-- Styled as a premium prominent button -->
+            <a class="ml-4 bg-[#c5a880] text-[#1c1c1c] font-semibold px-4 py-2 rounded shadow hover:bg-[#b4966c] transition-all" href="/contact.html">
+                Contact Us
+            </a>
         </nav>
 
         <!-- Mobile Trigger Button -->
@@ -89,15 +94,15 @@
             <i class="fas fa-bars"></i>
         </div>
 
-        <!-- Mobile Drawer Menu -->
+        <!-- Mobile Drawer Menu (Matches exact same strategic order) -->
         <nav class="mobile-menu shadow-xl">
             <a href="/index.html">Home</a>
-            <a href="/about.html">About</a>
             <a href="/services.html">Services</a>
-            <a href="/learn.html">Learn</a>
-            <a href="/testimonials.html">Testimonials</a>
             <a href="/pricing.html">Programs &amp; Pricing</a>
-            <a href="/contact.html">Contact</a>
+            <a href="/testimonials.html">Testimonials</a>
+            <a href="/about.html">About</a>
+            <a href="/learn.html">Learn</a>
+            <a href="/contact.html" class="bg-[#c5a880] text-[#1c1c1c] font-semibold text-center my-2 rounded">Contact Us</a>
         </nav>
     </header>
 
