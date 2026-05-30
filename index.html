@@ -1,6 +1,6 @@
 ---
 layout: default
-banner_image_path: /images/Guest check-in.png
+banner_image_path: /images/mba3.png
 icon1_path: /images/icons/flash.png
 ---
 <!DOCTYPE html>
@@ -8,39 +8,88 @@ icon1_path: /images/icons/flash.png
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>RAMP | The Psychology of Business Performance</title>
+  <title>RAMP Business Skills Consulting</title>
   <style>
-    .padded { padding: 20px; }
-    .text-center { text-align: center; }
-    .hero-title-smaller { font-size: 1.8em; font-weight: bold; }
+    /* Base styles */
+    .padded {
+      padding: 20px;
+    }
 
+    .text-center {
+      text-align: center;
+    }
+
+    /* Custom smaller hero title */
+    .hero-title-smaller {
+      font-size: 1.8em; /* Adjusted down from original hero-title */
+      font-weight: bold;
+    }
+
+    /* Responsive styles */
     @media (max-width: 768px) {
       .grid-middle {
         display: flex;
         flex-direction: column;
         align-items: center;
       }
-      .hero-div, .text-background, .text-background-2 {
+
+      .hero-div,
+      .text-background,
+      .text-background-2 {
         width: 100%;
         padding: 15px;
       }
-      .hero-title { font-size: 1.3em; }
-      .hero-text { font-size: 1em; }
-      .padded-b-2 { padding-bottom: 10px; }
-      .bg-image { background-size: cover; }
-      .bg-meeting { height: 220px; }
-      .bg-plant-2 { height: 300px; }
-      .super-small-text { font-size: 0.85em; }
-      .hide-sm { display: none; }
+
+      .hero-title {
+        font-size: 1.3em;
+      }
+
+      .hero-text {
+        font-size: 1em;
+      }
+
+      .padded-b-2 {
+        padding-bottom: 10px;
+      }
+
+      .bg-image {
+        background-size: cover;
+      }
+
+      .bg-meeting {
+        height: 220px;
+      }
+
+      .bg-plant-2 {
+        height: 300px;
+      }
+
+      .super-small-text {
+        font-size: 0.85em;
+      }
+
+      .hide-sm {
+        display: none;
+      }
     }
 
     @media (max-width: 480px) {
-      .hero-title { font-size: 1.2em; }
-      .hero-text { font-size: 0.95em; }
+      .hero-title {
+        font-size: 1.2em;
+      }
+
+      .hero-text {
+        font-size: 0.95em;
+      }
     }
 
-    img { max-width: 100%; height: auto; }
+    /* Image scaling */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
 
+    /* Book link styling */
     .book-link {
       display: inline-block;
       margin-top: 15px;
@@ -59,167 +108,141 @@ icon1_path: /images/icons/flash.png
   </style>
 </head>
 <body>
+    <!-- Hero -->
+    <section class="bg-image padded tall-80 grid-middle" style="background-image: url('{{page.banner_image_path}}');">
+        <div class="md:col-8_sm-10 text-background hero-div custom-slided">
+            <h1 class="hero-title-smaller editable">
+                <em><strong>Welcome to: RAMP</strong></em>&nbsp;Hospitality Skills Training
+            </h1>
+            <h2 class="hero-text editable">
+                <strong>Boost Guest Revenue - Elevate Service Standards - Build Loyalty.</strong>
+            </h2>
+            <p class="hero-text editable">
+                <strong>&nbsp;&nbsp;&nbsp;RAMP helps hotels and resorts increase guest spending, resolve conflicts effortlessly, and deliver memorable experiences. We train your staff to master the art of guest interaction, so every front desk conversation, restaurant visit, and service recovery becomes an opportunity to build loyalty and drive revenue.</strong>
+            </p>
+        </div>
+    </section>
 
-<section class="bg-image padded tall-80 grid-middle" style="background-image: url('{{page.banner_image_path}}');">
-  <div class="md:col-8_sm-10 text-background hero-div custom-slided">
-    <h1 class="hero-title-smaller editable">
-      <strong>RAMP | The Psychology of Business Performance</strong>
-    </h1>
-    <h2 class="hero-text editable">
-      <strong>Applied Behavioral Science for Sales, Negotiation, Leadership, and Executive Communication.</strong>
-    </h2>
-    <p class="hero-text editable">
-      Most organizations teach employees what to say. RAMP teaches professionals why people decide.
-      Drawing on behavioral psychology, consumer behavior research, executive leadership experience,
-      and the proprietary RAMPOC Framework, we help organizations improve sales performance,
-      strengthen leadership communication, enhance negotiation outcomes, and build lasting influence.
-    </p>
-  </div>
-</section>
+    {% include newsletter-signup.html %}
 
-{% include newsletter-signup.html %}
+    <!-- Why Choose RAMP -->
+    <section class="padded grid center icon-section" id="why-us">
+        <div class="col-12 center padded-b">
+            <h2 class="editable hero-title">Why Choose RAMP</h2>
+        </div>
+        <div class="col-4_sm-6_xs-12">
+            <img class="editable" src="/uploads/icons8-customize-50.png" />
+            <h4 class="editable">Proven Framework</h4>
+            <p class="editable hero-text hide-sm">
+                <em>The RAMPOC method provides a clear-actionable framework for understanding guest needs/wants, and guiding interaction to a positive outcome.</em>
+            </p>
+        </div>
+        <div class="col-4_sm-6_xs-12">
+            <img class="editable" src="/uploads/strategic.png" />
+            <h4 class="editable">Hospitality Industry Focused</h4>
+            <p class="editable hero-text hide-sm">
+                Every hotel/resort is unique, but the staff makes the difference. RAMP designs training that solves specific service challenges that affect revenue, from upselling suites, activities/tours like a trusted advisor.&nbsp;
+            </p>
+        </div>
+        <div class="col-4_sm-6_xs-12">
+            <img class="editable" src="/uploads/icons8-personal-growth-64.png" />
+            <h4 class="editable">Lasting Growth</h4>
+            <p class="editable hero-text hide-sm">
+                RAMP's focus is on increasing customer satisfaction through enhanced staff interaction that will result in higher online rating and reviews, more bookings, increased loyalty/retention, and growth of brand reputation.
+            </p>
+        </div>
+    </section>
 
-<section class="padded grid center icon-section" id="why-us">
-  <div class="col-12 center padded-b">
-    <h2 class="editable hero-title">Why Organizations Work With RAMP</h2>
-  </div>
-
-  <div class="col-4_sm-6_xs-12">
-    <img class="editable" src="/uploads/icons8-customize-50.png" />
-    <h4 class="editable">Behavioral Science Foundation</h4>
-    <p class="editable hero-text hide-sm">
-      Grounded in psychology, consumer behavior, influence science, and decades of research into how people build trust, make decisions, and respond to persuasion.
-    </p>
-  </div>
-
-  <div class="col-4_sm-6_xs-12">
-    <img class="editable" src="/uploads/strategic.png" />
-    <h4 class="editable">Real Business Experience</h4>
-    <p class="editable hero-text hide-sm">
-      27 years spanning commercial banking, commercial real estate, operations leadership, consulting, and executive education.
-    </p>
-  </div>
-
-  <div class="col-4_sm-6_xs-12">
-    <img class="editable" src="/uploads/icons8-personal-growth-64.png" />
-    <h4 class="editable">Practical Application</h4>
-    <p class="editable hero-text hide-sm">
-      Actionable frameworks professionals can immediately apply in sales, leadership, negotiation, presentations, and business development.
-    </p>
-  </div>
-</section>
-
+   <!-- Target Clients -->
 <section class="grid bg-green padded">
-  <div class="col-7_sm-12 bg-image tall-50"
-       style="background-image: url('/images/service-image.png'); background-size: cover; background-position: center;">
-  </div>
+  <div class="col-7_sm-12 bg-image tall-50" style="background-image: url('/images/service-image.png'); background-size: cover; background-position: center;"></div>
 
   <div class="md:col-5_sm-12-middle padded editable">
-    <h2 class="hero-title sm-text-center">Who We Help</h2>
+    <h2 class="hero-title sm-text-center">Our Clients</h2>
     <ul>
-      <li><p class="hide-sm"><strong>Sales Teams</strong> seeking stronger conversion rates and deeper client relationships.</p></li>
-      <li><p class="hide-sm"><strong>Business Leaders</strong> who want greater influence and communication effectiveness.</p></li>
-      <li><p class="hide-sm"><strong>Executives</strong> delivering high-stakes presentations and negotiations.</p></li>
-      <li><p class="hide-sm"><strong>Organizations</strong> developing leadership and cross-cultural business capability.</p></li>
+      <li>
+        <p class="hide-sm"><strong>3-4 and 5-Star Hotels&nbsp;</strong>aiming to elevate their service culture and increase customer loyalty.</p>
+      </li>
+      <li>
+        <p class="hide-sm"><strong>Resorts and Tourism Groups</strong> seeking to create a consistent, world-class guest experience across all touchpoints.</p>
+      </li>
+      <li>
+        <p class="hide-sm"><strong>Hospitality Teams</strong> preparing for international guest seasons or new market openings.</p>
+      </li>
     </ul>
   </div>
 </section>
 
-<section class="padded grid">
-  <div class="col-6_xs-12 padded editable">
-    <h3>Solutions</h3>
-    <ul>
-      <li><p>Sales Psychology and the RAMPOC Framework</p></li>
-      <li><p>Executive Presentation Skills</p></li>
-      <li><p>Strategic Negotiation Programs</p></li>
-      <li><p>Leadership Communication Development</p></li>
-    </ul>
-  </div>
-
-  <div class="col-6_xs-12 padded editable">
-    <h3>Organizational Outcomes</h3>
-    <ul>
-      <li><p><strong>Improve Sales Performance:</strong> Build trust, influence decisions, and strengthen client relationships.</p></li>
-      <li><p><strong>Enhance Negotiation Results:</strong> Create better outcomes in high-stakes conversations.</p></li>
-      <li><p><strong>Increase Leadership Influence:</strong> Improve communication and stakeholder alignment.</p></li>
-      <li><p><strong>Develop Long-Term Capability:</strong> Equip professionals with transferable behavioral skills.</p></li>
-    </ul>
-  </div>
-</section>
-
-<section class="bg-image bg-plant-2 padded center tall-70 grid-right" id="services">
-  <div class="col-6_sm-8-middle right text-background-2" data-aos="fade-left">
-    <h2 class="editable hero-title">The RAMPOC Framework</h2>
-    <p class="editable hero-text">
-      <strong>
-      Created by Roderick Mendoza, RAMPOC combines behavioral psychology, consumer behavior,
-      and real-world business experience to help professionals understand the hidden barriers
-      behind decision-making. Rather than relying on scripts and tactics, RAMPOC teaches professionals
-      how to diagnose uncertainty, identify resistance, and guide conversations toward confident decisions.
-      </strong>
-    </p>
-  </div>
-</section>
-
-<section class="padded grid">
-  <div class="col-6_xs-12 padded editable">
-    <h3><strong>Meet Roderick Mendoza</strong></h3>
-    <p>
-      Business Consultant, Professor, Author, and Creator of the RAMPOC Framework.
-      Roderick combines 27 years of experience across commercial banking, commercial real estate,
-      operations leadership, consulting, and higher education.
-    </p>
-    <p>
-      He has managed commercial banking portfolios exceeding $20 million, negotiated landmark real estate transactions,
-      led organizations with more than 100 employees, and taught sales, negotiation, consumer behavior,
-      and business communication for over 17 years.
-    </p>
-  </div>
-
-  <div class="col-6_xs-12 padded editable">
-    <h3><strong>The RAMP Philosophy</strong></h3>
-    <p>
-      Every business result begins with a human decision.
-    </p>
-    <p>
-      Whether a customer buys, an executive approves a proposal, a stakeholder supports a strategy,
-      or a team follows a leader, success depends on understanding how people think, decide, and act.
-    </p>
-    <p>
-      RAMP helps organizations apply behavioral science to achieve measurable business outcomes.
-    </p>
-  </div>
-</section>
-
-<section class="padded text-center">
-  <h3 class="editable">THE RAMPOC METHOD</h3>
-  <p class="editable">
-    Understanding the Buyer's Crisis in Sales
-  </p>
-  <a href="https://www.amazon.com/dp/B0DZD9YL95" target="_blank" rel="noopener noreferrer" class="book-link editable">
-    📘 Get the Book on Amazon
-  </a>
-</section>
-
-<section class="bg-rust padded projects center hero-pb" id="projects">
-  <h2 class="center hero-title hero-nav">What Clients and Learners Say</h2>
-
-  <section class="light-bg text-center p-5p center grid-middle">
-    <div class="grid md:grid-cols-2 p-2">
-      <div class="p-1">
-        <div class="card light-bg">
-          <img src="/images/professional-testimonial.png" class="profile mx-auto" alt="Client photo" />
-          <p class="author editable hero-text">Corporate Client</p>
-          <p class="company editable hero-text">Executive Development Program</p>
-          <p class="editable hero-text super-small-text">
-            "Roderick's ability to connect behavioral science with practical business application transformed the way our team approaches communication, negotiation, and client relationships."
-          </p>
-          <span> ★ ★ ★ ★ ★ </span>
+    <!-- Features & Benefits -->
+    <section class="padded grid">
+        <div class="col-6_xs-12 padded editable">
+            <h3>Key Features</h3>
+            <ul>
+                <li><p>Tailored service recovery and upselling scripts</p></li>
+                <li><p>Real-world guest roleplays and simulations&nbsp;</p></li>
+                <li><p>6 months of ongoing coaching for managers.</p></li>
+            </ul>
         </div>
-      </div>
-    </div>
-  </section>
-</section>
+        <div class="col-6_xs-12 padded editable">
+            <h3>Benefits</h3>
+            <ul>
+                <li><p><strong>Increase Revenue:</strong> Confidently recommend suites, activities, tours as a trusted advisor instead of establishment staff</p></li>
+                <li><p><strong>Resolve Conflicts:</strong> Turn a negative experience into a positive, solving a problem and turning an unsatisfied guest into a loyal patron. </p></li>
+                <li><p><strong>Elevate Reputation:</strong> Generate positive reviews and word-of-mouth referrals. </p></li>
+                <li><p><strong>Long-Term Impact:</strong> A service culture that delivers measurable financial results.</p></li>
+            </ul>
+        </div>
+    </section>
 
+    <!-- Commitment -->
+    <section class="bg-image bg-plant-2 padded center tall-70 grid-right" id="services">
+        <div class="col-6_sm-8-middle right text-background-2" data-aos="fade-left">
+            <h2 class="editable hero-title">RAMP’s Commitment</h2>
+            <p class="editable hero-text">
+                <strong>We don’t just train!!&nbsp; RAMP will transform your service culture, as your staff gains the confidence, empathy, and skills to make every guest feel understood and valued, leading directly to a healthier bottom line.</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="padded grid">
+        <div class="col-6_xs-12 padded editable">
+            <h3><strong>Our Mission</strong></h3>
+            <p><strong>To train and empower hospitality teams to master guest interactions, building lasting loyalty that drives revenue, reputation, and growth.</strong></p>
+        </div>
+        <div class="col-6_xs-12 padded editable">
+            <h3><strong>Contact Us</strong></h3>
+            <p><strong>Ready to transform your guest experience and profitability?</strong></p>
+            <p><strong>Let's talk now!! Get in touch with RAMP today</strong> and take the first step toward growth.</p>
+        </div>
+    </section>
+
+    <!-- Book Promotion Section -->
+    <section class="padded text-center">
+      <h3 class="editable">READ THE RAMPOC SALES METHOD</h3>
+      <a href="https://www.amazon.com/dp/B0DZD9YL95" target="_blank" rel="noopener noreferrer" class="book-link editable">
+          📘 Get the Book on Amazon
+      </a>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="bg-rust padded projects center hero-pb" id="projects">
+        <h2 class="center hero-title hero-nav">Testimonials</h2>
+        <section class="light-bg text-center p-5p center grid-middle">
+            <div class="grid md:grid-cols-2 p-2">
+                <div class="p-1">
+                    <div class="card light-bg">
+                        <img src="/images/resort image.png" class="profile mx-auto" alt="Resort photo" />
+                        <p class="author editable hero-text">Jane</p>
+                        <p class="company editable hero-text">Island Resort</p>
+                        <p class="editable hero-text super-small-text">
+                            "Thanks to RAMP, our guest reviews are shining brighter than ever. From the time we say 'hello' to 'goodbye', our guests can feel the connection. Wished we could have done this sooner."
+                        </p>
+                        <span> ★ ★ ★ ★ ★ </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
 </body>
 </html>
