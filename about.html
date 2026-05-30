@@ -1,959 +1,242 @@
 ---
 layout: default
-banner_image: /images/Receive Key.png
+banner_image: /uploads/target-client.jpg
 team:
 ---
 
-<style>
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-  :root {
-    --ink: #0D0D0D;
-    --ink-2: #1C1C1C;
-    --ink-3: #3A3530;
-    --smoke: #F2EFE9;
-    --smoke-2: #E4DED4;
-    --white: #FAFAF8;
-    --gold: #B8922A;
-    --gold-light: #D4AA4E;
-    --gold-pale: #F5EDD8;
-    --font-display: 'Cormorant Garamond', Georgia, serif;
-    --font-body: 'Outfit', sans-serif;
-  }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: var(--font-body);
-    background: var(--white);
-    color: var(--ink);
-    line-height: 1.7;
-    overflow-x: hidden;
-  }
-
-  nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 1rem 5%;
-    background: rgba(250,250,248,0.96);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--smoke-2);
-  }
-
-  .nav-logo {
-    font-family: var(--font-display);
-    font-size: 1.75rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    color: var(--ink);
-    text-decoration: none;
-    white-space: nowrap;
-  }
-
-  .nav-logo span { color: var(--gold); }
-
-  .nav-links {
-    display: flex;
-    gap: 1.25rem;
-    list-style: none;
-    align-items: center;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-  }
-
-  .nav-links a {
-    font-size: 0.74rem;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ink-3);
-    text-decoration: none;
-    transition: color 0.2s;
-    white-space: nowrap;
-  }
-
-  .nav-links a:hover { color: var(--gold); }
-
-  .nav-cta {
-    background: var(--ink);
-    color: var(--white) !important;
-    padding: 0.5rem 1rem;
-    border-radius: 2px;
-  }
-
-  .about-hero {
-    min-height: 55vh;
-    display: flex;
-    align-items: flex-end;
-    padding: 130px 5% 5rem;
-    position: relative;
-    overflow: hidden;
-    background: var(--ink-2);
-  }
-
-  .about-hero-bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1400&q=80');
-    background-size: cover;
-    background-position: center 20%;
-    opacity: 0.18;
-  }
-
-  .about-hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 750px;
-  }
-
-  .section-label {
-    display: inline-block;
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 0.85rem;
-  }
-
-  .about-hero h1,
-  .section-title {
-    font-family: var(--font-display);
-    font-size: clamp(2.6rem, 5vw, 5rem);
-    font-weight: 700;
-    line-height: 1.08;
-    color: var(--white);
-    margin-bottom: 1.25rem;
-  }
-
-  .about-hero h1 em,
-  .section-title em {
-    font-style: italic;
-    color: var(--gold-light);
-  }
-
-  .about-hero-sub {
-    font-size: 1.05rem;
-    font-weight: 300;
-    color: rgba(255,255,255,0.65);
-    max-width: 580px;
-    line-height: 1.85;
-  }
-
-  .intro {
-    display: grid;
-    grid-template-columns: minmax(280px, 440px) 1fr;
-    gap: 0;
-    background: var(--smoke);
-  }
-
-  .intro-photo {
-    position: relative;
-    overflow: hidden;
-    background: var(--smoke-2);
-    min-height: 420px;
-    max-height: 520px;
-  }
-
-  .intro-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
-    display: block;
-  }
-
-  .intro-photo-caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to top, rgba(13,13,13,0.85), transparent);
-    padding: 2rem 2rem 1.5rem;
-  }
-
-  .intro-photo-caption h3 {
-    font-family: var(--font-display);
-    font-size: 1.5rem;
-    color: var(--white);
-  }
-
-  .intro-photo-caption p {
-    font-size: 0.78rem;
-    color: rgba(255,255,255,0.6);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
-  .intro-content {
-    padding: 4.5rem 5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .intro-headline {
-    font-family: var(--font-display);
-    font-size: clamp(1.8rem, 2.5vw, 2.6rem);
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-  }
-
-  .intro-headline em { color: var(--gold); }
-
-  .intro-body {
-    font-size: 0.95rem;
-    font-weight: 300;
-    color: var(--ink-3);
-    line-height: 1.9;
-    margin-bottom: 1.25rem;
-  }
-
-  .intro-body strong {
-    font-weight: 500;
-    color: var(--ink);
-  }
-
-  .intro-pull {
-    margin-top: 2rem;
-    padding: 1.75rem 2rem;
-    border-left: 3px solid var(--gold);
-    background: var(--white);
-  }
-
-  .intro-pull p {
-    font-family: var(--font-display);
-    font-size: 1.25rem;
-    font-style: italic;
-    line-height: 1.65;
-  }
-
-  .stats-bar {
-    background: var(--gold-pale);
-    border-top: 3px solid var(--gold);
-    padding: 3.5rem 5%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2px;
-  }
-
-  .stat-item {
-    text-align: center;
-    padding: 1.5rem;
-  }
-
-  .stat-num {
-    font-family: var(--font-display);
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--ink);
-    line-height: 1;
-    margin-bottom: 0.4rem;
-  }
-
-  .stat-label {
-    font-size: 0.75rem;
-    color: var(--ink-3);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    line-height: 1.4;
-  }
-
-  .philosophy {
-    background: var(--ink);
-    padding: 7rem 5%;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .philosophy-bg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    font-family: var(--font-display);
-    font-size: 24rem;
-    font-weight: 700;
-    color: rgba(255,255,255,0.025);
-    line-height: 1;
-    pointer-events: none;
-    white-space: nowrap;
-  }
-
-  .philosophy-inner {
-    position: relative;
-    z-index: 2;
-    max-width: 860px;
-    margin: 0 auto;
-  }
-
-  .philosophy h2,
-  .video-section h2 {
-    font-family: var(--font-display);
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    color: var(--white);
-    line-height: 1.15;
-    margin-bottom: 2rem;
-  }
-
-  .philosophy h2 em,
-  .video-section h2 em {
-    color: var(--gold-light);
-  }
-
-  .philosophy p {
-    font-size: 1rem;
-    font-weight: 300;
-    color: rgba(255,255,255,0.58);
-    line-height: 1.9;
-    margin-bottom: 1rem;
-  }
-
-  .philosophy-pillars {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-    margin-top: 4rem;
-  }
-
-  .phil-pillar {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.07);
-    padding: 2.5rem 2rem;
-    text-align: left;
-  }
-
-  .phil-pillar h4 {
-    font-family: var(--font-display);
-    font-size: 1.2rem;
-    color: var(--gold-light);
-    margin-bottom: 0.5rem;
-  }
-
-  .credentials,
-  .framework,
-  .about-cta {
-    padding: 7rem 5%;
-  }
-
-  .credentials {
-    background: var(--white);
-  }
-
-  .framework,
-  .about-cta {
-    background: var(--smoke);
-  }
-
-  .credentials-header h2,
-  .framework-content h2,
-  .about-cta h2 {
-    font-family: var(--font-display);
-    font-size: clamp(2rem, 3vw, 2.8rem);
-    color: var(--ink);
-    line-height: 1.15;
-    margin-bottom: 1.25rem;
-  }
-
-  .credentials-header h2 em,
-  .framework-content h2 em,
-  .about-cta h2 em {
-    color: var(--gold);
-  }
-
-  .cred-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
-    margin-top: 3rem;
-  }
-
-  .cred-card {
-    background: var(--smoke);
-    padding: 2.75rem;
-  }
-
-  .cred-card.dark {
-    background: var(--ink-2);
-  }
-
-  .cred-card-tag {
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 0.6rem;
-  }
-
-  .cred-card h3 {
-    font-family: var(--font-display);
-    font-size: 1.4rem;
-    color: var(--ink);
-    margin-bottom: 0.3rem;
-  }
-
-  .cred-card.dark h3 {
-    color: var(--white);
-  }
-
-  .cred-card-sub {
-    font-size: 0.82rem;
-    color: var(--ink-3);
-    margin-bottom: 1.25rem;
-  }
-
-  .cred-card.dark .cred-card-sub {
-    color: rgba(255,255,255,0.45);
-  }
-
-  .cred-list {
-    list-style: none;
-  }
-
-  .cred-list li {
-    font-size: 0.85rem;
-    font-weight: 300;
-    color: var(--ink-3);
-    padding: 0.5rem 0;
-    border-top: 1px solid var(--smoke-2);
-  }
-
-  .cred-card.dark .cred-list li {
-    color: rgba(255,255,255,0.6);
-    border-top-color: rgba(255,255,255,0.08);
-  }
-
-  .framework-inner {
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: 5rem;
-    align-items: start;
-  }
-
-  .framework-content p {
-    font-size: 0.93rem;
-    font-weight: 300;
-    color: var(--ink-3);
-    line-height: 1.9;
-    margin-bottom: 1rem;
-  }
-
-  .framework-book {
-    background: var(--white);
-    padding: 1.5rem 1.75rem;
-    margin-top: 2rem;
-  }
-
-  .framework-book a,
-  .footer-col a {
-    color: var(--gold);
-    text-decoration: none;
-  }
-
-  .stages {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-
-  .stage {
-    background: var(--white);
-    padding: 1.5rem 1.75rem;
-    display: flex;
-    gap: 1.25rem;
-    align-items: flex-start;
-  }
-
-  .stage-letter {
-    font-family: var(--font-display);
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--gold);
-    line-height: 1;
-    min-width: 1.5rem;
-  }
-
-  .stage h5 {
-    font-family: var(--font-display);
-    font-size: 1.1rem;
-    color: var(--ink);
-    margin-bottom: 0.2rem;
-  }
-
-  .stage p {
-    font-size: 0.83rem;
-    font-weight: 300;
-    color: var(--ink-3);
-    line-height: 1.65;
-  }
-
-  .video-section {
-    background: var(--ink);
-    padding: 6rem 5%;
-    text-align: center;
-  }
-
-  .video-wrap {
-    max-width: 780px;
-    margin: 0 auto;
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-  }
-
-  .video-wrap iframe {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-  }
-
-  .about-cta {
-    text-align: center;
-  }
-
-  .about-cta-inner {
-    max-width: 680px;
-    margin: 0 auto;
-  }
-
-  .about-cta p {
-    font-family: var(--font-display);
-    font-size: 1.2rem;
-    font-style: italic;
-    color: var(--ink-3);
-    line-height: 1.7;
-    margin-bottom: 2.5rem;
-  }
-
-  .cta-row {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .btn-primary,
-  .btn-outline {
-    display: inline-block;
-    padding: 0.9rem 2rem;
-    font-size: 0.82rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    text-decoration: none;
-    border-radius: 2px;
-  }
-
-  .btn-primary {
-    background: var(--ink);
-    color: var(--white);
-  }
-
-  .btn-outline {
-    border: 1px solid var(--ink-3);
-    color: var(--ink);
-  }
-
-  footer {
-    background: var(--ink-2);
-    padding: 4rem 5% 2rem;
-  }
-
-  .footer-top {
-    display: grid;
-    grid-template-columns: 1.6fr 1fr 1fr;
-    gap: 4rem;
-    padding-bottom: 3rem;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    margin-bottom: 2rem;
-  }
-
-  .footer-logo {
-    font-family: var(--font-display);
-    font-size: 1.8rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    color: var(--white);
-    text-decoration: none;
-    display: block;
-    margin-bottom: 0.85rem;
-  }
-
-  .footer-logo span { color: var(--gold); }
-
-  .footer-desc,
-  .footer-col a,
-  .footer-copy {
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.5);
-    font-weight: 300;
-  }
-
-  .footer-col h5 {
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.28);
-    margin-bottom: 1.1rem;
-  }
-
-  .footer-col ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.65rem;
-  }
-
-  @media (max-width: 960px) {
-    nav {
-      flex-direction: column;
-      align-items: center;
-      padding: 0.9rem 5%;
-    }
-
-    .nav-links {
-      justify-content: center;
-      gap: 0.7rem 1rem;
-    }
-
-    .nav-links a {
-      font-size: 0.68rem;
-    }
-
-    .about-hero {
-      padding-top: 170px;
-    }
-
-    .intro,
-    .philosophy-pillars,
-    .cred-grid,
-    .framework-inner,
-    .footer-top {
-      grid-template-columns: 1fr;
-    }
-
-    .intro-photo {
-      max-width: 420px;
-      width: 90%;
-      min-height: 360px;
-      max-height: 430px;
-      margin: 3rem auto 0;
-    }
-
-    .stats-bar {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
-  @media (max-width: 600px) {
-    .about-hero {
-      min-height: 70vh;
-      padding-bottom: 3rem;
-    }
-
-    .intro-photo {
-      min-height: 320px;
-      max-height: 380px;
-    }
-
-    .stats-bar {
-      grid-template-columns: 1fr;
-    }
-
-    .credentials,
-    .framework,
-    .about-cta,
-    .philosophy,
-    .video-section {
-      padding: 4rem 5%;
-    }
-  }
-</style>
-
-<nav>
-  <a href="/" class="nav-logo">R<span>A</span>MP</a>
-  <ul class="nav-links">
-    <li><a href="/about/">About</a></li>
-    <li><a href="/#services">Services</a></li>
-    <li><a href="/learn/">Learn</a></li>
-    <li><a href="/pricing-and-programs/">Pricing &amp; Programs</a></li>
-    <li><a href="/#projects">Testimonials</a></li>
-    <li><a href="/#contact" class="nav-cta">Contact</a></li>
-  </ul>
-</nav>
+<!-- PREMIUM ABOUT PAGE FOR RAMP -->
 
 <section class="about-hero">
   <div class="about-hero-bg"></div>
   <div class="about-hero-content">
-    <div class="section-label">About Erick Mendoza</div>
-    <h1>Not a sales trainer.<br><em>A student of why<br>people say yes.</em></h1>
-    <p class="about-hero-sub">27 years studying human behavior in banks, boardrooms, universities, and negotiating tables across two continents. This is what that journey built.</p>
+    <div class="section-label">The Psychology of Business</div>
+    <h1>Most professionals focus on<br><em>what to say.</em><br>I focus on why people decide.</h1>
+    <p class="about-hero-sub">
+      For more than 27 years, I have studied, taught, negotiated, sold, consulted,
+      and researched one question: What drives human decisions?
+    </p>
   </div>
 </section>
 
-<div class="intro">
+<section class="intro">
   <div class="intro-photo">
-    <img src="/images/AI Profile pic3.png" alt="Erick Mendoza, Founder of RAMP" />
+    <img src="/images/AI Profile pic3.png" alt="Erick Mendoza">
     <div class="intro-photo-caption">
       <h3>Erick Mendoza</h3>
-      <p>Founder, RAMP Business Consulting</p>
+      <p>Founder | RAMP Business Consulting</p>
     </div>
   </div>
 
   <div class="intro-content">
-    <div class="section-label">Who I Am</div>
-    <h2 class="intro-headline">Most people lose deals<br>before they open<br><em>their mouths.</em></h2>
+    <div class="section-label">My Story</div>
 
-    <p class="intro-body">I'm Erick Mendoza, originally from San Francisco, California. For over 27 years, I've been fascinated by one question: <strong>why do people decide the way they do?</strong></p>
+    <h2 class="intro-headline">
+      From commercial banking and real estate<br>
+      to academia and consulting,<br>
+      <em>the question never changed.</em>
+    </h2>
 
-    <p class="intro-body">That question took me from a Psychology degree, into high-stakes commercial banking where I managed a <strong>$20M+ lending portfolio</strong>, into real estate where I closed one of the <strong>largest single retail lease in company history</strong>, and eventually to South Korea.</p>
+    <p class="intro-body">
+      Early in my career, I worked in commercial banking managing a portfolio
+      exceeding $20 million. Later, I negotiated major retail real estate transactions,
+      managed large operational teams, and advised business owners facing critical
+      growth decisions.
+    </p>
 
-    <p class="intro-body">What I discovered across all of it: <strong>the most skilled salespeople still lose, not because of what they say, but because they don't understand what's happening inside the buyer's mind.</strong></p>
+    <p class="intro-body">
+      Throughout those experiences, one pattern became impossible to ignore:
+      people rarely make decisions for purely logical reasons. Behind every
+      opportunity, objection, negotiation, and purchase is a psychological process.
+    </p>
+
+    <p class="intro-body">
+      That realization led me deeper into psychology, counseling, consumer behavior,
+      communication, leadership, and influence science. Today, I combine real-world
+      business experience with academic research to help organizations understand
+      how people think, decide, trust, resist, and commit.
+    </p>
 
     <div class="intro-pull">
-      <p>"I don't teach people how to sell. I teach them how people decide, and what to do when they don't."</p>
+      <p>
+        “I don't teach people how to sell. I teach them how people decide — and what
+        to do when they don't.”
+      </p>
     </div>
   </div>
-</div>
+</section>
 
-<div class="stats-bar">
+<section class="stats-bar">
   <div class="stat-item">
     <div class="stat-num">27+</div>
-    <div class="stat-label">Years of practitioner and academic experience</div>
+    <div class="stat-label">Years of Business Experience</div>
   </div>
+
   <div class="stat-item">
-    <div class="stat-num">17yr</div>
-    <div class="stat-label">University-level sales and psychology instruction</div>
+    <div class="stat-num">17</div>
+    <div class="stat-label">Years Teaching Business & Psychology</div>
   </div>
+
   <div class="stat-item">
-    <div class="stat-num">Top<br>100</div>
-    <div class="stat-label">Educator every semester since 2014</div>
+    <div class="stat-num">$20M+</div>
+    <div class="stat-label">Commercial Banking Portfolio</div>
   </div>
+
   <div class="stat-item">
-    <div class="stat-num">2x</div>
-    <div class="stat-label">Master's degrees</div>
+    <div class="stat-num">Top 100</div>
+    <div class="stat-label">Professor Recognition Since 2014</div>
   </div>
-</div>
+</section>
 
 <section class="philosophy">
-  <div class="philosophy-bg">WHY</div>
   <div class="philosophy-inner">
-    <div class="section-label">The Philosophy</div>
-    <h2>Every buyer is navigating<br>an <em>internal crisis.</em><br>Your job is to resolve it.</h2>
+    <div class="section-label">Philosophy</div>
 
-    <p>My approach to sales and communication is grounded in psychology: trust vs. doubt, confidence vs. competence, commitment vs. fear of loss.</p>
+    <h2>
+      Behavioral science belongs in the<br>
+      <em>boardroom.</em>
+    </h2>
 
-    <p>Traditional sales training teaches you what to say. RAMP teaches you what the buyer is feeling, and how to respond with precision.</p>
+    <p>
+      Most business problems are people problems disguised as business problems.
+      Lost deals. Weak presentations. Difficult negotiations. Resistance to change.
+      Leadership challenges.
+    </p>
 
-    <p>This isn't a system of manipulation. It's a system of understanding. When you understand what another person needs to feel safe enough to decide, you stop selling and start connecting.</p>
+    <p>
+      The common denominator is human behavior.
+    </p>
 
-    <div class="philosophy-pillars">
-      <div class="phil-pillar">
-        <h4>Behavioral Science First</h4>
-        <p>Every RAMP technique is rooted in psychology, influence principles, and real-world decision-making.</p>
-      </div>
-      <div class="phil-pillar">
-        <h4>Diagnosis Before Prescription</h4>
-        <p>Before recommending a response, we identify the internal crisis the buyer is experiencing.</p>
-      </div>
-      <div class="phil-pillar">
-        <h4>Skills That Transfer to Life</h4>
-        <p>The ability to understand people and respond with empathy improves every professional relationship.</p>
-      </div>
-    </div>
+    <p>
+      RAMP exists to bridge the gap between behavioral science and business
+      performance. The goal is not manipulation. The goal is understanding.
+      When people understand what drives decisions, they communicate more
+      effectively, negotiate more successfully, and build stronger relationships.
+    </p>
   </div>
 </section>
 
 <section class="credentials">
   <div class="credentials-header">
-    <div class="section-label">Background</div>
-    <h2>Practitioner credibility.<br><em>Academic depth.</em></h2>
+    <div class="section-label">Credibility</div>
+    <h2>Built from practice.<br><em>Supported by research.</em></h2>
   </div>
 
   <div class="cred-grid">
+
     <div class="cred-card dark">
-      <div class="cred-card-tag">Corporate Career</div>
-      <h3>Real-World Practitioner</h3>
-      <div class="cred-card-sub">San Francisco Bay Area, 2000-2008</div>
+      <div class="cred-card-tag">Corporate Experience</div>
+      <h3>Practitioner First</h3>
       <ul class="cred-list">
-        <li>Managed a $20M+ commercial loan portfolio working for one of the largest bank in the country.</li>
-        <li>Executed one of the largest single retail lease deal in the company's history.</li>
-        <li>Directed 100+ person operations at SFO International Airport.</li>
-        <li>Delivered strategic consulting to SMEs during the 2008 financial crisis.</li>
+        <li>Commercial Banking Officer managing $20M+ business portfolio.</li>
+        <li>Top-performing business development and lending professional.</li>
+        <li>Executed landmark commercial real estate transactions.</li>
+        <li>Managed 100+ employee operations environment.</li>
       </ul>
     </div>
 
     <div class="cred-card">
-      <div class="cred-card-tag">Academic Career</div>
-      <h3>Thought Leader &amp; Educator</h3>
-      <div class="cred-card-sub">South Korea, 2010-Present</div>
+      <div class="cred-card-tag">Consulting</div>
+      <h3>Business Advisor</h3>
       <ul class="cred-list">
-        <li>Assistant Professor, Hannam University.</li>
-        <li>Courses include Sales, Negotiation, Consumer Behavior, Corporate Ethics, and Business Communication.</li>
-        <li>Recognized Top 100 Professor by student evaluation every semester since 2014.</li>
-        <li>Published author of RAMPOC: Understanding the Buyer's Crisis in Sales.</li>
+        <li>Founder of RAMP Business Consulting.</li>
+        <li>Corporate sales psychology programs.</li>
+        <li>Executive communication coaching.</li>
+        <li>Negotiation and leadership development.</li>
       </ul>
     </div>
 
     <div class="cred-card">
+      <div class="cred-card-tag">Academia</div>
+      <h3>Professor & Researcher</h3>
+      <ul class="cred-list">
+        <li>17 years teaching business subjects in Asia.</li>
+        <li>Consumer Behavior, Sales, Negotiation, Ethics and Communication.</li>
+        <li>Repeated Top 100 Professor recognition.</li>
+        <li>MBA and undergraduate instruction.</li>
+      </ul>
+    </div>
+
+    <div class="cred-card dark">
       <div class="cred-card-tag">Education</div>
       <h3>Academic Foundation</h3>
-      <div class="cred-card-sub">University of Illinois &amp; Saint Mary's College</div>
       <ul class="cred-list">
-        <li>M.S. in Business Management, Gies College of Business, University of Illinois Urbana-Champaign.</li>
-        <li>M.S. in Counseling, SMC</li>
-        <li>B.S. in Psychology, SMC</li>
+        <li>M.S. Business Management — University of Illinois.</li>
+        <li>M.S. Counseling.</li>
+        <li>B.S. Psychology.</li>
+        <li>Specialization in human behavior and decision-making.</li>
       </ul>
     </div>
 
-    <div class="cred-card dark">
-      <div class="cred-card-tag">Specializations</div>
-      <h3>Areas of Expertise</h3>
-      <div class="cred-card-sub">Cross-disciplinary capabilities</div>
-      <ul class="cred-list">
-        <li>Sales Psychology and Buyer Behavior.</li>
-        <li>Executive Presence and Presentation Mastery.</li>
-        <li>High-Stakes B2B Negotiation.</li>
-        <li>Behavioral Psychology Applied to Leadership and Communication.</li>
-      </ul>
-    </div>
   </div>
 </section>
 
-<section class="framework" id="framework">
+<section class="framework">
   <div class="framework-inner">
+
     <div class="framework-content">
-      <div class="section-label">The Framework</div>
-      <h2>RAMPOC — <em>A map of the<br>buyer's mind.</em></h2>
+      <div class="section-label">The RAMPOC Framework</div>
 
-      <p>RAMPOC is not a sales script. It's a diagnostic framework that maps the stages of a buyer's internal crisis to precise intervention strategies.</p>
+      <h2>
+        A model for understanding the<br>
+        <em>buyer's internal journey.</em>
+      </h2>
 
-      <p>At each stage of a sales conversation, your buyer is navigating a specific internal conflict. The RAMPOC framework teaches you to identify which crisis the buyer is in and respond with the strategy that resolves it.</p>
+      <p>
+        RAMPOC was developed from years of professional sales experience,
+        academic research, and the psychological theories of human development.
+      </p>
 
-      <p>This methodology is actively taught in university-level sales curriculum and applied in corporate training engagements across South Korea and internationally.</p>
+      <p>
+        Rather than focusing on scripts or pressure tactics, the framework helps
+        professionals identify the psychological barriers that prevent action and
+        resolve them through trust, understanding, and strategic communication.
+      </p>
+
+      <p>
+        Today, the framework is used in corporate consulting engagements and
+        university-level sales education.
+      </p>
 
       <div class="framework-book">
-        <h5>Read the RAMPOC Sales Method</h5>
-        <p>The complete framework is now published and available on Amazon.</p>
-        <a href="https://www.amazon.com/dp/B0DZD9YL95" target="_blank">Get the Book on Amazon</a>
+        <h5>Published Author</h5>
+        <p>Read the complete RAMPOC methodology on Amazon.</p>
+        <a href="https://www.amazon.com/dp/B0DZD9YL95" target="_blank">
+          Get the Book
+        </a>
       </div>
     </div>
 
     <div class="stages">
-      <div class="stage">
-        <div class="stage-letter">R</div>
-        <div>
-          <h5>Relationship</h5>
-          <p>Build genuine trust before anything else.</p>
-        </div>
-      </div>
-
-      <div class="stage">
-        <div class="stage-letter">A</div>
-        <div>
-          <h5>Assessment</h5>
-          <p>Diagnose the buyer's real needs, fears, and motivations.</p>
-        </div>
-      </div>
-
-      <div class="stage">
-        <div class="stage-letter">M</div>
-        <div>
-          <h5>Matching</h5>
-          <p>Connect your solution precisely to the buyer's world.</p>
-        </div>
-      </div>
-
-      <div class="stage">
-        <div class="stage-letter">P</div>
-        <div>
-          <h5>Persuasion</h5>
-          <p>Apply proven influence science in context.</p>
-        </div>
-      </div>
-
-      <div class="stage">
-        <div class="stage-letter">O</div>
-        <div>
-          <h5>Objection</h5>
-          <p>Resolve the doubt behind the objection.</p>
-        </div>
-      </div>
-
-      <div class="stage">
-        <div class="stage-letter">C</div>
-        <div>
-          <h5>Closing</h5>
-          <p>Guide the buyer to a natural decision.</p>
-        </div>
-      </div>
+      <div class="stage"><div class="stage-letter">R</div><div><h5>Relationship</h5><p>Trust begins the process.</p></div></div>
+      <div class="stage"><div class="stage-letter">A</div><div><h5>Assessment</h5><p>Understand needs and motivations.</p></div></div>
+      <div class="stage"><div class="stage-letter">M</div><div><h5>Matching</h5><p>Connect solutions to outcomes.</p></div></div>
+      <div class="stage"><div class="stage-letter">P</div><div><h5>Persuasion</h5><p>Apply influence ethically.</p></div></div>
+      <div class="stage"><div class="stage-letter">O</div><div><h5>Objection</h5><p>Resolve underlying concerns.</p></div></div>
+      <div class="stage"><div class="stage-letter">C</div><div><h5>Closing</h5><p>Support confident decisions.</p></div></div>
     </div>
+
   </div>
 </section>
 
-<section class="video-section">
-  <div class="section-label">Hear It Directly</div>
-  <h2>Watch Erick explain<br><em>the RAMP approach (Coming Soon)</em></h2>
-  <div class="video-wrap">
-    <iframe src="https://www.youtube.com/embed/rAOMo5f-pbA" allowfullscreen></iframe>
-  </div>
-</section>
-
-<section class="about-cta" id="contact">
+<section class="about-cta">
   <div class="about-cta-inner">
-    <div class="section-label">Work Together</div>
-    <h2>Ready to see how<br><em>this changes your team?</em></h2>
-    <p>No pitch. No pressure. Just an honest conversation about where you are and where you want to go.</p>
+    <div class="section-label">Let's Talk</div>
+
+    <h2>
+      If your organization wants better sales,
+      presentations, negotiations, or leadership communication,
+      start with understanding people.
+    </h2>
+
+    <p>
+      Every business result is ultimately driven by human decisions.
+      Improve the decisions, and performance follows.
+    </p>
 
     <div class="cta-row">
-      <a href="mailto:connect@rampbizenglish.com" class="btn-primary">Start a Conversation</a>
-      <a href="/#services" class="btn-outline">See Our Services</a>
+      <a href="mailto:connect@rampbizenglish.com" class="btn-primary">
+        Start a Conversation
+      </a>
     </div>
   </div>
 </section>
-
-<footer>
-  <div class="footer-top">
-    <div>
-      <a href="/" class="footer-logo">R<span>A</span>MP</a>
-      <p class="footer-desc">Business consulting in Sales Psychology and Presentation Skills, empowering SMEs and enterprise teams to win globally.</p>
-    </div>
-
-    <div class="footer-col">
-      <h5>Pages</h5>
-      <ul>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/#services">Services</a></li>
-        <li><a href="/learn/">Learn</a></li>
-        <li><a href="/pricing-and-programs/">Pricing &amp; Programs</a></li>
-        <li><a href="/#projects">Testimonials</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h5>Contact</h5>
-      <ul>
-        <li><a href="mailto:connect@rampbizenglish.com">connect@rampbizenglish.com</a></li>
-        <li><a href="tel:+821033610610">+82 10 3361 0610</a></li>
-        <li><a href="https://www.linkedin.com/in/roderick-m-023b0b61/">LinkedIn</a></li>
-        <li><a href="https://www.facebook.com/profile.php?id=61558688188225">Facebook</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <p class="footer-copy">© 2025 RAMP Business Consulting. All rights reserved.</p>
-</footer>
