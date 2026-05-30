@@ -4,39 +4,264 @@ banner_image: /uploads/learn-image.jpg
 title: RAMP Insights
 seo:
 description: >-
-  Expert insights on sales, presentations, negotiations, and conventions to help
-  startups and SMEs succeed.
+  Expert insights on sales psychology, presentation mastery, high-stakes negotiation, and corporate ethics.
 social_image:
 twitter_card:
 keywords: >-
-  sales training, business presentations, startup growth, negotiation tips,
-  convention success
+  sales psychology, business presentations, executive presence, negotiation frameworks, startup growth, behavioral economics
 hide-from-google: false
 ---
-<section class="tall-60 grid bg-green">
-  <div class="col-7 bg-contact" style="background-image: url('{{page.banner_image}}');">
-  </div>
-  <div class="col-5-middle editable padded ">
-      <h2> RAMP Hospitality Insights </h2>
-      <h4>RAMP Hospitality Insights is your resource for proven strategies and practical tips to elevate guest experience and drive hotel revenue. </h4>
-      <h4> We focus on three critical areas where hotels often struggle, and where the right training delivers the fastest impact: </h4>
-      <h4> **Guest Experience:** Create memorable interactions that build loyalty and positive reviews. </h4>
-      <h4> **Revenue Optimization:** Increase guest spending through natural upselling and recommendation skills. </h4>
-      <h4> **Service Recovery:** Turn difficult situations into opportunities to win loyal customers.</h4>
-      <h4>Explore our hospitality insights below, designed to give you practical strategies you can implement immediately. </h4>
-      <p></p>
-      <h4> Have a specific hotel training challenge? Let us know here.</h4>
-  </div>
-</section>
 
-<section class="p-5p max-w-screen-2xl mx-auto text-dark-white">
-  <h2 class="serif tracking-wide uppercase text-center text-4xl mb-4"> Featured RAMP Insights </h2>
-  <div class="sm-columns-1 columns-3">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
 
-    {% for post in site.posts limit:12 %}
-      {% include post-loop-item-mixed-images.html %}
-    {% endfor %}
+  :root {
+    --ink: #0D0D0D;
+    --ink-2: #1C1C1C;
+    --ink-3: #3A3530;
+    --smoke: #F2EFE9;
+    --smoke-2: #E4DED4;
+    --white: #FAFAF8;
+    --gold: #B8922A;
+    --gold-light: #D4AA4E;
+    --gold-pale: #F5EDD8;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Outfit', sans-serif;
+  }
 
-  </div>
-</section>
+  .insights-page-wrapper {
+    font-family: var(--font-body);
+    background: var(--white);
+    color: var(--ink);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
 
+  /* ── HERO GRID SECTION ── */
+  .insights-hero {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    background: var(--smoke);
+    min-height: 520px;
+  }
+
+  .insights-hero-image {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    min-height: 350px;
+  }
+
+  .insights-hero-content {
+    padding: 5rem 4.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .section-label {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .insights-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 1.25rem;
+  }
+
+  .insights-hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .insights-hero-lead {
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--ink-2);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  /* ── FOCUS AREAS ── */
+  .focus-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .focus-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .focus-icon {
+    font-size: 1.25rem;
+    line-height: 1;
+    margin-top: 0.15rem;
+  }
+
+  .focus-text h3 {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.15rem;
+  }
+
+  .focus-text p {
+    font-size: 0.88rem;
+    font-weight: 300;
+    color: var(--ink-3);
+    line-height: 1.5;
+  }
+
+  .insights-hero-footer {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--ink-2);
+    border-top: 1px solid var(--smoke-2);
+    padding-top: 1.5rem;
+  }
+
+  .insights-hero-footer a {
+    color: var(--gold);
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-style: normal;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--gold);
+    margin-left: 0.5rem;
+    padding-bottom: 1px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .insights-hero-footer a:hover {
+    color: var(--ink);
+    border-color: var(--ink);
+  }
+
+  /* ── POSTS FEED SECTION ── */
+  .feed-section {
+    padding: 6rem 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .feed-section h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: center;
+    color: var(--ink);
+    margin-bottom: 4rem;
+  }
+
+  /* Native Dynamic Columns Layout */
+  .grid-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem 2rem;
+  }
+
+  /* ── RESPONSIVE STYLING ── */
+  @media (max-width: 1024px) {
+    .grid-columns {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .insights-hero {
+      grid-template-columns: 1fr;
+    }
+    .insights-hero-image {
+      height: 300px;
+      min-height: 300px;
+    }
+    .insights-hero-content {
+      padding: 3.5rem 5%;
+    }
+    .grid-columns {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<div class="insights-page-wrapper">
+
+  <!-- HERO HEADER GRID -->
+  <section class="insights-hero">
+    <div class="insights-hero-image" style="background-image: url('{{ page.banner_image }}');"></div>
+    
+    <div class="insights-hero-content">
+      <div class="section-label">RAMP Insights</div>
+      <h1>Decisions are psychological.<br /><em>Deals are behavioral.</em></h1>
+      
+      <p class="insights-hero-lead">
+        Welcome to your resource for tactical strategies built on behavioral economics, structural persuasion frameworks, and corporate psychology.
+      </p>
+
+      <div class="focus-list">
+        <!-- Area 1: Sales Psychology -->
+        <div class="focus-item">
+          <div class="focus-icon">🧠</div>
+          <div class="focus-text">
+            <h3>Buyer Behavioral Mechanics</h3>
+            <p>Deconstruct the internal psychological crises buyers face at every stage, using diagnostic tactics to unpack stalling mechanisms and hidden objections.</p>
+          </div>
+        </div>
+
+        <!-- Area 2: Presentation & Delivery -->
+        <div class="focus-item">
+          <div class="focus-icon">🎙️</div>
+          <div class="focus-text">
+            <h3>Executive Presence &amp; Rhythm</h3>
+            <p>Master advanced presentation dynamics—focusing on non-verbal delivery, structural pacing, voice intonation control, and intentional performance stress-testing.</p>
+          </div>
+        </div>
+
+        <!-- Area 3: High-Stakes Negotiation -->
+        <div class="focus-item">
+          <div class="focus-icon">⚖️</div>
+          <div class="focus-text">
+            <h3>Strategic Negotiation &amp; Ethics</h3>
+            <p>Navigate elite B2B environments and value defense using structured frameworks like Hosmer's ELSP model to optimize organizational trust and velocity.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="insights-hero-footer">
+        Facing a specific commercial or organizational performance barrier? <a href="mailto:connect@rampbizenglish.com">Let's Connect</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECENT INSIGHTS ARTICLES FEED -->
+  <section class="feed-section">
+    <h2>Featured RAMP Insights</h2>
+    
+    <div class="grid-columns">
+      {% for post in site.posts limit:12 %}
+        {% include post-loop-item-mixed-images.html %}
+      {% endfor %}
+    </div>
+  </section>
+
+</div>
