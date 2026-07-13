@@ -3,38 +3,174 @@ layout: default
 banner_image: /images/contactsuit.png
 ---
 
-<section class="tall-60 grid bg-green">
-  <div class="col-7 bg-contact" style="background-image: url('{{page.banner_image}}');">
-  </div>
-  <div class="col-5-middle editable padded">
-      <h2>Get in Touch</h2>
-      <h4>Thank you for considering RAMP as your partner. Every engagement begins with a conversation.</h4>
-      <p></p>
-      <h4>Complete the form below to schedule a complimentary discussion about your sales challenges
-                and discover how a better understanding of buyer psychology can help improve your sales.</h4>
-  </div>
-</section>
+<!-- MODERN INLINE STYLES FOR ABSOLUTE SAFETY & CLEAN DISPLAY -->
+<style>
+  .custom-contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    font-family: 'Outfit', sans-serif;
+    color: #0D0D0D;
+    line-height: 1.7;
+  }
+  
+  .custom-hero-image-wrapper {
+    width: 100%;
+    max-height: 400px;
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+  }
 
-<section class="padded capped-width">
-  <div class="center editable margin-b-2">
-      <h2>COMPLIMENTARY OFFER</h2>
-      <h4 style="margin-bottom: 1.5rem; font-size: 1.3rem; color: var(--gold, #B8922A);">Let Me Analyze One Stalled Opportunity.</h4>
-      
-      <p style="text-align: left; max-width: 750px; margin: 0 auto 1.5rem auto; font-size: 1.05rem; line-height: 1.7; font-weight: 300;">
-        Salespeople don't lose qualified opportunities because they forgot a closing technique. They lose them because buyers struggle with decisions that most sales training failed to recognize.
-      </p>
-      
-      <p style="text-align: left; max-width: 750px; margin: 0 auto 1.5rem auto; font-size: 1.05rem; line-height: 1.7; font-weight: 300;">
-        If you're willing to let me examine one anonymized stalled opportunity from your pipeline, I'll tell you where I believe your buyer's decision process broke down and whether your team is trying to solve the wrong problem. **No fee. No presentation. No obligation.**
-      </p>
-      
-      <p style="text-align: left; max-width: 750px; margin: 0 auto 2rem auto; font-size: 1.05rem; line-height: 1.7; font-weight: 300; font-style: italic;">
-        If my diagnosis helps, we can discuss whether it's worth applying the same thinking across your sales organization. If not, you'll still have another perspective on an opportunity your team hasn't been able to move. Would you be open to that?
-      </p>
+  .custom-hero-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .custom-section-heading {
+    text-align: center;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #0D0D0D;
+    margin-bottom: 1.5rem;
+  }
+
+  .custom-subheading {
+    text-align: center;
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: #1C1C1C;
+    margin-bottom: 1.5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .custom-offer-box {
+    background-color: #F2EFE9;
+    padding: 2.5rem;
+    border-radius: 4px;
+    margin: 3rem 0;
+    border-top: 3px solid #B8922A;
+  }
+
+  .custom-offer-title {
+    text-align: center;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #0D0D0D;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  .custom-offer-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #B8922A;
+    margin-bottom: 1.5rem;
+  }
+
+  .custom-body-text {
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: #3A3530;
+    margin-bottom: 1.25rem;
+  }
+
+  /* FORMSPREE BACKEND STYLING */
+  .custom-contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .custom-contact-form label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: #0D0D0D;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .custom-contact-form input, 
+  .custom-contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #E4DED4;
+    background-color: #FAFAF8;
+    font-family: inherit;
+    font-size: 1rem;
+    border-radius: 4px;
+  }
+
+  .custom-contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+
+  .custom-submit-btn {
+    background-color: #B8922A;
+    color: #FAFAF8;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    align-self: center;
+    min-width: 200px;
+    border-radius: 4px;
+  }
+
+  .custom-submit-btn:hover {
+    background-color: #D4AA4E;
+  }
+</style>
+
+<div class="custom-contact-container">
+
+  <!-- TOP HERO IMAGE CONTAINER -->
+  <div class="custom-hero-image-wrapper">
+    <img src="{{ page.banner_image }}" alt="RAMP Enterprise Commercial Architecture" />
   </div>
 
-  <form action="https://formspree.io/f/mnnaqeek" method="POST">
-    <!-- ✅ Corrected: Use _next for redirect -->
+  <!-- INTRO SECTION -->
+  <h1 class="custom-section-heading">Get in Touch</h1>
+  <p class="custom-subheading">
+    Thank you for considering RAMP as your partner. Every engagement begins with a conversation. Complete the form below to schedule a complimentary discussion about your sales challenges and discover how a better understanding of buyer psychology can improve your pipeline velocity.
+  </p>
+
+  <!-- STRATEGIC VALUE OFFER SECTION -->
+  <div class="custom-offer-box">
+    <h2 class="custom-offer-title">COMPLIMENTARY OFFER</h2>
+    <div class="custom-offer-subtitle">Let Me Analyze One Stalled Opportunity.</div>
+    
+    <p class="custom-body-text">
+      Salespeople don't lose qualified opportunities because they forgot a closing technique. They lose them because buyers struggle with decisions that most sales training failed to recognize.
+    </p>
+    
+    <p class="custom-body-text">
+      If you're willing to let me examine one anonymized stalled opportunity from your pipeline, I'll tell you where I believe your buyer's decision process broke down and whether your team is trying to solve the wrong problem. <strong>No fee. No presentation. No obligation.</strong>
+    </p>
+    
+    <p class="custom-body-text" style="font-style: italic; margin-bottom: 0;">
+      If my diagnosis helps, we can discuss whether it's worth applying the same thinking across your sales organization. If not, you'll still have another perspective on an opportunity your team hasn't been able to move. Would you be open to that?
+    </p>
+  </div>
+
+  <!-- CENTERED CONVERSATION CAPTURE FORM -->
+  <form action="https://formspree.io/f/mnnaqeek" method="POST" class="custom-contact-form">
+    <!-- Formspree Redirect Guardrail -->
     <input type="hidden" name="_next" value="https://www.rampbizenglish.com/thank-you" />
 
     <label for="_name">Your Name</label>
@@ -46,6 +182,7 @@ banner_image: /images/contactsuit.png
     <label for="message">Identify your current commercial goals or pipeline challenges</label>
     <textarea name="message" id="message" placeholder="Help me tailor our diagnostic session directly to your team's operational needs." required></textarea>
 
-    <button type="submit" class="button">SUBMIT</button>
+    <button type="submit" class="custom-submit-btn">Submit Request</button>
   </form>
-</section>
+
+</div>
