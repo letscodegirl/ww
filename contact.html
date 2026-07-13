@@ -2,53 +2,59 @@
 layout: default
 banner_image: /images/contactsuit.png
 ---
-<!-- ===== Let's Connect & The Complimentary Offer ===== -->
-<section class="py-20 px-[5%] bg-white">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
-        <div class="space-y-6">
-            <h3 class="text-3xl font-serif border-b-2 border-[#c5a880] inline-block pb-2 editable">
-                Let's Connect
-            </h3>
-            <p class="text-zinc-700 leading-relaxed editable">
-                <em>Thank you for considering RAMP as your partner.</em> <br /> <br /><em><strong>Every engagement begins with a conversation. Let's start yours today!</strong></em> <br /><br /> Complete the form below to schedule a <em><strong>complimentary</strong></em> discussion about your sales challenges and discover how a better understanding of buyer psychology can help your team improve the way they sell.
-            </p>
-        </div>
+<section class="tall-60 grid bg-green">
+  <div class="col-7 bg-contact" style="background-image: url('{{page.banner_image}}');">
+  </div>
+  <div class="col-5-middle editable padded">
+      <p><strong>Let's Connect!</strong></p>
+      <p></p>
+      <p><strong>Thank you for considering </strong><em><strong>RAMP</strong></em> <strong>as your partner. </strong></p>
+      <p><strong>Every engagement begins with a conversation. Let’s start yours today!</strong></p>
+      <h6></h6>
+      <p><strong>Complete the form below to schedule a complimentary discussion about your sales challenges  </strong></p>
+      <p><strong>and discover how a better understanding of buyer psychology can help your team improve the way they sell.</strong></p>
+  </div>
+</section>
 
-        <div class="bg-zinc-50 p-8 rounded-lg border-l-4 border-[#c5a880] flex flex-col justify-center">
-            <h3 class="text-3xl font-serif mb-4 editable">
-                The Complimentary Offer
-            </h3>
-            <p class="text-xl italic text-zinc-600 mb-4 editable">
-                <strong>"Every business result begins with a human decision."</strong>
-            </p>
-            <p class="text-zinc-700 leading-relaxed editable">
-                <strong>Let's Analyze One Stalled Opportunity.</strong> <br /><br />The sales industry has spent decades teaching salespeople how to sell. But strategically, we've overlooked the buyer. <br /><br /> Salespeople don't lose qualified opportunities because they forgot a closing technique. They lose them because buyers struggle with decisions that most sales training has failed to recognize. <br /><br />If you're willing to let me examine one anonymized stalled opportunity from your pipeline, I'll tell you where I believe your buyer's decision process broke down and whether your team is trying to solve the wrong problem. <br />No fee. No presentation. No obligation. <br /><br />If my diagnosis helps, we can discuss whether it's worth applying the same thinking across your sales organization. If not, you'll still have another perspective on an opportunity your team hasn't been able to move. <br /><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<strong>Would you be open to that?</strong>
-            </p>
-            <h6 class="text-lg font-semibold mt-2 mb-4 editable">
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; SECURE YOUR SESSION TODAY!!
-            </h6>
+<section class="padded capped-width">
+  <div class="center editable margin-b-2">
+      <p><strong>Let's Analyze One Stalled Opportunity.</strong></p>
+      <h6>Salespeople don't lose qualified opportunities because they
+forgot a closing technique. They lose them because buyers struggle with
+decisions that most sales training failed to recognize.
 
-            <form action="https://formspree.io/f/mnnaqeek" method="POST" class="space-y-4">
-                <!-- ✅ Corrected: Use _next for redirect -->
-                <input type="hidden" name="_next" value="https://www.rampbizenglish.com/thank-you" />
+If you're willing to let me examine one anonymized stalled
+opportunity from your pipeline, I'll tell you where I believe your buyer's
+decision process broke down and whether your team is trying to solve the wrong
+problem.
 
-                <div>
-                    <label for="_name">Your Name</label>
-                    <input type="text" name="name" id="_name" placeholder="Name" required class="w-full mt-1" />
-                </div>
+No fee. No presentation. No obligation.
 
-                <div>
-                    <label for="_replyto">Your Email</label>
-                    <input type="email" name="email" id="_replyto" placeholder="Email" required class="w-full mt-1" />
-                </div>
+If my diagnosis helps, we can discuss whether it's worth
+applying the same thinking across your sales organization.
 
-                <div>
-                    <label for="message">Identify your current pipeline challenges and goals</label>
-                    <textarea name="message" id="message" placeholder="Help me tailor our diagnostic session directly to your team's operational needs." required class="w-full mt-1"></textarea>
-                </div>
+If not, you'll still have another perspective on an
+opportunity your team hasn't been able to move.
+Would you be open to that?
 
-                <button type="submit" class="button">SUBMIT</button>
-            </form>
-        </div>
-    </div>
+</h6>
+      <h6></h6>
+      <h6>Secure your session today.</h6>
+  </div>
+
+  <form action="https://formspree.io/f/mnnaqeek" method="POST">
+    <!-- ✅ Corrected: Use _next for redirect -->
+    <input type="hidden" name="_next" value="https://www.rampbizenglish.com/thank-you" />
+
+    <label for="_name">Your Name</label>
+    <input type="text" name="name" id="_name" placeholder="Name" required />
+
+    <label for="_replyto">Your Email</label>
+    <input type="email" name="email" id="_replyto" placeholder="Email" required />
+
+    <label for="message">Identify your current pipeline challenges and goals</label>
+    <textarea name="message" id="message" placeholder="Help me tailor our diagnostic session directly to your team's operational needs." required></textarea>
+
+    <button type="submit" class="button">SUBMIT</button>
+  </form>
 </section>
